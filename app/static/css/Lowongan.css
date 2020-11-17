@@ -1,0 +1,2382 @@
+.mediaViewInfo {
+	--web-view-name: Lowongan;
+	--web-view-id: Lowongan;
+	--web-scale-to-fit: true;
+	--web-scale-to-fit-type: width;
+	--web-scale-on-resize: true;
+	--web-enable-deep-linking: true;
+}
+:root {
+	--web-view-ids: Lowongan;
+}
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	border: none;
+}
+#Lowongan {
+	position: absolute;
+	width: 2039px;
+	height: 7228px;
+	background-color: rgba(255,255,255,1);
+	overflow: hidden;
+	--web-view-name: Lowongan;
+	--web-view-id: Lowongan;
+	--web-scale-to-fit: true;
+	--web-scale-to-fit-type: width;
+	--web-scale-on-resize: true;
+	--web-enable-deep-linking: true;
+}
+@keyframes fadein {
+
+	0% {
+		opacity: 0;
+	}
+	100% {
+		opacity: 1;
+	}
+
+}
+#Lowongan_ed {
+	left: 212px;
+	top: 43px;
+	position: absolute;
+	overflow: visible;
+	width: 166px;
+	white-space: nowrap;
+	text-align: left;
+	font-family: Segoe UI;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 36px;
+	color: rgba(255,255,255,1);
+}
+#Perusahaan_ee {
+	left: 436px;
+	top: 43px;
+	position: absolute;
+	overflow: visible;
+	width: 183px;
+	white-space: nowrap;
+	text-align: left;
+	font-family: Segoe UI;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 36px;
+	color: rgba(255,247,247,1);
+}
+#Daftar_ef {
+	left: 1583px;
+	top: 43px;
+	position: absolute;
+	overflow: visible;
+	width: 99px;
+	white-space: nowrap;
+	text-align: left;
+	font-family: Segoe UI;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 36px;
+	color: rgba(255,255,255,1);
+}
+#Masuk_eg {
+	left: 1739px;
+	top: 43px;
+	position: absolute;
+	overflow: visible;
+	width: 105px;
+	white-space: nowrap;
+	text-align: left;
+	font-family: Segoe UI;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 36px;
+	color: rgba(255,255,255,1);
+}
+#Hubungi_kami__eh {
+	left: 688px;
+	top: 43px;
+	position: absolute;
+	overflow: visible;
+	width: 234px;
+	white-space: nowrap;
+	text-align: left;
+	font-family: Segoe UI;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 36px;
+	color: rgba(255,244,244,1);
+}
+#Rectangle_266_ei {
+	fill: rgba(121,160,239,1);
+	stroke: rgba(0,0,0,1);
+	stroke-width: 1px;
+	stroke-linejoin: miter;
+	stroke-linecap: butt;
+	stroke-miterlimit: 4;
+	shape-rendering: auto;
+}
+.Rectangle_266_ei {
+	position: absolute;
+	overflow: visible;
+	width: 2039px;
+	height: 143px;
+	left: 0px;
+	top: 0px;
+}
+#GolekKerjo_ej {
+	left: 40px;
+	top: 36px;
+	position: absolute;
+	overflow: visible;
+	width: 283px;
+	white-space: nowrap;
+	transition: all 0.3s ease-in-out;
+	--web-animation: fadein 0.3s ease-in-out;
+	--web-action-type: page;
+	--web-action-target: Landing Page.html;
+	cursor: pointer;
+	text-align: left;
+	font-family: Arvo;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 50px;
+	color: rgba(255,255,255,1);
+}
+#Lowongan_ek {
+	left: 376px;
+	top: 43px;
+	position: absolute;
+	overflow: visible;
+	width: 205px;
+	white-space: nowrap;
+	text-align: left;
+	font-family: Arvo;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 40px;
+	color: rgba(255,255,255,1);
+}
+#Perusahaan_el {
+	left: 630px;
+	top: 43px;
+	position: absolute;
+	overflow: visible;
+	width: 232px;
+	white-space: nowrap;
+	transition: all 0.3s ease-in-out;
+	--web-animation: fadein 0.3s ease-in-out;
+	--web-action-type: page;
+	--web-action-target: Perusahaan___Belum_Daftar_Masuk.html;
+	cursor: pointer;
+	text-align: left;
+	font-family: Arvo;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 40px;
+	color: rgba(255,255,255,1);
+}
+#Daftar_em {
+	left: 1644px;
+	top: 48px;
+	position: absolute;
+	overflow: visible;
+	width: 122px;
+	white-space: nowrap;
+	transition: all 0.3s ease-in-out;
+	--web-animation: fadein 0.3s ease-in-out;
+	--web-action-type: page;
+	--web-action-target: Daftar_Pekerja___Utama___1.html;
+	cursor: pointer;
+	text-align: left;
+	font-family: Arvo;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 40px;
+	color: rgba(255,255,255,1);
+}
+#Masuk_en {
+	left: 1834px;
+	top: 48px;
+	position: absolute;
+	overflow: visible;
+	width: 137px;
+	white-space: nowrap;
+	transition: all 0.3s ease-in-out;
+	--web-animation: fadein 0.3s ease-in-out;
+	--web-action-type: page;
+	--web-action-target: Daftar_Pekerja___Utama___2.html;
+	cursor: pointer;
+	text-align: left;
+	font-family: Arvo;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 40px;
+	color: rgba(255,255,255,1);
+}
+#AmazonCompanyImage {
+	position: absolute;
+	width: 1346px;
+	height: 757.333px;
+	left: 347px;
+	top: 444px;
+	overflow: visible;
+}
+#architecture-2256489_1920 {
+	position: absolute;
+	width: 1364px;
+	height: 660px;
+	left: 1834px;
+	top: 498px;
+	overflow: visible;
+}
+#appartment-building-835817_192 {
+	position: absolute;
+	width: 1172px;
+	height: 660.5px;
+	left: -966px;
+	top: 497px;
+	overflow: visible;
+}
+#Polygon_1 {
+	fill: rgba(254,182,144,1);
+}
+.Polygon_1 {
+	overflow: visible;
+	position: absolute;
+	width: 190px;
+	height: 405px;
+	transform: matrix(1,0,0,1,1761.3427,625.084) rotate(90deg);
+	transform-origin: center;
+	left: 0px;
+	top: 0px;
+}
+#Polygon_3 {
+	fill: rgba(254,182,144,1);
+}
+.Polygon_3 {
+	overflow: visible;
+	position: absolute;
+	width: 190px;
+	height: 405px;
+	transform: matrix(1,0,0,1,107.3427,625.084) rotate(270deg);
+	transform-origin: center;
+	left: 0px;
+	top: 0px;
+}
+#Rectangle_6 {
+	fill: transparent;
+	stroke: rgba(0,0,0,1);
+	stroke-width: 4px;
+	stroke-linejoin: miter;
+	stroke-linecap: butt;
+	stroke-miterlimit: 4;
+	shape-rendering: auto;
+}
+.Rectangle_6 {
+	position: absolute;
+	overflow: visible;
+	width: 463px;
+	height: 498px;
+	left: 788px;
+	top: 1529px;
+}
+#Part_Time_ey {
+	left: 945px;
+	top: 1949px;
+	position: absolute;
+	overflow: visible;
+	width: 150px;
+	white-space: nowrap;
+	text-align: left;
+	font-family: Segoe UI;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 36px;
+	color: rgba(112,112,112,1);
+}
+#fulltime {
+	position: absolute;
+	width: 295px;
+	height: 295px;
+	left: 872px;
+	top: 1580px;
+	overflow: visible;
+}
+#Rectangle_291 {
+	fill: transparent;
+	stroke: rgba(0,0,0,1);
+	stroke-width: 4px;
+	stroke-linejoin: miter;
+	stroke-linecap: butt;
+	stroke-miterlimit: 4;
+	shape-rendering: auto;
+}
+.Rectangle_291 {
+	position: absolute;
+	overflow: visible;
+	width: 463px;
+	height: 498px;
+	left: 788px;
+	top: 1529px;
+}
+#Part_Time_ey {
+	left: 945px;
+	top: 1949px;
+	position: absolute;
+	overflow: visible;
+	width: 150px;
+	white-space: nowrap;
+	text-align: left;
+	font-family: Segoe UI;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 36px;
+	color: rgba(112,112,112,1);
+}
+#Part_Time_ey {
+	left: 945px;
+	top: 1949px;
+	position: absolute;
+	overflow: visible;
+	width: 150px;
+	white-space: nowrap;
+	text-align: left;
+	font-family: Segoe UI;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 36px;
+	color: rgba(112,112,112,1);
+}
+#full-day-service-9-768065 {
+	position: absolute;
+	width: 268px;
+	height: 268px;
+	left: 273px;
+	top: 1580px;
+	overflow: visible;
+}
+#Rectangle_293 {
+	fill: transparent;
+	stroke: rgba(0,0,0,1);
+	stroke-width: 4px;
+	stroke-linejoin: miter;
+	stroke-linecap: butt;
+	stroke-miterlimit: 4;
+	shape-rendering: auto;
+}
+.Rectangle_293 {
+	position: absolute;
+	overflow: visible;
+	width: 463px;
+	height: 498px;
+	left: 175px;
+	top: 1529px;
+}
+#Full_Time {
+	left: 336px;
+	top: 1949px;
+	position: absolute;
+	overflow: visible;
+	width: 144px;
+	white-space: nowrap;
+	text-align: left;
+	font-family: Segoe UI;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 36px;
+	color: rgba(112,112,112,1);
+}
+#Rectangle_294 {
+	fill: transparent;
+	stroke: rgba(0,0,0,1);
+	stroke-width: 4px;
+	stroke-linejoin: miter;
+	stroke-linecap: butt;
+	stroke-miterlimit: 4;
+	shape-rendering: auto;
+}
+.Rectangle_294 {
+	position: absolute;
+	overflow: visible;
+	width: 463px;
+	height: 498px;
+	left: 1401px;
+	top: 1529px;
+}
+#Freelance {
+	left: 1561px;
+	top: 1949px;
+	position: absolute;
+	overflow: visible;
+	width: 152px;
+	white-space: nowrap;
+	text-align: left;
+	font-family: Segoe UI;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 36px;
+	color: rgba(112,112,112,1);
+}
+#freelance {
+	position: absolute;
+	width: 313px;
+	height: 313px;
+	left: 1476px;
+	top: 1571px;
+	overflow: visible;
+}
+#Mau_kerja_apa {
+	left: 797px;
+	top: 1406px;
+	position: absolute;
+	overflow: visible;
+	width: 447px;
+	white-space: nowrap;
+	text-align: center;
+	font-family: Arvo;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 60px;
+	color: rgba(0,0,0,1);
+}
+#Component_20__1 {
+	position: absolute;
+	width: 551px;
+	height: 593px;
+	left: 759px;
+	top: 2620px;
+	overflow: visible;
+}
+#Rectangle_303 {
+	fill: rgba(254,182,144,1);
+}
+.Rectangle_303 {
+	position: absolute;
+	overflow: visible;
+	width: 522px;
+	height: 558px;
+	left: 29px;
+	top: 35px;
+}
+#Rectangle_297 {
+	fill: rgba(255,255,255,1);
+	stroke: rgba(112,112,112,1);
+	stroke-width: 3px;
+	stroke-linejoin: miter;
+	stroke-linecap: butt;
+	stroke-miterlimit: 4;
+	shape-rendering: auto;
+}
+.Rectangle_297 {
+	position: absolute;
+	overflow: visible;
+	width: 522px;
+	height: 558px;
+	left: 0px;
+	top: 0px;
+}
+#Web_Developer {
+	left: 897px;
+	top: 2746px;
+	position: absolute;
+	overflow: visible;
+	width: 246px;
+	white-space: nowrap;
+	text-align: left;
+	font-family: Segoe UI;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 36px;
+	color: rgba(0,0,0,1);
+}
+#Jakarta {
+	left: 965px;
+	top: 2902px;
+	position: absolute;
+	overflow: visible;
+	width: 111px;
+	white-space: nowrap;
+	text-align: left;
+	font-family: Segoe UI;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 36px;
+	color: rgba(0,0,0,1);
+}
+#Rp5000000- {
+	left: 912px;
+	top: 2975px;
+	position: absolute;
+	overflow: visible;
+	width: 217px;
+	white-space: nowrap;
+	text-align: left;
+	font-family: Segoe UI;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 36px;
+	color: rgba(0,0,0,1);
+}
+#Apple_Inc {
+	left: 941px;
+	top: 2819px;
+	position: absolute;
+	overflow: visible;
+	width: 158px;
+	white-space: nowrap;
+	text-align: left;
+	font-family: Segoe UI;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 36px;
+	color: rgba(0,0,0,1);
+}
+#Component_22__1 {
+	position: absolute;
+	width: 553px;
+	height: 588px;
+	left: 1364px;
+	top: 2625px;
+	overflow: visible;
+}
+#Rectangle_304 {
+	fill: rgba(254,182,144,1);
+}
+.Rectangle_304 {
+	position: absolute;
+	overflow: visible;
+	width: 522px;
+	height: 558px;
+	left: 31px;
+	top: 30px;
+}
+#Rectangle_299 {
+	fill: rgba(255,255,255,1);
+	stroke: rgba(112,112,112,1);
+	stroke-width: 3px;
+	stroke-linejoin: miter;
+	stroke-linecap: butt;
+	stroke-miterlimit: 4;
+	shape-rendering: auto;
+}
+.Rectangle_299 {
+	position: absolute;
+	overflow: visible;
+	width: 522px;
+	height: 558px;
+	left: 0px;
+	top: 0px;
+}
+#Sales_Marketing {
+	left: 1487px;
+	top: 2746px;
+	position: absolute;
+	overflow: visible;
+	width: 253px;
+	white-space: nowrap;
+	text-align: left;
+	font-family: Segoe UI;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 36px;
+	color: rgba(0,0,0,1);
+}
+#Surabaya {
+	left: 1543px;
+	top: 2893px;
+	position: absolute;
+	overflow: visible;
+	width: 147px;
+	white-space: nowrap;
+	text-align: left;
+	font-family: Segoe UI;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 36px;
+	color: rgba(0,0,0,1);
+}
+#Rp3500000- {
+	left: 1519px;
+	top: 2970px;
+	position: absolute;
+	overflow: visible;
+	width: 217px;
+	white-space: nowrap;
+	text-align: left;
+	font-family: Segoe UI;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 36px;
+	color: rgba(0,0,0,1);
+}
+#Huawei_ {
+	left: 1551px;
+	top: 2812px;
+	position: absolute;
+	overflow: visible;
+	width: 129px;
+	white-space: nowrap;
+	text-align: left;
+	font-family: Segoe UI;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 36px;
+	color: rgba(0,0,0,1);
+}
+#AppleLogo {
+	position: absolute;
+	width: 181px;
+	height: 181px;
+	left: 928px;
+	top: 2526px;
+	overflow: visible;
+}
+#Rekomendasi_Lowongan {
+	left: 659px;
+	top: 2363px;
+	position: absolute;
+	overflow: visible;
+	width: 723px;
+	white-space: nowrap;
+	text-align: center;
+	font-family: Arvo;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 60px;
+	color: rgba(0,0,0,1);
+}
+#Component_19__1 {
+	position: absolute;
+	width: 551px;
+	height: 676px;
+	left: 154px;
+	top: 2532px;
+	overflow: visible;
+	--web-animation: fadein 0.3s ease-out;
+	--web-action-type: page;
+	--web-action-target: Info___Lowongan___2.html;
+	cursor: pointer;
+}
+#Rectangle_302 {
+	fill: rgba(254,182,144,1);
+}
+.Rectangle_302 {
+	position: absolute;
+	overflow: visible;
+	width: 522px;
+	height: 558px;
+	left: 29px;
+	top: 118px;
+}
+#Rectangle_295 {
+	fill: rgba(255,255,255,1);
+	stroke: rgba(112,112,112,1);
+	stroke-width: 3px;
+	stroke-linejoin: miter;
+	stroke-linecap: butt;
+	stroke-miterlimit: 4;
+	shape-rendering: auto;
+}
+.Rectangle_295 {
+	position: absolute;
+	overflow: visible;
+	width: 522px;
+	height: 558px;
+	left: 0px;
+	top: 93px;
+}
+#Data_Scientist {
+	left: 145px;
+	top: 226px;
+	position: absolute;
+	overflow: visible;
+	width: 217px;
+	white-space: nowrap;
+	text-align: left;
+	font-family: Segoe UI;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 36px;
+	color: rgba(0,0,0,1);
+}
+#Jakarta_fq {
+	left: 207px;
+	top: 373px;
+	position: absolute;
+	overflow: visible;
+	width: 111px;
+	white-space: nowrap;
+	text-align: left;
+	font-family: Segoe UI;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 36px;
+	color: rgba(0,0,0,1);
+}
+#Rp10000000- {
+	left: 144px;
+	top: 446px;
+	position: absolute;
+	overflow: visible;
+	width: 237px;
+	white-space: nowrap;
+	text-align: left;
+	font-family: Segoe UI;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 36px;
+	color: rgba(0,0,0,1);
+}
+#Facebook {
+	left: 186px;
+	top: 299px;
+	position: absolute;
+	overflow: visible;
+	width: 152px;
+	white-space: nowrap;
+	text-align: left;
+	font-family: Segoe UI;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 36px;
+	color: rgba(0,0,0,1);
+}
+#NoPath_ft {
+	position: absolute;
+	width: 200px;
+	height: 200px;
+	left: 166px;
+	top: 0px;
+	overflow: visible;
+}
+#Path_1_fu {
+	fill: rgba(255,255,255,1);
+	stroke: rgba(0,0,0,1);
+	stroke-width: 1px;
+	stroke-linejoin: miter;
+	stroke-linecap: butt;
+	stroke-miterlimit: 4;
+	shape-rendering: auto;
+}
+.Path_1_fu {
+	overflow: visible;
+	position: absolute;
+	width: 203.75px;
+	height: 74.553px;
+	left: 156px;
+	top: 522px;
+	transform: matrix(1,0,0,1,0,0);
+	--web-animation: fadein 0.3s ease-out;
+	--web-action-type: page;
+	--web-action-target: Info___Lowongan___2.html;
+	cursor: pointer;
+}
+#INFO_ {
+	left: 226px;
+	top: 548px;
+	position: absolute;
+	overflow: visible;
+	width: 65px;
+	white-space: nowrap;
+	--web-animation: fadein 0.3s ease-out;
+	--web-action-type: page;
+	--web-action-target: Info___Lowongan___2.html;
+	cursor: pointer;
+	text-align: left;
+	font-family: Arvo;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 23px;
+	color: rgba(0,0,0,1);
+}
+#Path_60 {
+	fill: rgba(255,255,255,1);
+	stroke: rgba(0,0,0,1);
+	stroke-width: 1px;
+	stroke-linejoin: miter;
+	stroke-linecap: butt;
+	stroke-miterlimit: 4;
+	shape-rendering: auto;
+}
+.Path_60 {
+	overflow: visible;
+	position: absolute;
+	width: 203.75px;
+	height: 74.553px;
+	left: 918px;
+	top: 3058px;
+	transform: matrix(1,0,0,1,0,0);
+}
+#INFO__fx {
+	left: 988px;
+	top: 3084px;
+	position: absolute;
+	overflow: visible;
+	width: 65px;
+	white-space: nowrap;
+	text-align: left;
+	font-family: Arvo;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 23px;
+	color: rgba(0,0,0,1);
+}
+#Path_61 {
+	fill: rgba(255,255,255,1);
+	stroke: rgba(0,0,0,1);
+	stroke-width: 1px;
+	stroke-linejoin: miter;
+	stroke-linecap: butt;
+	stroke-miterlimit: 4;
+	shape-rendering: auto;
+}
+.Path_61 {
+	overflow: visible;
+	position: absolute;
+	width: 203.75px;
+	height: 74.553px;
+	left: 1531px;
+	top: 3061px;
+	transform: matrix(1,0,0,1,0,0);
+}
+#INFO__fz {
+	left: 1601px;
+	top: 3087px;
+	position: absolute;
+	overflow: visible;
+	width: 65px;
+	white-space: nowrap;
+	text-align: left;
+	font-family: Arvo;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 23px;
+	color: rgba(0,0,0,1);
+}
+#Lowongan_baru_hari_ini__ {
+	left: 653px;
+	top: 3449px;
+	position: absolute;
+	overflow: visible;
+	width: 707px;
+	white-space: nowrap;
+	text-align: center;
+	font-family: Arvo;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 60px;
+	color: rgba(0,0,0,1);
+}
+#Component_23__1 {
+	position: absolute;
+	width: 551px;
+	height: 583px;
+	left: 141px;
+	top: 3675px;
+	overflow: visible;
+}
+#Rectangle_307 {
+	fill: rgba(121,160,239,1);
+}
+.Rectangle_307 {
+	position: absolute;
+	overflow: visible;
+	width: 522px;
+	height: 558px;
+	left: 29px;
+	top: 25px;
+}
+#Rectangle_308 {
+	fill: rgba(255,255,255,1);
+	stroke: rgba(112,112,112,1);
+	stroke-width: 3px;
+	stroke-linejoin: miter;
+	stroke-linecap: butt;
+	stroke-miterlimit: 4;
+	shape-rendering: auto;
+}
+.Rectangle_308 {
+	position: absolute;
+	overflow: visible;
+	width: 522px;
+	height: 558px;
+	left: 0px;
+	top: 0px;
+}
+#IT {
+	left: 379px;
+	top: 3808px;
+	position: absolute;
+	overflow: visible;
+	width: 29px;
+	white-space: nowrap;
+	text-align: left;
+	font-family: Segoe UI;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 36px;
+	color: rgba(0,0,0,1);
+}
+#Pekanbaru {
+	left: 311px;
+	top: 3955px;
+	position: absolute;
+	overflow: visible;
+	width: 168px;
+	white-space: nowrap;
+	text-align: left;
+	font-family: Segoe UI;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 36px;
+	color: rgba(0,0,0,1);
+}
+#Rp4000000- {
+	left: 285px;
+	top: 4028px;
+	position: absolute;
+	overflow: visible;
+	width: 217px;
+	white-space: nowrap;
+	text-align: left;
+	font-family: Segoe UI;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 36px;
+	color: rgba(0,0,0,1);
+}
+#Telkom_Indonesia {
+	left: 261px;
+	top: 3881px;
+	position: absolute;
+	overflow: visible;
+	width: 278px;
+	white-space: nowrap;
+	text-align: left;
+	font-family: Segoe UI;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 36px;
+	color: rgba(0,0,0,1);
+}
+#Component_24__1 {
+	position: absolute;
+	width: 551px;
+	height: 593px;
+	left: 746px;
+	top: 3670px;
+	overflow: visible;
+}
+#Rectangle_306 {
+	fill: rgba(121,160,239,1);
+}
+.Rectangle_306 {
+	position: absolute;
+	overflow: visible;
+	width: 522px;
+	height: 558px;
+	left: 29px;
+	top: 35px;
+}
+#Rectangle_309 {
+	fill: rgba(255,255,255,1);
+	stroke: rgba(112,112,112,1);
+	stroke-width: 3px;
+	stroke-linejoin: miter;
+	stroke-linecap: butt;
+	stroke-miterlimit: 4;
+	shape-rendering: auto;
+}
+.Rectangle_309 {
+	position: absolute;
+	overflow: visible;
+	width: 522px;
+	height: 558px;
+	left: 0px;
+	top: 0px;
+}
+#Sales_Marketing_gb {
+	left: 882px;
+	top: 3808px;
+	position: absolute;
+	overflow: visible;
+	width: 253px;
+	white-space: nowrap;
+	text-align: left;
+	font-family: Segoe UI;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 36px;
+	color: rgba(0,0,0,1);
+}
+#Jakarta_gc {
+	left: 952px;
+	top: 3955px;
+	position: absolute;
+	overflow: visible;
+	width: 111px;
+	white-space: nowrap;
+	text-align: left;
+	font-family: Segoe UI;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 36px;
+	color: rgba(0,0,0,1);
+}
+#Rp6000000- {
+	left: 899px;
+	top: 4025px;
+	position: absolute;
+	overflow: visible;
+	width: 217px;
+	white-space: nowrap;
+	text-align: left;
+	font-family: Segoe UI;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 36px;
+	color: rgba(0,0,0,1);
+}
+#Honda {
+	left: 948px;
+	top: 3881px;
+	position: absolute;
+	overflow: visible;
+	width: 108px;
+	white-space: nowrap;
+	text-align: left;
+	font-family: Segoe UI;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 36px;
+	color: rgba(0,0,0,1);
+}
+#Component_25__1 {
+	position: absolute;
+	width: 553px;
+	height: 588px;
+	left: 1351px;
+	top: 3675px;
+	overflow: visible;
+}
+#Rectangle_305 {
+	fill: rgba(121,160,239,1);
+}
+.Rectangle_305 {
+	position: absolute;
+	overflow: visible;
+	width: 522px;
+	height: 558px;
+	left: 31px;
+	top: 30px;
+}
+#Rectangle_310 {
+	fill: rgba(255,255,255,1);
+	stroke: rgba(112,112,112,1);
+	stroke-width: 3px;
+	stroke-linejoin: miter;
+	stroke-linecap: butt;
+	stroke-miterlimit: 4;
+	shape-rendering: auto;
+}
+.Rectangle_310 {
+	position: absolute;
+	overflow: visible;
+	width: 522px;
+	height: 558px;
+	left: 0px;
+	top: 0px;
+}
+#Human_Resource {
+	left: 1468px;
+	top: 3807px;
+	position: absolute;
+	overflow: visible;
+	width: 271px;
+	white-space: nowrap;
+	text-align: left;
+	font-family: Segoe UI;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 36px;
+	color: rgba(0,0,0,1);
+}
+#Bandung {
+	left: 1533px;
+	top: 3955px;
+	position: absolute;
+	overflow: visible;
+	width: 143px;
+	white-space: nowrap;
+	text-align: left;
+	font-family: Segoe UI;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 36px;
+	color: rgba(0,0,0,1);
+}
+#Rp8000000- {
+	left: 1494px;
+	top: 4027px;
+	position: absolute;
+	overflow: visible;
+	width: 217px;
+	white-space: nowrap;
+	text-align: left;
+	font-family: Segoe UI;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 36px;
+	color: rgba(0,0,0,1);
+}
+#Google {
+	left: 1527px;
+	top: 3881px;
+	position: absolute;
+	overflow: visible;
+	width: 117px;
+	white-space: nowrap;
+	text-align: left;
+	font-family: Segoe UI;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 36px;
+	color: rgba(0,0,0,1);
+}
+#Path_62 {
+	fill: rgba(255,255,255,1);
+	stroke: rgba(0,0,0,1);
+	stroke-width: 1px;
+	stroke-linejoin: miter;
+	stroke-linecap: butt;
+	stroke-miterlimit: 4;
+	shape-rendering: auto;
+}
+.Path_62 {
+	overflow: visible;
+	position: absolute;
+	width: 203.75px;
+	height: 74.553px;
+	left: 297px;
+	top: 4104px;
+	transform: matrix(1,0,0,1,0,0);
+}
+#INFO__gn {
+	left: 367px;
+	top: 4130px;
+	position: absolute;
+	overflow: visible;
+	width: 65px;
+	white-space: nowrap;
+	text-align: left;
+	font-family: Arvo;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 23px;
+	color: rgba(0,0,0,1);
+}
+#Path_63 {
+	fill: rgba(255,255,255,1);
+	stroke: rgba(0,0,0,1);
+	stroke-width: 1px;
+	stroke-linejoin: miter;
+	stroke-linecap: butt;
+	stroke-miterlimit: 4;
+	shape-rendering: auto;
+}
+.Path_63 {
+	overflow: visible;
+	position: absolute;
+	width: 203.75px;
+	height: 74.553px;
+	left: 905px;
+	top: 4108px;
+	transform: matrix(1,0,0,1,0,0);
+}
+#INFO__gp {
+	left: 975px;
+	top: 4134px;
+	position: absolute;
+	overflow: visible;
+	width: 65px;
+	white-space: nowrap;
+	text-align: left;
+	font-family: Arvo;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 23px;
+	color: rgba(0,0,0,1);
+}
+#Path_64 {
+	fill: rgba(255,255,255,1);
+	stroke: rgba(0,0,0,1);
+	stroke-width: 1px;
+	stroke-linejoin: miter;
+	stroke-linecap: butt;
+	stroke-miterlimit: 4;
+	shape-rendering: auto;
+}
+.Path_64 {
+	overflow: visible;
+	position: absolute;
+	width: 203.75px;
+	height: 74.553px;
+	left: 1497px;
+	top: 4107px;
+	transform: matrix(1,0,0,1,0,0);
+}
+#INFO__gr {
+	left: 1567px;
+	top: 4133px;
+	position: absolute;
+	overflow: visible;
+	width: 65px;
+	white-space: nowrap;
+	text-align: left;
+	font-family: Arvo;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 23px;
+	color: rgba(0,0,0,1);
+}
+#NoPath_-_Copy_2 {
+	position: absolute;
+	width: 300px;
+	height: 305.678px;
+	left: 1524px;
+	top: 3616px;
+	overflow: visible;
+}
+#HuaweiLogo {
+	position: absolute;
+	width: 213px;
+	height: 213px;
+	left: 1511px;
+	top: 2514px;
+	overflow: visible;
+}
+#ID1594112895830_compress_PNG_I {
+	position: absolute;
+	width: 266px;
+	height: 237px;
+	left: 285px;
+	top: 3543px;
+	overflow: visible;
+}
+#icon_logo_ahm-2 {
+	position: absolute;
+	width: 206px;
+	height: 206px;
+	left: 903px;
+	top: 3565px;
+	overflow: visible;
+}
+#Polygon_4 {
+	fill: rgba(254,182,144,1);
+}
+.Polygon_4 {
+	overflow: visible;
+	position: absolute;
+	width: 153px;
+	height: 308px;
+	transform: matrix(1,0,0,1,1971.3427,2768.084) rotate(90deg);
+	transform-origin: center;
+	left: 0px;
+	top: 0px;
+}
+#Lowongan_yang_tersedia___ {
+	left: 643px;
+	top: 4459px;
+	position: absolute;
+	overflow: visible;
+	width: 753px;
+	white-space: nowrap;
+	text-align: center;
+	font-family: Arvo;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 60px;
+	color: rgba(0,0,0,1);
+}
+#Component_136__1 {
+	position: absolute;
+	width: 551px;
+	height: 583px;
+	left: 140px;
+	top: 4787px;
+	overflow: visible;
+}
+#Rectangle_313 {
+	fill: rgba(179,242,221,1);
+}
+.Rectangle_313 {
+	position: absolute;
+	overflow: visible;
+	width: 522px;
+	height: 558px;
+	left: 29px;
+	top: 25px;
+}
+#Rectangle_314 {
+	fill: rgba(255,255,255,1);
+	stroke: rgba(112,112,112,1);
+	stroke-width: 3px;
+	stroke-linejoin: miter;
+	stroke-linecap: butt;
+	stroke-miterlimit: 4;
+	shape-rendering: auto;
+}
+.Rectangle_314 {
+	position: absolute;
+	overflow: visible;
+	width: 522px;
+	height: 558px;
+	left: 0px;
+	top: 0px;
+}
+#IT_g {
+	left: 378px;
+	top: 4920px;
+	position: absolute;
+	overflow: visible;
+	width: 29px;
+	white-space: nowrap;
+	text-align: left;
+	font-family: Segoe UI;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 36px;
+	color: rgba(0,0,0,1);
+}
+#Jakarta_g {
+	left: 347px;
+	top: 5067px;
+	position: absolute;
+	overflow: visible;
+	width: 111px;
+	white-space: nowrap;
+	text-align: left;
+	font-family: Segoe UI;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 36px;
+	color: rgba(0,0,0,1);
+}
+#Rp10000000-_g {
+	left: 284px;
+	top: 5140px;
+	position: absolute;
+	overflow: visible;
+	width: 237px;
+	white-space: nowrap;
+	text-align: left;
+	font-family: Segoe UI;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 36px;
+	color: rgba(0,0,0,1);
+}
+#Tokopedia {
+	left: 310px;
+	top: 4993px;
+	position: absolute;
+	overflow: visible;
+	width: 165px;
+	white-space: nowrap;
+	text-align: left;
+	font-family: Segoe UI;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 36px;
+	color: rgba(0,0,0,1);
+}
+#Component_137__1 {
+	position: absolute;
+	width: 551px;
+	height: 593px;
+	left: 745px;
+	top: 4782px;
+	overflow: visible;
+}
+#Rectangle_312 {
+	fill: rgba(179,242,221,1);
+}
+.Rectangle_312 {
+	position: absolute;
+	overflow: visible;
+	width: 522px;
+	height: 558px;
+	left: 29px;
+	top: 35px;
+}
+#Rectangle_315 {
+	fill: rgba(255,255,255,1);
+	stroke: rgba(112,112,112,1);
+	stroke-width: 3px;
+	stroke-linejoin: miter;
+	stroke-linecap: butt;
+	stroke-miterlimit: 4;
+	shape-rendering: auto;
+}
+.Rectangle_315 {
+	position: absolute;
+	overflow: visible;
+	width: 522px;
+	height: 558px;
+	left: 0px;
+	top: 0px;
+}
+#Sales_Marketing_g {
+	left: 881px;
+	top: 4920px;
+	position: absolute;
+	overflow: visible;
+	width: 253px;
+	white-space: nowrap;
+	text-align: left;
+	font-family: Segoe UI;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 36px;
+	color: rgba(0,0,0,1);
+}
+#Yogyakarta {
+	left: 919px;
+	top: 5067px;
+	position: absolute;
+	overflow: visible;
+	width: 175px;
+	white-space: nowrap;
+	text-align: left;
+	font-family: Segoe UI;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 36px;
+	color: rgba(0,0,0,1);
+}
+#Rp4000000-_ha {
+	left: 898px;
+	top: 5137px;
+	position: absolute;
+	overflow: visible;
+	width: 217px;
+	white-space: nowrap;
+	text-align: left;
+	font-family: Segoe UI;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 36px;
+	color: rgba(0,0,0,1);
+}
+#BMW {
+	left: 941px;
+	top: 4994px;
+	position: absolute;
+	overflow: visible;
+	width: 88px;
+	white-space: nowrap;
+	text-align: left;
+	font-family: Segoe UI;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 36px;
+	color: rgba(0,0,0,1);
+}
+#Component_138__1 {
+	position: absolute;
+	width: 553px;
+	height: 588px;
+	left: 1350px;
+	top: 4787px;
+	overflow: visible;
+}
+#Rectangle_311 {
+	fill: rgba(179,242,221,1);
+}
+.Rectangle_311 {
+	position: absolute;
+	overflow: visible;
+	width: 522px;
+	height: 558px;
+	left: 31px;
+	top: 30px;
+}
+#Rectangle_316 {
+	fill: rgba(255,255,255,1);
+	stroke: rgba(112,112,112,1);
+	stroke-width: 3px;
+	stroke-linejoin: miter;
+	stroke-linecap: butt;
+	stroke-miterlimit: 4;
+	shape-rendering: auto;
+}
+.Rectangle_316 {
+	position: absolute;
+	overflow: visible;
+	width: 522px;
+	height: 558px;
+	left: 0px;
+	top: 0px;
+}
+#Game_Design_ {
+	left: 1496px;
+	top: 4924px;
+	position: absolute;
+	overflow: visible;
+	width: 223px;
+	white-space: nowrap;
+	text-align: left;
+	font-family: Segoe UI;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 36px;
+	color: rgba(0,0,0,1);
+}
+#Makasar {
+	left: 1545px;
+	top: 5070px;
+	position: absolute;
+	overflow: visible;
+	width: 134px;
+	white-space: nowrap;
+	text-align: left;
+	font-family: Segoe UI;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 36px;
+	color: rgba(0,0,0,1);
+}
+#Rp8000000-_hh {
+	left: 1508px;
+	top: 5139px;
+	position: absolute;
+	overflow: visible;
+	width: 217px;
+	white-space: nowrap;
+	text-align: left;
+	font-family: Segoe UI;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 36px;
+	color: rgba(0,0,0,1);
+}
+#Steam_ {
+	left: 1554px;
+	top: 4993px;
+	position: absolute;
+	overflow: visible;
+	width: 109px;
+	white-space: nowrap;
+	text-align: left;
+	font-family: Segoe UI;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 36px;
+	color: rgba(0,0,0,1);
+}
+#Path_65 {
+	fill: rgba(255,255,255,1);
+	stroke: rgba(0,0,0,1);
+	stroke-width: 1px;
+	stroke-linejoin: miter;
+	stroke-linecap: butt;
+	stroke-miterlimit: 4;
+	shape-rendering: auto;
+}
+.Path_65 {
+	overflow: visible;
+	position: absolute;
+	width: 203.75px;
+	height: 74.553px;
+	left: 296px;
+	top: 5216px;
+	transform: matrix(1,0,0,1,0,0);
+}
+#INFO__hk {
+	left: 366px;
+	top: 5242px;
+	position: absolute;
+	overflow: visible;
+	width: 65px;
+	white-space: nowrap;
+	text-align: left;
+	font-family: Arvo;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 23px;
+	color: rgba(0,0,0,1);
+}
+#Path_66 {
+	fill: rgba(255,255,255,1);
+	stroke: rgba(0,0,0,1);
+	stroke-width: 1px;
+	stroke-linejoin: miter;
+	stroke-linecap: butt;
+	stroke-miterlimit: 4;
+	shape-rendering: auto;
+}
+.Path_66 {
+	overflow: visible;
+	position: absolute;
+	width: 203.75px;
+	height: 74.553px;
+	left: 904px;
+	top: 5220px;
+	transform: matrix(1,0,0,1,0,0);
+}
+#INFO__hm {
+	left: 974px;
+	top: 5239px;
+	position: absolute;
+	overflow: visible;
+	width: 65px;
+	white-space: nowrap;
+	text-align: left;
+	font-family: Arvo;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 23px;
+	color: rgba(0,0,0,1);
+}
+#Path_67 {
+	fill: rgba(255,255,255,1);
+	stroke: rgba(0,0,0,1);
+	stroke-width: 1px;
+	stroke-linejoin: miter;
+	stroke-linecap: butt;
+	stroke-miterlimit: 4;
+	shape-rendering: auto;
+}
+.Path_67 {
+	overflow: visible;
+	position: absolute;
+	width: 203.75px;
+	height: 74.553px;
+	left: 1508px;
+	top: 5219px;
+	transform: matrix(1,0,0,1,0,0);
+}
+#INFO__ho {
+	left: 1581px;
+	top: 5246px;
+	position: absolute;
+	overflow: visible;
+	width: 65px;
+	white-space: nowrap;
+	text-align: left;
+	font-family: Arvo;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 23px;
+	color: rgba(0,0,0,1);
+}
+#Tokopedia_Mascot-36c1015eabb66 {
+	position: absolute;
+	width: 219px;
+	height: 265px;
+	left: 284px;
+	top: 4630px;
+	overflow: visible;
+}
+#Polygon_5 {
+	fill: rgba(254,182,144,1);
+}
+.Polygon_5 {
+	overflow: visible;
+	position: absolute;
+	width: 153px;
+	height: 308px;
+	transform: matrix(1,0,0,1,-60.6572,2780.084) rotate(270deg);
+	transform-origin: center;
+	left: 0px;
+	top: 0px;
+}
+#Polygon_6 {
+	fill: rgba(121,160,239,1);
+}
+.Polygon_6 {
+	overflow: visible;
+	position: absolute;
+	width: 153px;
+	height: 308px;
+	transform: matrix(1,0,0,1,1962.3427,3800.084) rotate(90deg);
+	transform-origin: center;
+	left: 0px;
+	top: 0px;
+}
+#Polygon_7 {
+	fill: rgba(121,160,239,1);
+}
+.Polygon_7 {
+	overflow: visible;
+	position: absolute;
+	width: 153px;
+	height: 308px;
+	transform: matrix(1,0,0,1,-76.6572,3832.084) rotate(270deg);
+	transform-origin: center;
+	left: 0px;
+	top: 0px;
+}
+#BMW-logo-2000-2048x2048-500x50 {
+	position: absolute;
+	width: 226px;
+	height: 226px;
+	left: 881px;
+	top: 4668px;
+	overflow: visible;
+}
+#NoPath_hu {
+	position: absolute;
+	width: 200px;
+	height: 200px;
+	left: 1508px;
+	top: 4690px;
+	overflow: visible;
+}
+#Component_139__1 {
+	position: absolute;
+	width: 551px;
+	height: 583px;
+	left: 137px;
+	top: 5582px;
+	overflow: visible;
+}
+#Rectangle_319 {
+	fill: rgba(179,242,221,1);
+}
+.Rectangle_319 {
+	position: absolute;
+	overflow: visible;
+	width: 522px;
+	height: 558px;
+	left: 29px;
+	top: 25px;
+}
+#Rectangle_320 {
+	fill: rgba(255,255,255,1);
+	stroke: rgba(112,112,112,1);
+	stroke-width: 3px;
+	stroke-linejoin: miter;
+	stroke-linecap: butt;
+	stroke-miterlimit: 4;
+	shape-rendering: auto;
+}
+.Rectangle_320 {
+	position: absolute;
+	overflow: visible;
+	width: 522px;
+	height: 558px;
+	left: 0px;
+	top: 0px;
+}
+#Barista_ {
+	left: 334px;
+	top: 5714px;
+	position: absolute;
+	overflow: visible;
+	width: 117px;
+	white-space: nowrap;
+	text-align: left;
+	font-family: Segoe UI;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 36px;
+	color: rgba(0,0,0,1);
+}
+#Surabaya_ {
+	left: 317px;
+	top: 5858px;
+	position: absolute;
+	overflow: visible;
+	width: 156px;
+	white-space: nowrap;
+	text-align: left;
+	font-family: Segoe UI;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 36px;
+	color: rgba(0,0,0,1);
+}
+#Rp2500000- {
+	left: 290px;
+	top: 5939px;
+	position: absolute;
+	overflow: visible;
+	width: 217px;
+	white-space: nowrap;
+	text-align: left;
+	font-family: Segoe UI;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 36px;
+	color: rgba(0,0,0,1);
+}
+#Starbucks {
+	left: 317px;
+	top: 5786px;
+	position: absolute;
+	overflow: visible;
+	width: 153px;
+	white-space: nowrap;
+	text-align: left;
+	font-family: Segoe UI;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 36px;
+	color: rgba(0,0,0,1);
+}
+#Component_140__1 {
+	position: absolute;
+	width: 551px;
+	height: 593px;
+	left: 742px;
+	top: 5577px;
+	overflow: visible;
+}
+#Rectangle_318 {
+	fill: rgba(179,242,221,1);
+}
+.Rectangle_318 {
+	position: absolute;
+	overflow: visible;
+	width: 522px;
+	height: 558px;
+	left: 29px;
+	top: 35px;
+}
+#Rectangle_321 {
+	fill: rgba(255,255,255,1);
+	stroke: rgba(112,112,112,1);
+	stroke-width: 3px;
+	stroke-linejoin: miter;
+	stroke-linecap: butt;
+	stroke-miterlimit: 4;
+	shape-rendering: auto;
+}
+.Rectangle_321 {
+	position: absolute;
+	overflow: visible;
+	width: 522px;
+	height: 558px;
+	left: 0px;
+	top: 0px;
+}
+#Sales_Promotion_Girl {
+	left: 841px;
+	top: 5715px;
+	position: absolute;
+	overflow: visible;
+	width: 324px;
+	white-space: nowrap;
+	text-align: left;
+	font-family: Segoe UI;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 36px;
+	color: rgba(112,112,112,1);
+}
+#Sidoarjo {
+	left: 938px;
+	top: 5869px;
+	position: absolute;
+	overflow: visible;
+	width: 132px;
+	white-space: nowrap;
+	text-align: left;
+	font-family: Segoe UI;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 36px;
+	color: rgba(112,112,112,1);
+}
+#Rp3500000-_h {
+	left: 911px;
+	top: 5946px;
+	position: absolute;
+	overflow: visible;
+	width: 217px;
+	white-space: nowrap;
+	text-align: left;
+	font-family: Segoe UI;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 36px;
+	color: rgba(112,112,112,1);
+}
+#Asus {
+	left: 969px;
+	top: 5792px;
+	position: absolute;
+	overflow: visible;
+	width: 75px;
+	white-space: nowrap;
+	text-align: left;
+	font-family: Segoe UI;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 36px;
+	color: rgba(112,112,112,1);
+}
+#Component_141__1 {
+	position: absolute;
+	width: 553px;
+	height: 588px;
+	left: 1347px;
+	top: 5582px;
+	overflow: visible;
+}
+#Rectangle_317 {
+	fill: rgba(179,242,221,1);
+}
+.Rectangle_317 {
+	position: absolute;
+	overflow: visible;
+	width: 522px;
+	height: 558px;
+	left: 31px;
+	top: 30px;
+}
+#Rectangle_322 {
+	fill: rgba(255,255,255,1);
+	stroke: rgba(112,112,112,1);
+	stroke-width: 3px;
+	stroke-linejoin: miter;
+	stroke-linecap: butt;
+	stroke-miterlimit: 4;
+	shape-rendering: auto;
+}
+.Rectangle_322 {
+	position: absolute;
+	overflow: visible;
+	width: 522px;
+	height: 558px;
+	left: 0px;
+	top: 0px;
+}
+#Software_Developer {
+	left: 1456px;
+	top: 5711px;
+	position: absolute;
+	overflow: visible;
+	width: 313px;
+	white-space: nowrap;
+	text-align: left;
+	font-family: Segoe UI;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 36px;
+	color: rgba(112,112,112,1);
+}
+#Gresik {
+	left: 1559px;
+	top: 5860px;
+	position: absolute;
+	overflow: visible;
+	width: 99px;
+	white-space: nowrap;
+	text-align: left;
+	font-family: Segoe UI;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 36px;
+	color: rgba(112,112,112,1);
+}
+#Rp7000000- {
+	left: 1505px;
+	top: 5934px;
+	position: absolute;
+	overflow: visible;
+	width: 217px;
+	white-space: nowrap;
+	text-align: left;
+	font-family: Segoe UI;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 36px;
+	color: rgba(112,112,112,1);
+}
+#Discord {
+	left: 1550px;
+	top: 5791px;
+	position: absolute;
+	overflow: visible;
+	width: 122px;
+	white-space: nowrap;
+	text-align: left;
+	font-family: Segoe UI;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 36px;
+	color: rgba(112,112,112,1);
+}
+#Path_68 {
+	fill: rgba(255,255,255,1);
+	stroke: rgba(0,0,0,1);
+	stroke-width: 1px;
+	stroke-linejoin: miter;
+	stroke-linecap: butt;
+	stroke-miterlimit: 4;
+	shape-rendering: auto;
+}
+.Path_68 {
+	overflow: visible;
+	position: absolute;
+	width: 203.75px;
+	height: 74.553px;
+	left: 293px;
+	top: 6011px;
+	transform: matrix(1,0,0,1,0,0);
+}
+#INFO__ih {
+	left: 363px;
+	top: 6037px;
+	position: absolute;
+	overflow: visible;
+	width: 65px;
+	white-space: nowrap;
+	text-align: left;
+	font-family: Arvo;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 23px;
+	color: rgba(0,0,0,1);
+}
+#Path_69 {
+	fill: rgba(255,255,255,1);
+	stroke: rgba(0,0,0,1);
+	stroke-width: 1px;
+	stroke-linejoin: miter;
+	stroke-linecap: butt;
+	stroke-miterlimit: 4;
+	shape-rendering: auto;
+}
+.Path_69 {
+	overflow: visible;
+	position: absolute;
+	width: 203.75px;
+	height: 74.553px;
+	left: 901px;
+	top: 6015px;
+	transform: matrix(1,0,0,1,0,0);
+}
+#INFO__ij {
+	left: 971px;
+	top: 6041px;
+	position: absolute;
+	overflow: visible;
+	width: 65px;
+	white-space: nowrap;
+	text-align: left;
+	font-family: Arvo;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 23px;
+	color: rgba(0,0,0,1);
+}
+#Path_70 {
+	fill: rgba(255,255,255,1);
+	stroke: rgba(0,0,0,1);
+	stroke-width: 1px;
+	stroke-linejoin: miter;
+	stroke-linecap: butt;
+	stroke-miterlimit: 4;
+	shape-rendering: auto;
+}
+.Path_70 {
+	overflow: visible;
+	position: absolute;
+	width: 203.75px;
+	height: 74.553px;
+	left: 1505px;
+	top: 6014px;
+	transform: matrix(1,0,0,1,0,0);
+}
+#INFO__il {
+	left: 1578px;
+	top: 6041px;
+	position: absolute;
+	overflow: visible;
+	width: 65px;
+	white-space: nowrap;
+	text-align: left;
+	font-family: Arvo;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 23px;
+	color: rgba(0,0,0,1);
+}
+#Ellipse_11 {
+	fill: rgba(180,180,180,1);
+}
+.Ellipse_11 {
+	position: absolute;
+	overflow: visible;
+	width: 58px;
+	height: 53px;
+	left: 1088px;
+	top: 6344px;
+}
+#Ellipse_12 {
+	fill: rgba(180,180,180,1);
+}
+.Ellipse_12 {
+	position: absolute;
+	overflow: visible;
+	width: 58px;
+	height: 53px;
+	left: 892px;
+	top: 6344px;
+}
+#Ellipse_13 {
+	fill: rgba(180,180,180,1);
+}
+.Ellipse_13 {
+	position: absolute;
+	overflow: visible;
+	width: 58px;
+	height: 53px;
+	left: 990px;
+	top: 6344px;
+}
+#ID1017px-Starbucks_Corporation {
+	position: absolute;
+	width: 222px;
+	height: 225px;
+	left: 281px;
+	top: 5465px;
+	overflow: visible;
+}
+#Rectangle_10_iq {
+	fill: rgba(121,160,239,1);
+	stroke: rgba(0,0,0,1);
+	stroke-width: 1px;
+	stroke-linejoin: miter;
+	stroke-linecap: butt;
+	stroke-miterlimit: 4;
+	shape-rendering: auto;
+}
+.Rectangle_10_iq {
+	position: absolute;
+	overflow: visible;
+	width: 2039px;
+	height: 630px;
+	left: 0px;
+	top: 6598px;
+}
+#Golek_Kerjo_3_ir {
+	position: absolute;
+	width: 360px;
+	height: 360px;
+	left: 91px;
+	top: 6716px;
+	overflow: visible;
+}
+#GolekKerjo_is {
+	left: 1628px;
+	top: 6726px;
+	position: absolute;
+	overflow: visible;
+	width: 237px;
+	white-space: nowrap;
+	text-align: left;
+	font-family: Arvo;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 36px;
+	color: rgba(255,255,255,1);
+	letter-spacing: 1px;
+}
+#GolekKerjo_it {
+	left: 1628px;
+	top: 6833px;
+	position: absolute;
+	overflow: visible;
+	width: 237px;
+	white-space: nowrap;
+	text-align: left;
+	font-family: Arvo;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 36px;
+	color: rgba(255,255,255,1);
+	letter-spacing: 1px;
+}
+#InstagramLogo_iu {
+	position: absolute;
+	width: 64px;
+	height: 64px;
+	left: 1520px;
+	top: 6716px;
+	overflow: visible;
+}
+#GolekKerjo_iv {
+	left: 1628px;
+	top: 6931px;
+	position: absolute;
+	overflow: visible;
+	width: 231px;
+	white-space: nowrap;
+	text-align: left;
+	font-family: Arial Rounded MT Bold;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 36px;
+	color: rgba(255,252,252,1);
+	letter-spacing: 1px;
+}
+#Golek_Kerjo_adalah_platform_jo_iw {
+	left: 495px;
+	top: 6716px;
+	position: absolute;
+	overflow: hidden;
+	width: 899px;
+	height: 360px;
+	text-align: left;
+	font-family: Arvo;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 36px;
+	color: rgba(255,255,255,1);
+}
+#NoPath_ix {
+	position: absolute;
+	width: 64px;
+	height: 64px;
+	left: 1520px;
+	top: 6920px;
+	overflow: visible;
+}
+#republic-of-gamers-asus-logo-p {
+	position: absolute;
+	width: 276px;
+	height: 233px;
+	left: 881px;
+	top: 5447px;
+	overflow: visible;
+}
+#NoPath_-_Copy_4 {
+	position: absolute;
+	width: 229px;
+	height: 178.438px;
+	left: 1499px;
+	top: 5474px;
+	overflow: visible;
+}
+#NoPath_-_Copy_5_i {
+	position: absolute;
+	width: 64px;
+	height: 64px;
+	left: 1520px;
+	top: 6823px;
+	overflow: visible;
+}
+#Polygon_8 {
+	fill: rgba(254,182,144,1);
+}
+.Polygon_8 {
+	overflow: visible;
+	position: absolute;
+	width: 190px;
+	height: 405px;
+	transform: matrix(1,0,0,1,2103.3428,2177.084) rotate(270deg);
+	transform-origin: center;
+	left: 0px;
+	top: 0px;
+}
+#Golek_Kerjo {
+	left: 180px;
+	top: 237px;
+	position: absolute;
+	overflow: visible;
+	width: 283px;
+	white-space: nowrap;
+	text-align: left;
+	font-family: Arvo;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 48px;
+	color: rgba(112,112,112,1);
+}
+#Component_4__3 {
+	position: absolute;
+	width: 1176px;
+	height: 95px;
+	left: 493px;
+	top: 218px;
+	overflow: visible;
+}
+#Rectangle_280 {
+	fill: rgba(255,255,255,1);
+	stroke: rgba(0,0,0,1);
+	stroke-width: 1px;
+	stroke-linejoin: miter;
+	stroke-linecap: butt;
+	stroke-miterlimit: 4;
+	shape-rendering: auto;
+}
+.Rectangle_280 {
+	position: absolute;
+	overflow: visible;
+	width: 1176px;
+	height: 95px;
+	left: 0px;
+	top: 0px;
+}
+#Cari_berdasarkan_Lokasi_Gaji_J {
+	left: 512px;
+	top: 251px;
+	position: absolute;
+	overflow: visible;
+	width: 877px;
+	white-space: nowrap;
+	text-align: left;
+	font-family: Arvo;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 24px;
+	color: rgba(149,146,146,1);
+}
+#magnifying-glass {
+	position: absolute;
+	width: 64px;
+	height: 64px;
+	left: 1691px;
+	top: 234px;
+	overflow: visible;
+	--web-animation: fadein 0.3s ease-out;
+	--web-action-type: page;
+	--web-action-target: Advanced_Search___Belum_Daftar_Masuk___3.html;
+	cursor: pointer;
+}
+#funnel {
+	position: absolute;
+	width: 64px;
+	height: 64px;
+	left: 1795px;
+	top: 234px;
+	overflow: visible;
+	--web-animation: fadein 0.3s ease-out;
+	--web-action-type: page;
+	--web-action-target: Advanced_Search___Belum_Daftar_Masuk___3.html;
+	cursor: pointer;
+}
+#Hubungi_Kami_i {
+	left: 921px;
+	top: 43px;
+	position: absolute;
+	overflow: visible;
+	width: 291px;
+	white-space: nowrap;
+	--web-animation: fadein 0.3s ease-out;
+	--web-action-type: page;
+	--web-action-target: Daftar_Pekerja___Utama___6.html;
+	cursor: pointer;
+	text-align: left;
+	font-family: Arvo;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 40px;
+	color: rgba(255,255,255,1);
+}

@@ -1,0 +1,264 @@
+.mediaViewInfo {
+	--web-view-name: Daftar Pekerja - Utama – 2;
+	--web-view-id: Daftar_Pekerja_-_Utama__2;
+	--web-scale-to-fit: true;
+	--web-scale-to-fit-type: width;
+	--web-scale-on-resize: true;
+	--web-enable-deep-linking: true;
+}
+:root {
+	--web-view-ids: Daftar_Pekerja_-_Utama__2;
+}
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	border: none;
+}
+#Daftar_Pekerja_-_Utama__2 {
+	position: absolute;
+	width: 2603px;
+	height: 1876px;
+	background-color: rgba(255,255,255,1);
+	overflow: hidden;
+	--web-view-name: Daftar Pekerja - Utama – 2;
+	--web-view-id: Daftar_Pekerja_-_Utama__2;
+	--web-scale-to-fit: true;
+	--web-scale-to-fit-type: width;
+	--web-scale-on-resize: true;
+	--web-enable-deep-linking: true;
+}
+@keyframes fadein {
+
+	0% {
+		opacity: 0;
+	}
+	100% {
+		opacity: 1;
+	}
+
+}
+#_dw {
+	left: 1037px;
+	top: 51px;
+	position: absolute;
+	overflow: visible;
+	width: 3px;
+	height: 2px;
+	text-align: left;
+	font-family: Segoe UI;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 36px;
+	color: rgba(112,112,112,1);
+}
+#Ellipse_25_dx {
+	fill: rgba(121,160,239,1);
+	stroke: rgba(112,112,112,1);
+	stroke-width: 1px;
+	stroke-linejoin: miter;
+	stroke-linecap: butt;
+	stroke-miterlimit: 4;
+	shape-rendering: auto;
+}
+.Ellipse_25_dx {
+	width: 3392px;
+	height: 3170px;
+	position: absolute;
+	overflow: visible;
+	transform: matrix(1,0,0,1,-2026.3425,-1158.478) rotate(1deg);
+	transform-origin: center;
+}
+#SELAMAT_DATANG__KEMBALI____DI_ {
+	left: 288px;
+	top: 479px;
+	position: absolute;
+	overflow: visible;
+	width: 761px;
+	white-space: nowrap;
+	text-align: center;
+	font-family: Arvo;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 75px;
+	color: rgba(255,239,239,1);
+}
+#MASUK_ {
+	left: 1855px;
+	top: 390px;
+	position: absolute;
+	overflow: visible;
+	width: 251px;
+	white-space: nowrap;
+	text-align: center;
+	font-family: Arvo;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 60px;
+	color: rgba(0,0,0,1);
+}
+#Rectangle_30_d {
+	fill: rgba(255,255,255,1);
+	stroke: rgba(112,112,112,1);
+	stroke-width: 1px;
+	stroke-linejoin: round;
+	stroke-linecap: butt;
+	stroke-miterlimit: 4;
+	shape-rendering: auto;
+}
+.Rectangle_30_d {
+	position: absolute;
+	overflow: visible;
+	width: 961px;
+	height: 86px;
+	left: 1473px;
+	top: 626px;
+}
+#Nama__d {
+	left: 1580px;
+	top: 647px;
+	position: absolute;
+	overflow: visible;
+	width: 132px;
+	white-space: nowrap;
+	text-align: left;
+	font-family: Arvo;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 36px;
+	color: rgba(112,112,112,1);
+	letter-spacing: 1.31px;
+}
+#Rectangle_270_d {
+	fill: rgba(255,255,255,1);
+	stroke: rgba(112,112,112,1);
+	stroke-width: 1px;
+	stroke-linejoin: round;
+	stroke-linecap: butt;
+	stroke-miterlimit: 4;
+	shape-rendering: auto;
+}
+.Rectangle_270_d {
+	position: absolute;
+	overflow: visible;
+	width: 961px;
+	height: 86px;
+	left: 1473px;
+	top: 806px;
+}
+#Password_d {
+	left: 1580px;
+	top: 827px;
+	position: absolute;
+	overflow: visible;
+	width: 200px;
+	white-space: nowrap;
+	text-align: left;
+	font-family: Arvo;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 36px;
+	color: rgba(112,112,112,1);
+	letter-spacing: 1.31px;
+}
+#Lupa_Password__ {
+	left: 1809px;
+	top: 1220px;
+	position: absolute;
+	overflow: visible;
+	width: 345px;
+	white-space: nowrap;
+	--web-animation: fadein 0.3s ease-out;
+	--web-action-type: page;
+	--web-action-target: Daftar_Pekerja___Utama___4.html;
+	cursor: pointer;
+	line-height: 48px;
+	margin-top: -6px;
+	text-align: left;
+	font-family: Arvo;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 36px;
+	color: rgba(112,112,112,1);
+	letter-spacing: 1.31px;
+}
+#Path_1_d {
+	fill: rgba(121,160,239,1);
+}
+.Path_1_d {
+	overflow: visible;
+	position: absolute;
+	width: 401.766px;
+	height: 89px;
+	left: 1753px;
+	top: 1057px;
+	transform: matrix(1,0,0,1,0,0);
+	transition: all 0.3s ease-in-out;
+	--web-animation: fadein 0.3s ease-in-out;
+	--web-action-type: page;
+	--web-action-target: Landing_Page___Belum_Daftar_Masuk___2.html;
+	cursor: pointer;
+}
+#Masuk_ {
+	left: 1869px;
+	top: 1078px;
+	position: absolute;
+	overflow: visible;
+	width: 171px;
+	white-space: nowrap;
+	line-height: 48px;
+	margin-top: -4px;
+	text-align: left;
+	font-family: Arvo;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 40px;
+	color: rgba(255,248,248,1);
+	letter-spacing: 1.31px;
+}
+#user_d {
+	position: absolute;
+	width: 50px;
+	height: 50px;
+	left: 1524px;
+	top: 641px;
+	overflow: visible;
+}
+#padlock_d {
+	position: absolute;
+	width: 61px;
+	height: 61px;
+	left: 1513px;
+	top: 819px;
+	overflow: visible;
+}
+#Belum_punya_akun_Buat_akun {
+	left: 1651px;
+	top: 1319px;
+	position: absolute;
+	overflow: visible;
+	width: 660px;
+	white-space: nowrap;
+	transition: all 0.3s ease-in-out;
+	--web-animation: fadein 0.3s ease-in-out;
+	--web-action-type: page;
+	--web-action-target: Daftar_Pekerja___Utama___1.html;
+	cursor: pointer;
+	line-height: 48px;
+	margin-top: -6px;
+	text-align: left;
+	font-family: Arvo;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 36px;
+	color: rgba(112,112,112,1);
+	letter-spacing: 1.31px;
+}
+#Log_in {
+	position: absolute;
+	width: 400px;
+	height: 400px;
+	left: 468px;
+	top: 949px;
+	overflow: visible;
+}
