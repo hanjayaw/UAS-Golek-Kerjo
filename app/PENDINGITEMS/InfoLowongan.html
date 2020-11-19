@@ -13,73 +13,217 @@
 
 <body>
 	<!-- Navbar -->
-	<nav class="navbar navbar-default">
-		<div class="container-fluid bluebackground">
-			<ul class="nav">
-				<li class="nav-item">
-					<a class="nav-link active" href="#" style="font-size: 24px;">GolekKerjo</a>
-				</li>
-				<li class="nav-item">
-					<a class="nav-link" href="#">Lowongan</a>
-				</li>
-				<li class="nav-item">
-					<a class="nav-link" href="#">Perusahaan</a>
-				</li>
-				<li class="nav-item">
-					<!-- <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a> -->
-					<a class="nav-link" href="#">Hubungi Kami</a>
-				</li>
-			</ul>
-			<ul class="nav navbar-right">
-				<li class="nav-item justify-content-right">
-					<a class="nav-link" href="#">Daftar</a>
-				</li>
-				<li class="nav-item justify-content-right">
-					<a class="nav-link" href="#">Masuk</a>
-				</li>
-			</ul>
-		</div>
-	</nav>
-
-	<!-- Lowongan dan Kotaknya -->
-	<div class="container-fluid company-title">
-		<div class="container">
-			<div class="row">				
-				<div class="col-sm company-logo">
-					<img src="download_ber.png" alt="" id="company-logo">
-				</div>				
+	<div class="container-fluid p-0">
+		<nav class="navbar navbar-expand-md fixed-top navbar-light bg-blue">
+			<div class="container-fluid">
+				<a href="booststrap.html" class="navbar-brand text-uppercase d-md-none">
+					<i class="fa fa-heart text-danger" aria-hidden="true"></i> GolekKerjo
+				</a>
+				<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar"
+					aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
+					<span class="navbar-toggler-icon"></span>
+				</button>
+				<div class="collapse navbar-collapse" id="navbar">
+					<ul class="navbar-nav text-uppercase">
+						<li class="nav-item">
+							<a href="booststrap.html#company" class="nav-link">GolekKerjo<span
+									class="sr-only">(current)</span></a>
+						</li>
+						<li class="nav-item">
+							<a href="booststrap.html#Skill" class="nav-link mx-md-1 mx-lg-2 mx-xl-3">Lowongan</a>
+						</li>
+						<li class="nav-item">
+							<a href="booststrap.html#Achivement" class="nav-link mx-md-1 mx-lg-2 mx-xl-3">Perusahaan</a>
+						</li>
+						<!-- <li class="nav-item d-none d-md-block">
+                            <a href="" class="navbar-brand mr-auto">
+                                <i class="fa fa-heart text-danger" aria-hidden="true"></i>Eunha
+                            </a>
+                        </li> -->
+						<li class="nav-item">
+							<a href="booststrap.html#Hobby" class="nav-link mx-md-1 mx-lg-2 mx-xl-3">Hubungi Kami</a>
+						</li>
+					</ul>
+					<ul class="navbar-nav text-uppercase ml-auto">
+						<li class="nav-item">
+							<a href="booststrap.html#Hobby" class="nav-link mx-md-1 mx-lg-2 mx-xl-3">Daftar</a>
+						</li>
+						<li class="nav-item">
+							<a href="booststrap.html#Hobby" class="nav-link mx-md-1 mx-lg-2 mx-xl-3">Login</a>
+						</li>
+					</ul>
+				</div>
 			</div>
-		</div>
-	</div>
+		</nav>
 
+		<!-- company US -->
+		<section class="section-5" id="company-us">
+			<div class="container">
+				<div class="row main-row">
+					<div class="col-lg-4 col-md-12 col-sm-12">
+						<div class="company-img">
+							<img src="download_ber.png" class="img-fluid" id="company-img">
+						</div>
+					</div>
+					<div class="col-lg-8 col-md-12 col-sm-12 company-text">
+						<div class="company-title mb-3">
+							<h3>Data Scientist</h3>
+						</div>
+						<div class="company-desc mb-2">
+							<p>Full Time</p>
+							<p>Jakarta</p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+		<section class="section-gaji" id="company-gaji">
+			<div class="container-fluid gaji-container">
+				<div class="text-container">
+					<p style="font-weight: bold;">Gaji</p>
+				</div>
+				<div class="container">
+					<div class="row">
+						<div class="col-md-4 gajiminimum">
+							<img src="money-transfer_1_beu.png" alt="Gaji Minimum" id="gajiminimum">
+							<p>Rp. 15.000.000</p>							
+						</div>				
+						<div class="col-md-4 vertical-center">
+							<p id="sampai">Sampai</p>
+						</div>		
+						<div class="col-md-4 gajimaximum">
+							<img src="money-bag.png" alt="Gaji Minimum" id="gajimaximum">
+							<p>Rp. 15.000.000</p>							
+						</div>
+					</div>
+					
+				</div>
+			</div>
+		</section>
+		<section class="section-kontak" id="kontak">
+			<div class="container-fluid kontak-container">
+				<p id="text-kontak">Kontak</p>
+			</div>
+			<div class="container-fluid ">
+				<div class="row align-items-center">
+					<div class="col col-lg-3 col-md-3 col-sm-4 center-kontak-logo">
+						<img src="InstagramLogo_a.png" alt="Instagram" id="instagram-logo" class="sixfour">
+						<p style="padding-top: 5%;">Instagram</p>
+					</div>
+					<div class="col col-lg-3 col-md-3 col-sm-4 center-kontak-logo">
+						<img src="email.png" alt="Email" id="email-logo" class="sixfour">
+						<p style="padding-top: 5%;">Email</p>
+					</div>
+					<div class="col col-lg-3 col-md-3 col-sm-4 center-kontak-logo">
+						<img src="Phone_be.png" alt="Telepon" id="telepon-logo" class="sixfour">
+						<p style="padding-top: 5%;">Email</p>
+					</div>
+				</div>
+			</div>
+		</section>
 
 </body>
 <style>
+	/* Kontak */
+	.sixfour{
+		width: 64px;
+		height: 64px;
+	}
+	.align-items-center{		
+		justify-content: center;
+
+	}
+	.center-kontak-logo{
+		text-align: center;
+	}	
+	.kontak-container{
+		text-align: center;
+	}
+	#text-kontak{
+		font-size: 150%;
+		font-weight: bold;
+	}
+
+
+
+	/* Gaji */	
+	.gaji-container{		
+		text-align: center;
+		margin-top: 2%;
+		padding-top: 3%;					
+		font-size: 150%;
+		background-color: #F4F8FF;
+	}	
+	.gaji-container .row{		
+		text-align: center;
+		justify-content: center;
+		align-items: center;
+	}	
+	#company-gaji{
+		padding: 0 0 5% 0;
+	}
+	.vertical-center{
+		min-height: 100%;		
+
+		display: flex;
+		align-items: center;
+		text-align: center;
+		justify-content: center;
+	}
+	#sampai{
+		opacity: 30%;
+		padding: 10% 0 10% 0;
+	}
+	.text-container{
+		padding-top: 3%;
+	}
+
+	/* Company */
+	#company-us {
+		margin-top: 10%;
+		margin-bottom: 5%;
+	}
+
+	.company-img {
+		max-width: 100%;
+		padding: 13%;
+	}
+
+	#company-img {
+		position: absolute;
+		right: -20%;
+		z-index: 1;
+		width: 70%;
+	}
+
+	.company-text {
+		background-color: #79A0EF;
+		padding: 10%;
+		color: white;
+		border-radius: 20px;
+		text-align: center;
+		/* padding-left: 10%; */
+	}
+
+
+	/* Nav */
 	body {
 		font-family: 'Arvo', serif;
 		margin: 0px;
 		padding: 0px;
 	}
 
-	/* Lowongan dan Kotaknya */
-	#company-logo{
-		width: 50%;
-		height: auto;
-	}
-	.company-logo{
-		background-color: #79A0EF;
-	}
-
-
-
-
 	.container-fluid {
 		margin: 0;
 		padding: 0;
 	}
 
-	.navbar {
-		padding: 0;
+	.navbar a {
+		color: white !important;
+	}
+
+	.bg-blue {
+		background-color: #79A0EF;
 	}
 
 	.nav {
@@ -110,6 +254,95 @@
 
 	.bluebackground {
 		background-color: #79A0EF;
+	}
+
+	@media screen and (max-width: 1000px) {
+		#company-img {
+			position: static;
+			right: none;
+			z-index: none;
+		}
+
+		.company-img {
+			justify-content: center;
+			text-align: center;
+		}
+		.gajiminimum img{
+			width: 20%;
+		}
+		.gajiminimum p{
+			font-size: 75%;
+		}
+		.gajimaximum img{
+			width: 20%;
+		}
+		.gajimaximum p{
+			font-size: 75%;
+		}
+		#sampai{
+			font-size: 75%;
+		}
+		#company-img{
+			width: 50%;
+		}
+
+	}
+
+	@media screen and (max-width: 700px) {
+		.text {
+			width: 50%;
+			height: auto;
+		}
+
+		.text h2 {
+			font-size: 50%;
+		}
+
+		#search-input {
+			width: 50%;
+			font-size: 50%;
+			height: 3vh;
+		}
+
+		#search-submit {
+			width: 30%;
+			font-size: 50%;
+			height: 3vh;
+			margin-bottom: 10px;
+		}
+
+		.company-text {
+			font-size: 70%;
+		}
+
+		#company-img {
+			position: static;
+			right: 5%;
+			z-index: none;
+		}
+
+		.company-img {
+			justify-content: center;
+			text-align: center;
+		}		
+		.gajiminimum img{
+			width: 20%;
+		}
+		.gajiminimum p{
+			font-size: 75%;
+		}
+		.gajimaximum img{
+			width: 20%;
+		}
+		.gajimaximum p{
+			font-size: 75%;
+		}
+		#sampai{
+			font-size: 75%;
+		}
+		#company-img{
+			width: 50%;
+		}
 	}
 </style>
 
