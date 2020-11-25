@@ -38,7 +38,7 @@
 	}
 
 }
-# {
+/* # {
 	left: 1037px;
 	top: 51px;
 	position: absolute;
@@ -51,7 +51,7 @@
 	font-weight: normal;
 	font-size: 36px;
 	color: rgba(112,112,112,1);
-}
+} */
 #Ellipse_25 {
 	fill: rgba(121,160,239,1);
 	stroke: rgba(112,112,112,1);
@@ -62,6 +62,7 @@
 	shape-rendering: auto;
 }
 .Ellipse_25 {
+	overflow: hidden;
 	width: 3392px;
 	height: 3170px;
 	position: absolute;

@@ -1,0 +1,247 @@
+/* Kontak */
+.sixfour {
+    width: 64px;
+    height: 64px;
+}
+
+.align-items-center {
+    justify-content: center;
+
+}
+
+.center-kontak-logo {
+    text-align: center;
+    background-color: white;
+    margin: 1%;
+    padding-top: 2%;
+    border-radius: 20px;
+}
+
+.kontak-container {
+    text-align: center;
+}
+
+#text-kontak {
+    font-size: 150%;
+}
+
+.section-kontak {
+    padding: 5%;
+    background-color: #F4F8FF;
+}
+
+/* Company */
+#company-us {
+    margin-top: 10%;
+    margin-bottom: 5%;
+}
+
+.company-img {
+    max-width: 100%;
+    padding: 13%;
+}
+
+#company-img {
+    position: absolute;
+    right: -20%;
+    z-index: 1;
+    width: 70%;
+}
+
+.company-text {
+    background-color: #79A0EF;
+    padding: 10%;
+    color: white;
+    border-radius: 20px;
+    text-align: justify;
+    /* padding-left: 10%; */
+}
+
+/* ImagePerusahaan */
+.image-perusahaan img {
+    max-width: 100%;
+}
+
+/* Footer */
+.footer-img {
+    width: 50px;
+}
+
+.footer-list p {
+    display: inline-block;
+    color: white;
+    margin-left: 5%;
+}
+
+.footer-list {
+    margin-top: 20%;
+}
+
+.footer-list li {
+    list-style: none;
+    margin-bottom: 3%;
+}
+
+.gk-footer {
+    margin-top: 15%;
+    background-color: #79A0EF;
+    height: auto;
+}
+
+#gk-logo {
+    max-width: 100%;
+    max-height: 50%;
+    margin-top: 23%;
+    margin-left: 5%;
+}
+
+.gk-text {
+    margin-top: 7%;
+    margin-left: -5%;
+    text-align: justify;
+    color: white;
+}
+
+/* Nav dan Body */
+body {
+    font-family: 'Arvo', serif;
+    margin: 0px;
+    padding: 0px;
+}
+
+.container-fluid {
+    margin: 0;
+    padding: 0;
+}
+
+.navbar a {
+    color: white !important;
+}
+
+.bg-blue {
+    background-color: #79A0EF;
+}
+
+.nav {
+    background-color: #79A0EF;
+    padding: 10px;
+    list-style: none;
+}
+
+.nav ul {
+    margin: 0;
+}
+
+.nav a {
+    color: white;
+    text-decoration: none;
+
+}
+
+.nav-item {
+    margin: auto;
+    width: auto;
+    justify-content: center;
+}
+
+.justify-content-right {
+    justify-content: right;
+}
+
+.bluebackground {
+    background-color: #79A0EF;
+}
+
+
+
+/* Media Controls */
+@media screen and (max-width: 575px) {
+    .company-text {
+        border-radius: 0;
+    }
+}
+
+@media screen and (max-width: 700px) {
+    .text {
+        width: 50%;
+        height: auto;
+    }
+
+    .text h2 {
+        font-size: 50%;
+    }
+
+    .company-text {
+        font-size: 70%;
+    }
+
+    #company-img {
+        position: static;
+        right: 5%;
+        z-index: none;
+    }
+
+    .company-img {
+        justify-content: center;
+        text-align: center;
+    }
+
+    #company-img {
+        width: 50%;
+    }
+}
+
+/* Carousel */
+.MultiCarousel {
+    float: left;
+    overflow: hidden;
+    padding: 15px;
+    width: 100%;
+    position: relative;
+}
+
+.MultiCarousel .MultiCarousel-inner {
+    transition: 1s ease all;
+    float: left;
+}
+
+.MultiCarousel .MultiCarousel-inner .item {
+    float: left;
+}
+
+.MultiCarousel .MultiCarousel-inner .item>div {
+    text-align: center;
+    padding: 10px;
+    margin: 10px;
+    background: white;
+    color: #666;
+}
+
+.MultiCarousel .leftLst,
+.MultiCarousel .rightLst {
+    position: absolute;
+    border-radius: 50%;
+    top: calc(50% - 20px);
+}
+
+.MultiCarousel .leftLst {
+    left: 0;
+}
+
+.MultiCarousel .rightLst {
+    right: 0;
+}
+
+.MultiCarousel .leftLst.over,
+.MultiCarousel .rightLst.over {
+    pointer-events: none;
+    background: #79A0EF;
+    display: none;
+}
+.pad15 p{
+    padding-top: 3%;
+}
+.pad15{
+    box-shadow: 15px 15px #79A0EF;
+    outline: 1px solid grey;    
+}
