@@ -15,8 +15,12 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
         integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous">
     </script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.js" integrity="sha512-HGOnQO9+SP1V92SrtZfjqxxtLmVzqZpjFFekvzZVWoiASSQgSr4cw9Kqd2+l8Llp4Gm0G8GIFJ4ddwZilcdb8A==" crossorigin="anonymous"></script>
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Arvo&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick-theme.min.css" integrity="sha512-17EgCFERpgZKcm0j0fEq1YCJuyAWdz9KUtv1EjVuaOz8pDnh/0nZxmU6BBXwaaxqoi9PQXnRWqlcDB027hgv9A==" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.css" integrity="sha512-yHknP1/AwR+yx26cB1y0cjvQUMvEa2PFzt1c9LlS4pRQ5NOTZFWbhBig+X9G9eYW/8m0/4OXNx8pxJ6z57x0dw==" crossorigin="anonymous" />
     <title>Document</title>
 </head>
 
@@ -105,99 +109,119 @@
         </a>
       </div>
 
-      <div class="ukurantext">
+      <div class="text-center" style="margin-top: 5%;">
         <h3>Perusahaan Yang Mencari Hari Ini</h3>
       </div>
 
-      <div class="container testimoni-container">
-        <div class="row">
-            <div class="col-md-12">
-                <div id="carouselExampleIndicators" class="carousel slide">
-                    <!--Auto : data-ride="carousel"-->
-                    <ol class="carousel-indicators">
-                        <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
-                        <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
-                    </ol>
-                    <div class="carousel-inner">
-                        <div class="carousel-item active">
-                            <div class="row">
-                                <div class="col-md-4">
-                                    <div class="box">
-                                        <img src="AppleLogo.png" alt="" class="img-area">
-                                        <div class="img-text">
-                                            <h2>Bu Dewi</h2>
-                                            <p>Golek Kerjo telah membantu saya untuk
-                                                mencari pekerjaan</p>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-md-4">
-                                    <div class="box">
-                                        <img src="circle-cropped_1.png" alt="" class="img-area">
-                                        <div class="img-text">
-                                            <h2>Mbak Sri</h2>
-                                            <p>Awalnya setelah lulus kuliah bingung
-                                                mencari kerja kemana tetapi
-                                                setelah saya menemukan website ini
-                                                saya dapaty menemukan perkejaan
-                                                dengan mudah</p>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-md-4">
-                                    <div class="box">
-                                        <img src="circle-cropped.png" alt="" class="img-area">
-                                        <div class="img-text">
-                                            <h2>Bu Dewi</h2>
-                                            <p>Golek Kerjo telah membantu saya untuk
-                                                mencari pekerjaan</p>
-                                        </div>
-                                    </div>
-                                </div>
+      <section id="team">
+          <div class="container my-3 py-5 text-center">
+               <div class="row slider">
+                   <div class="col-lg-15 col-md-12">
+                        <div class="card">
+                            <div class="card-body">
+                                <img src="NoPath.png" alt="" class="img-fluid rounded-circle mb-5 mx-auto" style="margin-top: 5%; margin-left: 25%; width: 30%;">
+                                <h3>Facebook</h3>
+                                <h6>Facebook</h6>
+                                <h6>Jakarta</h6>
+                                <h6>3 lowongan</h6>
+                                <input class="btn btn-primary" type="submit" value="Submit">
                             </div>
                         </div>
-                        <div class="carousel-item">
-                            <div class="row">
-                                <div class="col-md-4">
-                                    <div class="box">
-                                        <img src="circle-cropped.png" alt="" class="img-area">
-                                        <div class="img-text">
-                                            <h2>Bu Dewi</h2>
-                                            <p>Golek Kerjo telah membantu saya untuk
-                                                mencari pekerjaan</p>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-md-4">
-                                    <div class="box">
-                                        <img src="circle-cropped_1.png" alt="" class="img-area">
-                                        <div class="img-text">
-                                            <h2>Mbak Sri</h2>
-                                            <p>Awalnya setelah lulus kuliah bingung
-                                                mencari kerja kemana tetapi
-                                                setelah saya menemukan website ini
-                                                saya dapaty menemukan perkejaan
-                                                dengan mudah</p>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-md-4">
-                                    <div class="box">
-                                        <img src="circle-cropped.png" alt="" class="img-area">
-                                        <div class="img-text">
-                                            <h2>Bu Dewi</h2>
-                                            <p>Golek Kerjo telah membantu saya untuk
-                                                mencari pekerjaan</p>
-                                        </div>
-                                    </div>
-                                </div>
+                   </div>
+
+                   <div class="col-lg-15 col-md-12">
+                         <div class="card">
+                            <div class="card-body">
+                                <img src="HuaweiLogo_l@2x.png" alt="" class="img-fluid rounded-circle mb-5 mx-auto" style="margin-top: 5%; margin-left: 25%; width: 30%;">
+                                <h3>Facebook</h3>
+                                <h6>Facebook</h6>
+                                <h6>Jakarta</h6>
+                                <h6>3 lowongan</h6>
+                                <input class="btn btn-primary" type="submit" value="Submit">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-15 col-md-12">
+                        <div class="card">
+                           <div class="card-body">
+                               <img src="AppleLogo.png" alt="" class="img-fluid rounded-circle mb-5 mx-auto" style="margin-top: 5%; margin-left: 25%; width: 30%;">
+                               <h3>Facebook</h3>
+                               <h6>Facebook</h6>
+                               <h6>Jakarta</h6>
+                               <h6>3 lowongan</h6>
+                               <input class="btn btn-primary" type="submit" value="Submit">
+                           </div>
+                       </div>
+                    </div>
+
+                    <div class="col-lg-15 col-md-12">
+                        <div class="card">
+                            <div class="card-body">
+                                <img src="AppleLogo.png" alt="" class="img-fluid rounded-circle mb-5 mx-auto" style="margin-top: 5%; margin-left: 25%; width: 30%;"> 
+                                <h3>Facebook</h3>
+                                <h6>Facebook</h6>
+                                <h6>Jakarta</h6>
+                                <h6>3 lowongan</h6>
+                                <input class="btn btn-primary" type="submit" value="Submit">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-15 col-md-12">
+                        <div class="card">
+                            <div class="card-body">
+                                <img src="AppleLogo.png" alt="" class="img-fluid rounded-circle mb-5 mx-auto" style="margin-top: 5%; margin-left: 25%; width: 30%;">
+                                <h3>Facebook</h3>
+                                <h6>Facebook</h6>
+                                <h6>Jakarta</h6>
+                                <h6>3 lowongan</h6>
+                                <input class="btn btn-primary" type="submit" value="Submit">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-15 col-md-12">
+                        <div class="card">
+                            <div class="card-body">
+                                <img src="AppleLogo.png" alt="" class="img-fluid rounded-circle mb-5 mx-auto" style="margin-top: 5%; margin-left: 25%; width: 30%;">
+                                <h3>Facebook</h3>
+                                <h6>Facebook</h6>
+                                <h6>Jakarta</h6>
+                                <h6>3 lowongan</h6>
+                                <input class="btn btn-primary" type="submit" value="Submit">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-15 col-md-12">
+                        <div class="card">
+                            <div class="card-body">
+                                <img src="AppleLogo.png" alt="" class="img-fluid rounded-circle mb-5 mx-auto" style="margin-top: 5%; margin-left: 25%; width: 30%;">
+                                <h3>Facebook</h3>
+                                <h6>Facebook</h6>
+                                <h6>Jakarta</h6>
+                                <h6>3 lowongan</h6>
+                                <input class="btn btn-primary" type="submit" value="Submit">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-15 col-md-12">
+                        <div class="card">
+                            <div class="card-body">
+                                <img src="AppleLogo.png" alt="" class="img-fluid rounded-circle mb-5 mx-auto" style="margin-top: 5%; margin-left: 25%; width: 30%;">
+                                <h3>Facebook</h3>
+                                <h6>Facebook</h6>
+                                <h6>Jakarta</h6>
+                                <h6>3 lowongan</h6>
+                                <input class="btn btn-primary" type="submit" value="Submit">
                             </div>
                         </div>
                     </div>
                 </div>
-            </div>
-        </div>
-    </div>
+          </div>
+      </section>
 
       <div class="ukurantextlowongan">
         <h3>lowongan tersedia</h3>
@@ -209,8 +233,8 @@
             <div class="d-block w-100">
                 <div class="row">
                     <div class="col-md-2">
-                        <div class="box">
-                            <img src="NoPath.png" alt="" class="img-area">
+                        <div class="box pad15">
+                            <img src="NoPath.png" alt="" class="img-area"  style="border-radius: 40px; width: 60px;">
                             <div class="img-text">
                                 <br>
                                 <h6>Facebook</h6>
@@ -222,7 +246,7 @@
                         </div>
                     </div>
                     <div class="col-md-2">
-                        <div class="box">
+                        <div class="box" style="outline:1px solid #000000;">
                             <img src="AppleLogo.png" alt="" class="img-area" width="70" style="margin-top: -1%;">
                             <div class="img-text">
                                 <br>
@@ -235,7 +259,7 @@
                         </div>
                     </div>
                     <div class="col-md-2">
-                        <div class="box">
+                        <div class="box pad15">
                             <img src="HuaweiLogo_l@2x.png" alt="" class="img-area" width="70" style="margin-top: 2%;">
                             <div class="img-text">
                                 <br>
@@ -306,9 +330,116 @@
           </a>
       </div>
 
+
+<script type="text/javascript">
+    $('.slider').slick({
+  dots: true,
+  infinite: false,
+  speed: 300,
+  slidesToShow: 3,
+  slidesToScroll: 3,
+  responsive: [
+    {
+      breakpoint: 1024,
+      settings: {
+        slidesToShow: 3,
+        slidesToScroll: 3,
+        infinite: true,
+        dots: true
+      }
+    },
+    {
+      breakpoint: 600,
+      settings: {
+        slidesToShow: 2,
+        slidesToScroll: 2
+      }
+    },
+    {
+      breakpoint: 480,
+      settings: {
+        slidesToShow: 1,
+        slidesToScroll: 1
+      }
+    }
+    // You can unslick at a given breakpoint now by adding:
+    // settings: "unslick"
+    // instead of a settings object
+  ]
+});
+</script>
 </body>
 
 <style>
+*{
+    margin:0;
+}
+
+.slick-next,.slick-arrow::before{
+   color: #000000!important;
+}
+
+.slick-prev,.slick-arrow::before{
+   color: #000000!important;
+}
+
+body{
+    font-family: 'raleway', sans-serif;
+    font-size: 14px;
+    font-weight: 400;
+    color: #777777;
+}
+
+h1{
+    font-size: 36px;
+    color: #555555;
+    font-weight: bold;
+}
+
+h3{
+    font-size: 24px;
+    color: #131c8f;
+    font-weight: bold;
+}
+
+#team img{
+    margin-top: -50px;
+}
+
+#team i{
+    font-size: 26px;
+    color: #75b410;
+}
+
+#team p{
+    font-weight: 500;
+}
+
+#team .card{
+    border-radius: 0;
+    box-shadow: 5px 5px 15px #feb690;
+    transition: all 0.3s ease-in;
+    -webkit-transition: all 0.3s ease-in;
+    -moz-transition: all 0.3s ease-in;
+}
+
+#team .card:hover{
+    background: #feb690;
+    color:#ffffff;
+    border-radius: 5px;
+    border: none;
+    box-shadow: 5px 5px 10px #8a7d7d;
+}
+
+#team .card:hover h3, #team .card:hover i{
+    color: #ffffff;
+}
+
+.pad15{
+    box-shadow: 15px 15px #79A0EF;
+    outline: 1px solid grey;    
+}
+
 .filter{
     margin-right: 0;
 }
@@ -388,10 +519,6 @@
     position: absolute;
     }
 
-    .ukurantext{
-        margin-top: 5%;
-        margin-left: 37%;
-    }
 
     .ukuransliderperusahaan{
         top: 50px;
@@ -490,6 +617,8 @@
         align-items: center;
         justify-content: center;
         background-color: #ffffff;
+        border: #000000;
+        box-shadow: 15px 15px #FEB690;
         padding-top: 5%;
         padding-left: 8%;
         color: rgb(0, 0, 0);
