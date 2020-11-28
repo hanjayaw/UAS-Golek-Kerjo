@@ -70,24 +70,17 @@
         </nav>
     </div>
 
+<div class="UkuranJudul">
+    <h3>GolekKerjo</h3>
+</div>    
 
-    <nav class="navbar navbar-light bg-light justify-content-between navbarsearch">
-        <h1 class="navbar-brand text-dark">GolekKerjo</h1> 
-        <form class="form-inline mx-auto row">
-          <input class="form-control-lg searchbar col-12" type="text" placeholder="Search" aria-label="Search" style="width: 100%!important;">
-        </form>
-       <ul> 
-           <img src="magnifying-glass.png" alt="" style="width: 50%;"> 
-       </ul> 
-       <ul style="padding: 0;">
-            <img src="funnel_bk.png" alt="" style="width: 50%;"> 
-       </ul>
+<input class="form-control ukuransearch" type="text" placeholder="Search" aria-label="Search">
 
-    </nav>
+<img src="magnifying-glass.png" class="img-fluid ukuranfotosearch" alt="Responsive image">
 
-      
+<img src="funnel_bk.png" class="img-fluid ukuranfotofilter" alt="Responsive image">
     
-    <div id="carouselExampleControls" class="carousel slide mt-5" data-ride="carousel">
+    <div id="carouselExampleControls" class="carousel slide mt-5 ukuransliderperusahaan" data-ride="carousel">
         <div class="carousel-inner">
           <div class="carousel-item active">
             <img class="d-block w-100" src="AmazonCompanyImage.png" alt="First slide">
@@ -227,108 +220,6 @@
         <h3>lowongan tersedia</h3>
       </div>
 
-      <div id="carouselExampleControls3" class="carousel slide ukuransliderlowongan" data-ride="carousel">
-        <div class="carousel-inner">
-          <div class="carousel-item active">
-            <div class="d-block w-100">
-                <div class="row">
-                    <div class="col-md-2 cardsmargin">
-                        <div class="box pad15">
-                            <img src="NoPath.png" alt="" class="img-area"  style="border-radius: 40px; width: 60px;">
-                            <div class="img-text">
-                                <br>
-                                <h6>Facebook</h6>
-                                <br>
-                                <h6>Jakarta</h6>
-                                <br>
-                                <h6>3 lowongan</h6>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-2 cardsmargin">
-                        <div class="box" style="outline:1px solid #000000;">
-                            <img src="AppleLogo.png" alt="" class="img-area" width="70" style="margin-top: -1%;">
-                            <div class="img-text">
-                                <br>
-                                <h6>Apple Inc</h6>
-                                <br>
-                                <h6>Jakarta</h6>
-                                <br>
-                                <h6>2 lowongan</h6>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-2 cardsmargin">
-                        <div class="box pad15">
-                            <img src="HuaweiLogo_l@2x.png" alt="" class="img-area" width="70" style="margin-top: 2%;">
-                            <div class="img-text">
-                                <br>
-                                <h6>Huawei</h6>
-                                <br>
-                                <h6>Surabaya</h6>
-                                <br>
-                                <h6>2 lowongan</h6>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-          </div>
-          <div class="carousel-item">
-            <div class="d-block w-100">
-                <div class="row">
-                    <div class="col-md-2">
-                        <div class="box">
-                            <img src="NoPath.png" alt="" class="img-area">
-                            <div class="img-text">
-                                <br>
-                                <h6>Facebook</h6>
-                                <br>
-                                <h6>Jakarta</h6>
-                                <br>
-                                <h6>3 lowongan</h6>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-2">
-                        <div class="box">
-                            <img src="AppleLogo.png" alt="" class="img-area" width="70" style="margin-top: -1%;">
-                            <div class="img-text">
-                                <br>
-                                <h6>Apple Inc</h6>
-                                <br>
-                                <h6>Jakarta</h6>
-                                <br>
-                                <h6>2 lowongan</h6>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-2">
-                        <div class="box">
-                            <img src="HuaweiLogo_l@2x.png" alt="" class="img-area" width="70" style="margin-top: 2%;">
-                            <div class="img-text">
-                                <br>
-                                <h6>Huawei</h6>
-                                <br>
-                                <h6>Surabaya</h6>
-                                <br>
-                                <h6>2 lowongan</h6>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-          </div>
-        </div>
-        <a href="#carouselExampleControls3" role="button" data-slide="prev">
-            <span class="carousel-control-prev-icon ukurantombolprevperusahaan" aria-hidden="true"></span>
-            <span class="sr-only">Previous</span>
-          </a>
-          <a class="carousel-control-next" href="#carouselExampleControls3" role="button" data-slide="next" >
-            <span class="carousel-control-next-icon ukurantombolnextperusahaan" aria-hidden="true"></span>
-            <span class="sr-only">Next</span>
-          </a>
-      </div>
 
 
 <script type="text/javascript">
@@ -373,6 +264,17 @@
 <style>
 *{
     margin:0;
+}
+
+.ukuransearch{
+    width: 70%;
+    margin-left: 15%;
+    margin-top: -2%;
+}
+
+.UkuranJudul{
+margin-top: 5%;
+margin-left: 3%;
 }
 
 .slick-next,.slick-arrow::before{
@@ -470,11 +372,11 @@ h3{
     position: absolute;
     } */
 
-    #ukuransearch{
-    height: 5vh;
-    width: 3%;
-    top: 12%;
-    right: 15%;
+    .ukuranfotosearch{
+    height: 3vh;
+    width: 2%;
+    top: 10%;
+    right: 10%;
     position: absolute;
     }
 
@@ -483,11 +385,11 @@ h3{
         margin-left: 43%;
     }
 
-    #ukuranfilter{
-    height: 5vh;
-    width: 3%;
-    top: 12%;
-    right: 10%;
+    .ukuranfotofilter{
+    height: 3vh;
+    width: 2%;
+    top: 10%;
+    right: 5%;
     position: absolute;
     }
 
@@ -521,8 +423,9 @@ h3{
 
 
     .ukuransliderperusahaan{
-        top: 50px;
-        left: 25%;
+        width: 70%;
+        top: 10%;
+        left: 15%;
     }
 
     .ukuransliderlowongan{
