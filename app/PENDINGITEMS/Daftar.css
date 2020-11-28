@@ -1,0 +1,210 @@
+/* Daftar Form */
+.container-form {
+    margin-top: 10%;
+    text-align: center;
+
+}
+
+.inputform {
+    margin-top: 1.5%;
+}
+
+#inputnama {
+    background: url(user.png) no-repeat left center;
+    background-size: 5%;
+    width: 40%;
+    height: 50px;
+    outline: gray;
+    border: 2px lightgray solid;
+    border-radius: 5px;
+    background-color: #f5f5f5;
+    background-position-y: center;
+    font-size: 100%;
+    background-position-x: 1%;
+}
+
+#inputemail {
+    background: url(email.png) no-repeat left center;
+    background-size: 5%;
+    width: 40%;
+    height: 50px;
+    outline: gray;
+    border: 2px lightgray solid;
+    border-radius: 5px;
+    background-color: #f5f5f5;
+    background-position-y: center;
+    background-position-x: 1%;
+    font-size: 100%;
+}
+
+#inputpassword {
+    background: url(padlock.png) no-repeat left center;
+    background-size: 5%;
+    width: 40%;
+    height: 50px;
+    outline: gray;
+    border: 2px lightgray solid;
+    border-radius: 5px;
+    background-color: #f5f5f5;
+    background-position-y: center;
+    background-position-x: 1%;
+    font-size: 100%;
+}
+
+input[type="text"]::placeholder {
+    padding-left: 30px;
+}
+
+#inputnama:focus {
+    background: none;
+    background-color: #f5f5f5;
+    content: none;
+}
+
+#inputemail:focus {
+    background: none;
+    content: none;
+    background-color: #f5f5f5;
+}
+
+#inputpassword:focus {
+    background: none;
+    content: none;
+    background-color: #f5f5f5;
+}
+
+#pushnotif {
+    margin-top: 2%;
+    width: 15px;
+    height: 15px;
+}
+
+#daftar{
+    border-radius: 20px;
+    width: 15%;
+    height: 40px;
+    outline: none;
+    border: none;
+    margin-top: 2%;
+    background-color: #79A0EF;
+    color: white;
+}
+#daftar:hover{
+    color: lightgray;
+}
+
+#noacc{
+    margin-top: 1%;
+}
+#noacc a{
+    text-decoration: none;
+    color: black;
+}
+#noacc a:hover{
+    color: gray;
+}
+
+/* Nav dan Body */
+body {
+    font-family: 'Arvo', serif;
+    margin: 0px;
+    padding: 0px;
+    /* background-blend-mode: lighten; */
+}
+
+.background-container {
+    position: relative;
+}
+
+.container-fluid {
+    margin: 0;
+    padding: 0;
+}
+
+.navbar a {
+    color: white !important;
+}
+
+.bg-blue {
+    background-color: #79A0EF;
+}
+
+.nav {
+    background-color: #79A0EF;
+    padding: 10px;
+    list-style: none;
+}
+
+.nav ul {
+    margin: 0;
+}
+
+.nav a {
+    color: white;
+    text-decoration: none;
+
+}
+
+.nav-item {
+    margin: auto;
+    width: auto;
+    justify-content: center;
+}
+
+.justify-content-right {
+    justify-content: right;
+}
+
+.bluebackground {
+    background-color: #79A0EF;
+}
+
+@media screen and (max-width: 992px) {
+    #inputnama {
+        background-size: 7%;
+        width: 50%;
+    }
+
+    #inputemail {
+        background-size: 7%;
+        width: 50%;
+    }
+
+    #inputpassword {
+        width: 50%;
+        background-size: 7%;
+    }
+
+    .container-form {
+        margin-top: 15%;
+    }
+
+}
+
+@media screen and (max-width: 500px) {
+    #inputnama {
+        width: 75%;
+        background-size: 10%;
+    }
+
+    #inputemail {
+        width: 75%;
+        background-size: 10%;
+    }
+
+    #inputpassword {
+        width: 75%;
+        background-size: 10%;
+    }
+
+    .container-form {
+        width: 75%;
+        margin-top: 17%;
+    }
+    #daftar{
+        width: 50%;
+    }
+    .inputform{
+        margin-top: 3%;
+    }
+}
