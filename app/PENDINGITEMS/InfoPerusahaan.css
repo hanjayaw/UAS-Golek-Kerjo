@@ -238,10 +238,17 @@ body {
     background: #79A0EF;
     display: none;
 }
-.pad15 p{
+
+.pad15 p {
     padding-top: 3%;
+    margin: 0;
 }
-.pad15{
+.pad15 img{
+    margin-bottom: 10%;
+}
+
+.pad15 {
     box-shadow: 15px 15px #79A0EF;
-    outline: 1px solid grey;    
+    outline: 1px solid grey;
+    padding: 20% 0 30% 0 !important;
 }
