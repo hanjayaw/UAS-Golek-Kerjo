@@ -79,17 +79,17 @@ input[type="text"]::placeholder {
     height: 15px;
 }
 
-#daftar{
+#login{
     border-radius: 20px;
     width: 15%;
     height: 40px;
     outline: none;
     border: none;
-    margin-top: 1%;
     background-color: #79A0EF;
     color: white;
+    margin-top: 3%;
 }
-#daftar:hover{
+#login:hover{
     color: lightgray;
 }
 
@@ -201,7 +201,7 @@ body {
         width: 75%;
         margin-top: 17%;
     }
-    #daftar{
+    #login{
         width: 50%;
     }
     .inputform{
