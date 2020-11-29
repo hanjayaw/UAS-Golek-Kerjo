@@ -10,7 +10,7 @@
 }
 
 #inputnama {
-    background: url(user.png) no-repeat left center;
+    background: url(/static/images/user.png) no-repeat left center;
     background-size: 5%;
     width: 40%;
     height: 50px;
@@ -24,7 +24,7 @@
 }
 
 #inputemail {
-    background: url(email.png) no-repeat left center;
+    background: url(/static/images/email.png) no-repeat left center;
     background-size: 5%;
     width: 40%;
     height: 50px;
@@ -38,7 +38,7 @@
 }
 
 #inputpassword {
-    background: url(padlock.png) no-repeat left center;
+    background: url(/static/images/padlock.png) no-repeat left center;
     background-size: 5%;
     width: 40%;
     height: 50px;
@@ -51,10 +51,21 @@
     font-size: 100%;
 }
 
-input[type="text"]::placeholder {
+
+
+input[type="text"] {
     padding-left: 30px;
 }
 
+input[type="email"] {
+    padding-left: 30px;
+}
+
+input[type="password"] {
+    padding-left: 30px;
+}
+
+/* 
 #inputnama:focus {
     background: none;
     background-color: #f5f5f5;
@@ -71,7 +82,7 @@ input[type="text"]::placeholder {
     background: none;
     content: none;
     background-color: #f5f5f5;
-}
+} */
 
 #pushnotif {
     margin-top: 2%;
@@ -79,7 +90,7 @@ input[type="text"]::placeholder {
     height: 15px;
 }
 
-#daftar{
+#daftar {
     border-radius: 20px;
     width: 15%;
     height: 40px;
@@ -89,18 +100,21 @@ input[type="text"]::placeholder {
     background-color: #79A0EF;
     color: white;
 }
-#daftar:hover{
+
+#daftar:hover {
     color: lightgray;
 }
 
-#noacc{
+#noacc {
     margin-top: 1%;
 }
-#noacc a{
+
+#noacc a {
     text-decoration: none;
     color: black;
 }
-#noacc a:hover{
+
+#noacc a:hover {
     color: gray;
 }
 
@@ -201,10 +215,12 @@ body {
         width: 75%;
         margin-top: 17%;
     }
-    #daftar{
+
+    #daftar {
         width: 50%;
     }
-    .inputform{
+
+    .inputform {
         margin-top: 3%;
     }
 }

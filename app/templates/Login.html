@@ -71,18 +71,21 @@
     <div class="container container-form">
         <h1>LOGIN</h1>
         <form action="">
-            
             <div class="emailinput">
-                <input type="text" id="inputemail" class="inputform" placeholder="Email" onfocus="this.placeholder = ''"
-                    onblur="this.placeholder = 'Email'">
+                <input type="email" id="inputemail" class="inputform" placeholder="Email" name="masukemail">
             </div>
             <div class="passwordinput">
-                <input type="text" id="inputpassword" class="inputform" placeholder="Password"
-                    onfocus="this.placeholder = ''" onblur="this.placeholder = 'Password'">
+                <input type="password" id="inputpassword" class="inputform" placeholder="Password" name="masukpassword">
             </div>
-            
+            {% with messages = get_flashed_messages() %}
+                {% if messages %}
+                    {% for msg in messages %}
+                       <h6 style="color: red; margin-top: 2%;">{{msg}}</h6>
+                    {% endfor %}
+                {% endif %}
+            {% endwith %}
             <div class="button">
-                <input type="button" value="Login" id="login">
+                <input type="submit" value="Login" id="login">
             </div>
             <h6 id="noacc"><a href="">Lupa Password</a></h6>
             <h6 id="noacc" style="margin: 0;">Belum punya akun? <a href="">Daftar</a></h6>

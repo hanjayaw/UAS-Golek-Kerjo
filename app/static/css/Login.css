@@ -51,10 +51,18 @@
     font-size: 100%;
 }
 
-input[type="text"]::placeholder {
+input[type="text"] {
     padding-left: 30px;
 }
 
+input[type="email"] {
+    padding-left: 30px;
+}
+
+input[type="password"] {
+    padding-left: 30px;
+}
+/* 
 #inputnama:focus {
     background: none;
     background-color: #f5f5f5;
@@ -71,7 +79,7 @@ input[type="text"]::placeholder {
     background: none;
     content: none;
     background-color: #f5f5f5;
-}
+} */
 
 #pushnotif {
     margin-top: 2%;
