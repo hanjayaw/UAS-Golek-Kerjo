@@ -4,6 +4,7 @@ from flask import Flask ## import Flask dari package flask
 from flaskext.mysql import MySQL
 
 app = Flask(__name__)
+app.debug =True
 mysql = MySQL()
 mysql.init_app(app)
 
@@ -32,7 +33,7 @@ def RunSelectOne(cmd):
     global cursor
     OpenDB()
     cursor.execute(cmd)
-    res = cursor.fecthone()
+    res = cursor.fetchone()
     CloseDB()
     return res
 
