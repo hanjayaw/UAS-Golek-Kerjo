@@ -1,0 +1,731 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='/bootstrap/css/bootstrap.min.css') }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick-theme.min.css" integrity="sha512-17EgCFERpgZKcm0j0fEq1YCJuyAWdz9KUtv1EjVuaOz8pDnh/0nZxmU6BBXwaaxqoi9PQXnRWqlcDB027hgv9A==" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.css" integrity="sha512-yHknP1/AwR+yx26cB1y0cjvQUMvEa2PFzt1c9LlS4pRQ5NOTZFWbhBig+X9G9eYW/8m0/4OXNx8pxJ6z57x0dw==" crossorigin="anonymous" />
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/index.css') }}">
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="container-fluid p-0">
+        <nav class="navbar navbar-expand-md fixed-top navbar-light bg-blue">
+            <div class="container-fluid">
+                <a href="" class="navbar-brand text-uppercase d-md-none">GolekKerjo
+                </a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar"
+                    aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbar">
+                    <ul class="navbar-nav text-uppercase">
+                        <li class="nav-item">
+                            <a href="" class="nav-link">GolekKerjo<span
+                                    class="sr-only">(current)</span></a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="" class="nav-link mx-md-1 mx-lg-2 mx-xl-3">Lowongan</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="" class="nav-link mx-md-1 mx-lg-2 mx-xl-3">Perusahaan</a>
+                        </li>
+    
+                        <li class="nav-item">
+                            <a href="" class="nav-link mx-md-1 mx-lg-2 mx-xl-3">Hubungi Kami</a>
+                        </li>
+                    </ul>
+                    <ul class="navbar-nav text-uppercase ml-auto">
+                        <li class="nav-item">
+                            <a href="" class="nav-link mx-md-1 mx-lg-2 mx-xl-3">Daftar</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="" class="nav-link mx-md-1 mx-lg-2 mx-xl-3">Login</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </div>  
+
+
+    <nav class="navbar navbar-expand-md navbar-dark bg-light mt-5 p-3">
+        <div class="d-flex flex-grow-1">
+            <h4 class="navbar-brand text-dark ml-2">GolekKerjo</h4>
+            <form class="mr-3 my-auto ml-3 mx-auto w-100 d-inline-block order-1">
+                <div class="input-group">
+                    <input type="text" class="form-control border border-right-0" placeholder="Search...">
+                    <span class="input-group-append">
+                        <button class="btn  border border-left-0" type="button" style="width:30%;">
+                            <img src="static/img/search.png" width="25%">
+                        </button>
+                        <button class="btn  border border-left-0" type="button" style="width: 30%;">
+                            <img src="static/img/funnel_zu@2x.png" width="25%">
+                        </button>
+                    </span>
+                </div>
+            </form>
+        </div>
+    
+    </nav>  
+
+    <div id="carouselExampleControls" class="carousel slide mt-5" data-ride="carousel" style="width: 70%; top: 10%; left: 15%;">
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <img class="d-block w-100" src="{{url_for('static', filename='images/wallpaperbetter.com_1920x1080.jpg')}}" alt="First slide">
+          </div>
+          <div class="carousel-item">
+            <img class="d-block w-100" src="{{url_for('static', filename='images/piqsels.com-id-jwzwo.jpg')}}" alt="Second slide">
+          </div>
+          <div class="carousel-item">
+            <img class="d-block w-100" src="{{url_for('static', filename='images/piqsels.com-id-fkrog.jpg')}}" alt="Third slide">
+          </div>
+        </div>
+        <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
+          <span class="carousel-control-prev-icon ukurantombolprev" aria-hidden="true"></span>
+          <span class="sr-only">Previous</span>
+        </a>
+        <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
+          <span class="carousel-control-next-icon ukurantombolnext" aria-hidden="true"></span>
+          <span class="sr-only">Next</span>
+        </a>
+    </div>
+
+    <section class = "Rekomendasi">
+        <div class = "container my-3 py-5 text-center">
+            <div class="row">
+                <div class = "col">
+                    <h3> Rekomendasi Lowongan</h3>
+                </div>
+    
+            </div>
+            <div class = "row mt-5 slider">
+                {%for item in results%}
+                <div class = "col-md-12">
+                    <div class = "card mb-5" style="width: 100%; height: 50%;">
+                        <div class = "card-body">
+                            <img src = "static/images/{{item[3]}}" class = "img-fluid rounded-circle mb-3  mx-auto" id = "lowongan"  style="width: 30%; height: 30%">
+                            <h5>{{item[0]}}</h5>
+                            <p>{{item[1]}}</p>
+                            <p>{{item[2]}} Lowongan</p>
+                            <button type="button" class="btn btn-outline-dark">Info</button>
+                        </div>
+                    </div>
+                </div>
+                {%endfor%}
+            </div>
+        </div>
+    </section>
+
+      <section class = "Lowongantersedia" id = "Lowonganbaru">
+        <div class = "container my-3 py-5 text-center">
+            <div class="row">
+                <div class = "col">
+                    <h3>Perusahaan yang buka lowongan</h3>
+                </div>
+            </div>
+            <div class = "row mt-5">
+                {%for item in hasil%}
+                <div class = "col-md-4 col-sm-6 col-6">
+                    <div class = "card-3 mb-5">
+                        <div class = "card-body" style="width: 100%; height: 50%;">
+                            <img src = "static/images/{{item[3]}}" class = "img-fluid rounded-circle mb-3  mx-auto" id = "lowongan"  style="width: 30%; height: 30%">
+                            <h5>{{item[0]}}</h5>
+                            <p>{{item[1]}}</p>
+                            <p>{{item[2]}} Lowongan</p>
+                            <button type="button" class="btn btn-outline-dark">Info</button>
+                        </div>
+                    </div>
+                </div>
+                {%endfor%}
+            </div>        
+        </div>
+    </section>
+    
+    <ul class="pagination" style="align-items: center; text-align:center; justify-content: center; margin:auto;">
+        {%for items in range(1,pages+1)%}
+            {%if items == currentpage%}
+              <li class = "page-item active"><a class = "page-link" href="/perusahaan?page={{items}}#Lowonganbaru">{{items}}</a></li>
+            {% else %}
+              <li class = "page-item"><a class = "page-link" href="/perusahaan?page={{items}}#Lowonganbaru">{{items}}</a></li>
+            {% endif %}
+        {% endfor %}
+    </ul>
+
+    <footer class="gk-footer">
+        <div class="container">
+            <div class="row">
+                <div class="col gk-logo">
+                    <img src="Golek_Kerjo_3_cq.png" alt="" id="gk-logo">
+                </div>
+                <div class="col gk-text">
+                    Golek Kerjo adalah platform job recruitment dengan visi membantu anak muda untuk dapat menemukan
+                    platform mereka menyalurkan aspirasi mereka. Misi kita adalah membantu perusahaan menemukan
+                    anak muda yang cocok bagi perusahaan dan untuk anak muda mencari jati diri dan karir yang
+                    sesuai dengan dirinya.
+                </div>
+                <div class="col">
+                    <ul class="footer-list">
+                        <li><img src="InstagramLogo_a.png" alt="" class="footer-img">
+                            <p>GolekKerjo</p>
+                        </li>
+                        <li><img src="icons8-linkedin-48.png" alt="" class="footer-img"
+                                style="width: 60px; margin-left: -1.5%;">
+                            <p>GolekKerjo</p>
+                        </li>
+                        <li><img src="NoPath.png" alt="" class="footer-img">
+                            <p>GolekKerjo</p>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="{{ url_for('static', filename='/js/jquery3.5.1.js') }}"></script>
+    <script src="{{ url_for('static', filename='/popper/js/popper.min.js') }}"></script>
+    <script src= "{{ url_for('static', filename='/bootstrap/js/bootstrap.min.js') }}"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.js" integrity="sha512-HGOnQO9+SP1V92SrtZfjqxxtLmVzqZpjFFekvzZVWoiASSQgSr4cw9Kqd2+l8Llp4Gm0G8GIFJ4ddwZilcdb8A==" crossorigin="anonymous"></script>
+<script type="text/javascript">
+    $('.slider').slick({
+  dots: true,
+  infinite: false,
+  speed: 300,
+  slidesToShow: 3,
+  slidesToScroll: 3,
+  responsive: [
+    {
+      breakpoint: 1024,
+      settings: {
+        slidesToShow: 3,
+        slidesToScroll: 3,
+        infinite: true,
+        dots: true
+      }
+    },
+    {
+      breakpoint: 600,
+      settings: {
+        slidesToShow: 2,
+        slidesToScroll: 2
+      }
+    },
+    {
+      breakpoint: 480,
+      settings: {
+        slidesToShow: 1,
+        slidesToScroll: 1
+      }
+    }
+    // You can unslick at a given breakpoint now by adding:
+    // settings: "unslick"
+    // instead of a settings object
+  ]
+});
+</script>
+</body>
+<!-- 
+<style>
+*{
+    margin:0;
+}
+
+.ukuransearch{
+    width: 70%;
+    margin-left: 15%;
+    margin-top: -2%;
+}
+
+.UkuranJudul{
+margin-top: 5%;
+margin-left: 3%;
+}
+
+.slick-next,.slick-arrow::before{
+   color: #000000!important;
+}
+
+.slick-prev,.slick-arrow::before{
+   color: #000000!important;
+}
+
+body{
+    font-family: 'raleway', sans-serif;
+    font-size: 14px;
+    font-weight: 400;
+    color: #777777;
+}
+
+h1{
+    font-size: 36px;
+    color: #555555;
+    font-weight: bold;
+}
+
+h3{
+    font-size: 24px;
+    color: #131c8f;
+    font-weight: bold;
+}
+
+#team img{
+    margin-top: -50px;
+}
+
+#team i{
+    font-size: 26px;
+    color: #75b410;
+}
+
+#team p{
+    font-weight: 500;
+}
+
+#team .card{
+    border-radius: 0;
+    box-shadow: 5px 5px 15px #feb690;
+    transition: all 0.3s ease-in;
+    -webkit-transition: all 0.3s ease-in;
+    -moz-transition: all 0.3s ease-in;
+}
+
+#team .card:hover{
+    background: #feb690;
+    color:#ffffff;
+    border-radius: 5px;
+    border: none;
+    box-shadow: 5px 5px 10px #8a7d7d;
+}
+
+#team .card:hover h3, #team .card:hover i{
+    color: #ffffff;
+}
+
+.pad15{
+    box-shadow: 15px 15px #79A0EF;
+    outline: 1px solid grey;    
+}
+
+.filter{
+    margin-right: 0;
+}
+
+.form{
+    width: 200%!important;
+}
+
+    .navbarsearch{
+        margin-top: 5%;
+    }
+
+    .navbar{
+    max-height: 8vh;
+}
+
+   .ukuran h4{
+    margin-top: 5%;
+    margin-left: 3%;
+
+}
+
+    /* .ukuransliderphoto{
+    height: 100px;
+    width: 1250px;
+    left: 290px;
+    top: 200px;
+    position: absolute;
+    } */
+
+    .ukuranfotosearch{
+    height: 3vh;
+    width: 2%;
+    top: 10%;
+    right: 10%;
+    position: absolute;
+    }
+
+    .ukurantextlowongan{
+        margin-top: 5%;
+        margin-left: 43%;
+    }
+
+    .ukuranfotofilter{
+    height: 3vh;
+    width: 2%;
+    top: 10%;
+    right: 5%;
+    position: absolute;
+    }
+
+    .ukurantombolprev{ 
+    height: 5vh;
+    width: 20%;
+    }
+
+    .ukurantombolnext{
+    height: 5vh;
+    width: 20%;
+    }
+
+    .ukurantombolprevperusahaan{
+    height: 5vh;
+    width: 50px;
+    left: -8%;
+    top: 30%;
+    background-color: #000000;
+    position: absolute;
+    }
+
+    .ukurantombolnextperusahaan{
+    height: 5vh;
+    width: 50px;
+    right: 280%;
+    top: 30%;
+    background-color: #000000;
+    position: absolute;
+    }
+
+
+    .ukuransliderperusahaan{
+        width: 70%;
+        top: 10%;
+        left: 15%;
+    }
+
+    .ukuransliderlowongan{
+        top: 50px;
+        left: 25%;
+        height: 10%;
+    }
+ /* Footer
+ .footer-img {
+        width: 50px;
+    }
+
+    .footer-list p {
+        display: inline-block;
+        color: white;
+        margin-left: 5%;
+    }
+
+    .footer-list {
+        margin-top: 20%;
+    }
+
+    .footer-list li {
+        list-style: none;
+        margin-bottom: 3%;
+    }
+
+    .gk-footer {
+        margin-top: 15%;
+        background-color: #79A0EF;
+        height: auto;
+
+    }
+
+    #gk-logo {
+        max-width: 100%;
+        max-height: 50%;
+        margin-top: 23%;
+        margin-left: 5%;
+    }
+
+    .gk-text {
+        margin-top: 7%;
+        margin-left: -5%;
+        text-align: justify;
+        color: white;
+    } */
+
+    /* Testimoni */
+    .testimoni-container {
+        margin-top: 5%;
+    }
+
+    /* .img-area{
+        position: absolute;
+        width: 100px;
+        height: 100px;
+        border: 5px solid #fff;
+        overflow:hidden;
+        top: 15px;
+        left: 40%;
+        border-radius: 50%;    
+    }
+    .img-area img{
+        width: 100%;        
+    } */
+    .carousel-indicators {
+        left: 0;
+        top: auto;
+        bottom: -70px;
+    }
+
+    .carousel-indicators li {
+        background: #79A0EF;
+        border-radius: 50%;
+        width: 25px;
+        height: 5px;
+    }
+
+    .img-text {
+        width: 100%;
+        height: 30vh;
+        display: block;
+        text-align: center;
+        padding-top: 5%;
+        margin-bottom: 10px;
+
+    }
+
+    .box {
+        text-align: center;
+        align-items: center;
+        justify-content: center;
+        background-color: #ffffff;
+        border: #000000;
+        box-shadow: 15px 15px #FEB690;
+        padding-top: 5%;
+        padding-left: 8%;
+        color: rgb(0, 0, 0);
+        position: relative;
+        margin-bottom: 30px;
+    }
+
+    /* Services */
+    .pelayananimg {
+        width: 60%;
+    }
+
+    .title {
+
+        display: flex;
+        justify-content: center;
+        text-align: center;
+        z-index: 1;
+        background-color: #e3edff;
+        font-size: 350%;
+        margin: 0;
+        padding-top: 3%;
+    }
+
+    .service {
+        display: flex;
+        justify-content: center;
+        text-align: center;
+        align-items: center;
+        min-height: 70vh;
+        background-color: #e3edff
+    }
+
+    .service-container .card {
+        position: relative;
+        width: 350px;
+        padding: 50px;
+        margin: 20px;
+        background-color: white;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, .1);
+        border-radius: 4px;
+        margin-top: 3%;
+        box-sizing: border-box;
+        overflow: hidden;
+
+    }
+
+    .service-container {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .service-container .card .numb {
+        position: relative;
+        width: 80px;
+        height: 80px;
+        color: #88a9eb;
+        top: 10%;
+        background: #88a9eb;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 0 auto;
+        border-radius: 50%;
+        font-size: 150%;
+        transition: 1s;
+    }
+
+
+    .service-container .card:nth-child(1) .numb {
+        box-shadow: 0 0 0 0 #79A0EF;
+        background-color: #79A0EF;
+
+    }
+
+    .service-container .card:nth-child(1):hover .numb {
+        box-shadow: 0 0 0 400px #79A0EF;
+
+    }
+
+    .service-container .card:nth-child(2) .numb {
+        box-shadow: 0 0 0 0 #79A0EF;
+        background-color: #79A0EF;
+
+    }
+
+    .service-container .card:nth-child(2):hover .numb {
+        box-shadow: 0 0 0 400px #79A0EF;
+
+    }
+
+    .service-container .card:nth-child(3) .numb {
+        box-shadow: 0 0 0 0 #79A0EF;
+        background-color: #79A0EF;
+
+    }
+
+    .service-container .card:nth-child(3):hover .numb {
+        box-shadow: 0 0 0 400px #79A0EF;
+
+    }
+
+    .service-container .card .content {
+        position: relative;
+        z-index: 1;
+        transition: 0, 5s;
+    }
+
+
+    /* About Us */
+    #about-us {
+        margin-top: 5%;
+        margin-bottom: 5%;
+    }
+
+    .about-img {
+        max-width: 100%;
+        padding: 5%;
+    }
+
+    #about-img {
+        position: absolute;
+        right: -10%;
+        z-index: 1;
+    }
+
+    .about-text {
+        background-color: #79A0EF;
+        padding: 10%;
+        color: white;
+        /* padding-left: 10%; */
+    }
+
+    /* Search Location Awal */
+    /* .landing-search-location {
+        background-image: url(windows-C6T6vr1sQI0-unsplash_.png);
+        background-size: cover;
+        width: 100%;
+        height: 100vh;
+    } */
+    .top-container {
+        position: relative;
+        color: black;
+    }
+
+    .header {
+        width: 100%;
+        height: auto;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: relative;
+    }
+
+    .text {
+        background-color: white;
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        width: 50%;
+        height: auto;
+        padding-top: 5%;
+        padding-bottom: 3%;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        border-radius: 20px;
+    }
+
+    #search-input {
+        width: 65%;
+        height: 7vh;
+        font-size: 24px;
+        margin-top: -5%;
+        margin-left: 15%;
+        text-align: center;
+        border-radius: 100px;
+        outline: none;
+    }
+
+    #search-submit {
+        margin-top: -8%;
+        margin-left: 82%;
+        padding: 1% 1% 1% 1%;
+        border-radius: 20px;
+        color: white;
+        background-color: #79A0EF;
+        outline: none;
+        border: none;
+    }
+
+
+    @media screen and (max-width: 1000px) {
+        #about-img {
+            position: static;
+            right: none;
+            z-index: none;
+        }
+    }
+
+    @media screen and (max-width: 700px) {
+        .text {
+            width: 50%;
+            height: auto;
+        }
+
+        .text h2 {
+            font-size: 50%;
+        }
+
+        #search-input {
+            width: 50%;
+            font-size: 50%;
+            height: 3vh;
+        }
+
+        #search-submit {
+            width: 30%;
+            font-size: 50%;
+            height: 3vh;
+            margin-bottom: 10px;
+        }
+
+        .about-text {
+            font-size: 70%;
+        }
+
+        #gk-logo {
+            margin-left: -30%;
+        }
+
+
+    }
+    .card{
+        margin-bottom: 5%;
+    }
+</style> -->
