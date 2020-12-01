@@ -47,9 +47,9 @@ body {
     background-color: #79A0EF;
 }
 
-.search-bar input{
-width: 150%;
-height: 20vh;
+.search-bar input {
+    width: 150%;
+    height: 20vh;
 }
 
 .pelayananimg {
@@ -158,34 +158,36 @@ height: 20vh;
 .carousel-control-prev {
     filter: invert(100%);
 }
+
 .carousel-indicators li {
     filter: invert(100%);
 }
 
 
-.card{
+.card {
     border-radius: 0;
-    border : 1px solid black;
-    box-shadow: 10px 10px  #FEB690;
+    border: 1px solid black;
+    box-shadow: 10px 10px #FEB690;
     transition: all 0.3s ease-in;
     -webkit-transition: all 0.3s ease-in;
     -moz-transition: all 0.3s ease-in;
 }
+
 .card:hover {
     background-color: #FEB690;
-    color:#fff;
+    color: black;
     border-radius: 5px;
-    border:none;
-    box-shadow:5px 5px 10px #9e9e9e;
+    border: none;
+    box-shadow: 5px 5px 10px #9e9e9e;
 }
 
-.card:hover h5{
-    color: #fff;
+.card:hover h5 {
+    color: black;
 
 
 }
 
-.card-2{
+.card-2 {
     border-radius: 0;
     border: 1px solid black;
     box-shadow: 10px 10px #79A0EF;
@@ -193,21 +195,22 @@ height: 20vh;
     -webkit-transition: all 0.3s ease-in;
     -moz-transition: all 0.3s ease-in;
 }
+
 .card-2:hover {
-    background-color:#79A0EF;
-    color:#fff;
+    background-color: #79A0EF;
+    color: black;
     border-radius: 5px;
-    border:none;
-    box-shadow:5px 5px 10px #9e9e9e;
+    border: none;
+    box-shadow: 5px 5px 10px #9e9e9e;
 }
 
-.card-2:hover h5{
-    color: #fff;
+.card-2:hover h5 {
+    color: black;
 
 
 }
 
-.card-3{
+.card-3 {
     border-radius: 0;
     border: 1px solid black;
     box-shadow: 10px 10px #B3F2DD;
@@ -215,16 +218,17 @@ height: 20vh;
     -webkit-transition: all 0.3s ease-in;
     -moz-transition: all 0.3s ease-in;
 }
+
 .card-3:hover {
-    background-color:#B3F2DD;
-    color:#fff;
+    background-color: #B3F2DD;
+    color: black;
     border-radius: 5px;
-    border:none;
-    box-shadow:5px 5px 10px #9e9e9e;
+    border: none;
+    box-shadow: 5px 5px 10px #9e9e9e;
 }
 
-.card-3:hover h5{
-    color: #fff;
+.card-3:hover h5 {
+    color: black;
 
 
 }
@@ -232,26 +236,29 @@ height: 20vh;
 
 
 
-#lowongan img{
-    display:flex;
+#lowongan img {
+    display: flex;
     justify-content: center;
     align-items: center;
 }
 
-.slick-next,.slick-arrow::before{
-    color: #000000!important;
- }
- 
- .slick-prev,.slick-arrow::before{
-    color: #000000!important;
- }
- 
+.slick-next,
+.slick-arrow::before {
+    color: #000000 !important;
+}
 
- footer{
-     max-height: auto;
-     margin-top:0;
- }
- .footer-img {
+.slick-prev,
+.slick-arrow::before {
+    color: #000000 !important;
+}
+
+
+footer {
+    max-height: auto;
+    margin-top: 0;
+}
+
+.footer-img {
     width: 10%;
 }
 
