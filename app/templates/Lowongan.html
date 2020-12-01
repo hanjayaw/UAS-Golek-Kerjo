@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='/bootstrap/css/bootstrap.min.css') }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick-theme.min.css" integrity="sha512-17EgCFERpgZKcm0j0fEq1YCJuyAWdz9KUtv1EjVuaOz8pDnh/0nZxmU6BBXwaaxqoi9PQXnRWqlcDB027hgv9A==" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.css" integrity="sha512-yHknP1/AwR+yx26cB1y0cjvQUMvEa2PFzt1c9LlS4pRQ5NOTZFWbhBig+X9G9eYW/8m0/4OXNx8pxJ6z57x0dw==" crossorigin="anonymous" />
+    <link rel="stylesheet" href="{{ url_for('static', filename='/css/index.css') }}">
+</head>
+<body>
+    <div class="container-fluid p-0">
+        <nav class="navbar navbar-expand-md fixed-top navbar-light bg-blue">
+            <div class="container-fluid">
+                <a href="" class="navbar-brand text-uppercase d-md-none">GolekKerjo
+                </a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar"
+                    aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbar">
+                    <ul class="navbar-nav text-uppercase">
+                        <li class="nav-item">
+                            <a href="" class="nav-link">GolekKerjo<span
+                                    class="sr-only">(current)</span></a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="" class="nav-link mx-md-1 mx-lg-2 mx-xl-3">Lowongan</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="" class="nav-link mx-md-1 mx-lg-2 mx-xl-3">Perusahaan</a>
+                        </li>
+    
+                        <li class="nav-item">
+                            <a href="" class="nav-link mx-md-1 mx-lg-2 mx-xl-3">Hubungi Kami</a>
+                        </li>
+                    </ul>
+                    <ul class="navbar-nav text-uppercase ml-auto">
+                        <li class="nav-item">
+                            <a href="" class="nav-link mx-md-1 mx-lg-2 mx-xl-3">Daftar</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="" class="nav-link mx-md-1 mx-lg-2 mx-xl-3">Login</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </div>  
+<!-- <div class = "container-fluid mt-5">
+    <nav class="navbar navbar-light bg-light justify-content-between">
+            <div class="container-fluid pt-1 ml-2">
+                <h4 class = "navbar-brand text-dark">GolekKerjo</h4>
+                <form class="form-inline mx-auto">
+                    <input class="form-control mr-sm-2 search-bar" type="search" placeholder="Search" aria-label="Search">
+                </form>
+                <form class = "form-inline">
+                    <img src="img/search.png" style="width: 15%;">
+                    <img src ="img/funnel_zu@2x.png" style="width: 15%; margin-left: 5%;">
+                    </form>
+            </div>
+              
+        
+        </nav>
+
+
+</div> -->
+
+
+<!-- search not in navbar collapse -->
+<nav class="navbar navbar-expand-md navbar-dark bg-light mt-5 p-3">
+    <div class="d-flex flex-grow-1">
+        <h4 class="navbar-brand text-dark ml-2">GolekKerjo</h4>
+        <form class="mr-3 my-auto ml-3 mx-auto w-100 d-inline-block order-1">
+            <div class="input-group">
+                <input type="text" class="form-control border border-right-0" placeholder="Search...">
+                <span class="input-group-append">
+                    <button class="btn  border border-left-0" type="button" style="width:30%;">
+                        <img src="static/img/search.png" width="25%">
+                    </button>
+                    <button class="btn  border border-left-0" type="button" style="width: 30%;">
+                        <img src="static/img/funnel_zu@2x.png" width="25%">
+                    </button>
+                </span>
+            </div>
+        </form>
+    </div>
+
+</nav>
+
+
+<section class = "carousel" style="width: 70%; top: 10%; left: 15%;">
+
+    <div id="carouselWithIndicators" class="carousel slide" data-ride="carousel">
+        <ol class="carousel-indicators">
+            <li data-target="#carouselWithIndicators" data-slide-to="0" class="active"></li>
+            <li data-target="#carouselWithIndicators" data-slide-to="1"></li>
+            <li data-target="#carouselWithIndicators" data-slide-to="2"></li>
+        </ol>
+        <div class="carousel-inner mt-1">
+            <div class="carousel-item carousel-image-1 active">
+                <img class="d-block w-100" src="static/img/quotes.jpg" alt="First slide" style="width:100%; height:70vh">
+                <div class="carousel-caption overlay">
+                    <h3 class="text-light"></h3>
+                    <p></p>
+                </div>
+            </div>
+            <div class="carousel-item carousel-image-2">
+                <img class="d-block w-100" src="static/img/career.jpg" alt="Second slide" style="width:100%; height:70vh">
+                <div class="carousel-caption overlay">
+                    <h3 class="text-light"></h3>
+                    <p></p>
+                </div>
+            </div>
+            <div class="carousel-item carousel-image-3">
+                <img class="d-block w-100" src="static/img/job.jpg" alt="Third slide" style="width:100%; height:70vh">
+                <div class="carousel-caption overlay">
+                    <h3 class="text-dark"></h3>
+                    <p></p>
+                </div>
+            </div>
+            <a href="#carouselWithIndicators" class="carousel-control-prev" role="button" data-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="sr-only" >Previous</span>
+            </a>
+            <a href="#carouselWithIndicators" class="carousel-control-next" role="button" data-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="sr-only">Next</span>
+            </a>
+        </div>
+    </div>
+</section>
+
+
+<h2 class="title">Mau kerja apa ?</h2>
+<section class="tipe-pekerjaan">
+    <div class="tipe-container">
+        <div class="card-1">
+            <div class="numb"><img src="static/img/freelance_kc.png" alt="" class="pelayananimg"></div>
+            <div class="content">
+                <p> Freelance</p>
+            </div>
+        </div>
+        <div class="card-1">
+            <div class="numb"><img src="static/img/fulltime_j.png" alt="" class="pelayananimg"></div>
+            <div class="content">
+                <p> Part-time</p>
+            </div>
+        </div>
+        <div class="card-1">
+            <div class="numb"><img src="static/img/full-day-service-9-768065_j@2x.png" alt="" class="pelayananimg"></div>
+            <div class="content">
+                <p> Fulltime</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class = "Rekomendasi">
+    <div class = "container my-3 py-5 text-center">
+        <div class="row">
+            <div class = "col">
+                <h3> Rekomendasi Lowongan</h3>
+            </div>
+
+        </div>
+        <div class = "row mt-5 slider">
+            {%for item in results%}
+            <div class = "col-md-12">
+                <div class = "card mb-5" style="width: 100%; height: 50%;">
+                    <div class = "card-body">
+                        <img src = "static/images/{{item[4]}}" class = "img-fluid rounded-circle mb-3  mx-auto" id = "lowongan" style="width: 10%; height: 10%">
+                        <h5>{{item[0]}}</h5>
+                        <p>{{item[2]}}</p>
+                        <p>{{item[3]}}</p>
+                        <p>{{item[1]}}</p>
+                        <button type="button" class="btn btn-outline-dark">Info</button>
+                    </div>
+                </div>
+            </div>
+            {%endfor%}
+        </div>
+    </div>
+</section>
+
+<section class = "LowonganBaru">
+    <div class = "container my-3 py-5 text-center">
+        <div class="row">
+            <div class = "col">
+                <h3> Lowongan baru</h3>
+            </div>
+        </div>
+        <div class = "row mt-5 slider">
+            {%for item in results%}
+            <div class = "col-md-12">
+                <div class = "card-2 mb-5">
+                    <div class = "card-body" style="width: 100%; height: 50%;">
+                        <img src = "static/images/{{item[4]}}" class = "img-fluid rounded-circle mb-3  mx-auto" id = "lowongan"  style="width: 10%; height: 10%">
+                        <h5>{{item[0]}}</h5>
+                        <p>{{item[2]}}</p>
+                        <p>{{item[3]}}</p>
+                        <p>{{item[1]}}</p>
+                        <button type="button" class="btn btn-outline-dark">Info</button>
+                    </div>
+                </div>
+            </div>
+            {%endfor%}
+        </div>
+    </div>
+</section>
+
+
+<section class = "Lowongantersedia" id = "Lowonganbaru">
+    <div class = "container my-3 py-5 text-center">
+        <div class="row">
+            <div class = "col">
+                <h3> Lowongan yang tersedia</h3>
+            </div>
+        </div>
+        <div class = "row mt-5">
+            {%for item in hasil%}
+            <div class = "col-md-4 col-sm-6 col-6">
+                <div class = "card-3 mb-5">
+                    <div class = "card-body" style="width: 100%; height: 50%;">
+                        <img src = "static/images/{{item[4]}}" class = "img-fluid rounded-circle mb-3  mx-auto" id = "lowongan"  style="width: 10%; height: 10%">
+                        <h5>{{item[0]}}</h5>
+                        <p>{{item[2]}}</p>
+                        <p>{{item[3]}}</p>
+                        <p>{{item[1]}}</p>
+                        <button type="button" class="btn btn-outline-dark">Info</button>
+                    </div>
+                </div>
+            </div>
+            {%endfor%}
+        </div>        
+    </div>
+</section>
+
+<ul class="pagination" style="align-items: center; text-align:center; justify-content: center; margin:auto;">
+    {%for items in range(1,pages+1)%}
+        {%if items == currentpage%}
+          <li class = "page-item active"><a class = "page-link" href="/lowongan?page={{items}}#Lowonganbaru">{{items}}</a></li>
+        {% else %}
+          <li class = "page-item"><a class = "page-link" href="/lowongan?page={{items}}#Lowonganbaru">{{items}}</a></li>
+        {% endif %}
+    {% endfor %}
+</ul>
+
+<footer class="gk-footer">
+    <div class="container-fluid">
+        <div class="row text-center">
+            <div class="col-sm-6 col-12 gk-logo">
+                <img src="static/img/golek-kerjo.png" alt="" id="gk-logo">
+            </div>
+            <div class="col-sm-6 col-12">
+                <ul class="footer-list">
+                    <li><img src="static/img/InstagramLogo_be.png" alt="" class="footer-img">
+                        <p>GolekKerjo</p>
+                    </li>
+                    <li><img src="static/img/linked2.png" alt="" class="footer-img">
+                        <p>GolekKerjo</p>
+                    </li>
+                    <li><img src="static/img/Facebook.png" alt="" class="footer-img">
+                        <p>GolekKerjo</p>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</footer>
+</body>
+
+<script src="{{ url_for('static', filename='/js/jquery3.5.1.js') }}"></script>
+<script src="{{ url_for('static', filename='/popper/js/popper.min.js') }}"></script>
+<script src= "{{ url_for('static', filename='/bootstrap/js/bootstrap.min.js') }}"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.js" integrity="sha512-HGOnQO9+SP1V92SrtZfjqxxtLmVzqZpjFFekvzZVWoiASSQgSr4cw9Kqd2+l8Llp4Gm0G8GIFJ4ddwZilcdb8A==" crossorigin="anonymous"></script>
+<script type="text/javascript">
+$('.slider').slick({
+  dots: true,
+  infinite: false,
+  speed: 300,
+  slidesToShow: 3,
+  slidesToScroll: 3,
+  responsive: [
+    {
+      breakpoint: 1024,
+      settings: {
+        slidesToShow: 2,
+        slidesToScroll: 2,
+        infinite: true,
+        dots: true
+      }
+    },
+    {
+      breakpoint: 600,
+      settings: {
+        slidesToShow: 2,
+        slidesToScroll: 2
+      }
+    },
+    {
+      breakpoint: 480,
+      settings: {
+        slidesToShow: 1,
+        slidesToScroll: 1
+      }
+    }
+    // You can unslick at a given breakpoint now by adding:
+    // settings: "unslick"
+    // instead of a settings object
+  ]
+});
+</script>
+
+
+</html>
