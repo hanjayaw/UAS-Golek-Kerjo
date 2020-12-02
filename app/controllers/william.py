@@ -1,4 +1,4 @@
-from flask import Flask, render_template, request, flash, session
+from flask import Flask, render_template, request, flash, session, redirect, url_for
 from app import app, RunSelect, ExecuteCMD, saveApplyFiles
 from datetime import timedelta
 
@@ -62,7 +62,7 @@ def daftarpage():
 def masukpage():
     if "user" in session:
         # To Be Continued
-        return "Selamat anda sudah login " + session["user"]
+        return redirect(url_for('perusahaan'))
     else:
         if request.method == "POST":
             email = request.form["masukemail"].lower()
@@ -82,7 +82,7 @@ def masukpage():
                 session["email"] = email
                 session["user"] = nama
                 session["iduser"] = idpekerja
-                return "Anda telah login " + session["user"]
+                return redirect(url_for('perusahaan'))
 
             return "Yes"
         else:
@@ -120,3 +120,7 @@ def infolowongan(idlowongan):
                                phone=results[0][8],
                                kualif=results[0][9].split(","),
                                desk=results[0][10].split(","))
+
+@app.route('/master', methods = ["POST", "GET"])
+def master():
+     return render_template('master.html')
