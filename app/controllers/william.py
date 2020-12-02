@@ -67,7 +67,7 @@ def masukpage():
         if request.method == "POST":
             email = request.form["masukemail"].lower()
             password = request.form["masukpassword"]
-            qry = "SELECT nama_pekerja, email, password, id_pekerja FROM pekerja"
+            qry = "SELECT nama_pekerja, email, password, id_pekerja, profil_pekerja FROM pekerja"
             results = RunSelect(qry)
             checker = False
             nama = None
@@ -76,12 +76,14 @@ def masukpage():
                     checker = True
                     nama = items[0]
                     idpekerja = items[3]
+                    profilpekerja = items[4]
                     break
             if checker == True:
                 session.permanent = True
                 session["email"] = email
                 session["user"] = nama
                 session["iduser"] = idpekerja
+                session["profilepicture"] = profilpekerja
                 return redirect(url_for('perusahaan'))
 
             return "Yes"
@@ -121,6 +123,7 @@ def infolowongan(idlowongan):
                                kualif=results[0][9].split(","),
                                desk=results[0][10].split(","))
 
-@app.route('/master', methods = ["POST", "GET"])
+
+@app.route('/master', methods=["POST", "GET"])
 def master():
-     return render_template('master.html')
+    return render_template('master.html')
