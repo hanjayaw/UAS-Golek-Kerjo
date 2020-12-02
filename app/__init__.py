@@ -2,11 +2,18 @@
 
 from flask import Flask  ## import Flask dari package flask
 from flaskext.mysql import MySQL
+from werkzeug.utils import secure_filename
+from datetime import datetime
+import os
 
 app = Flask(__name__)
 app.debug = True
 mysql = MySQL()
 mysql.init_app(app)
+
+UPLOAD_FOLDER = 'C:/Users/jieme/Desktop/UAS-Golek-Kerjo/UAS-Golek-Kerjo/app/static/images'
+app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
+ALLOWED_EXTENSIONS = {'jpg', 'jpeg', 'png', 'pdf', 'docx', 'doc'}
 
 app.config['MYSQL_DATABASE_HOST'] = 'jmswijaya.com'
 app.config['MYSQL_DATABASE_PORT'] = 3306
@@ -46,15 +53,53 @@ def ExecuteCMD(cmd):
     OpenDB()
     cursor.execute(cmd)
     conn.commit()
-    res = cursor.rowCount()
     CloseDB()
-    return res
 
 
 def CloseDB():
     global conn, cursor
     cursor.close()
     conn.close()
+
+
+def allowed_file(filename):
+    return '.' in filename and \
+           filename.rsplit('.', 1)[1].lower() in ALLOWED_EXTENSIONS
+
+
+def saveApplyFiles(files, pekerjaid, perusahaanid):
+    global conn, cursor
+    if files and allowed_file(files.filename):
+        filename = secure_filename(files.filename)
+        files.save(os.path.join(app.config['UPLOAD_FOLDER'], filename))
+
+        query = "SELECT * FROM pekerjatoperusahaan"
+        data = RunSelect(query)
+        if len(data) < 9:
+            iid = 'PR000' + str(len(data) + 1)
+        elif len(data) < 99:
+            iid = 'PR00' + str(len(data) + 1)
+        elif len(data) < 999:
+            iid = 'PR0' + str(len(data) + 1)
+        else:
+            iid = 'PR' + str(len(data) + 1)
+
+        query = "INSERT INTO pekerjatoperusahaan VALUES (\'" + iid + "\'. \'" + perusahaanid + "\', \'" + pekerjaid + "\', \'" + datetime.today(
+        ).strftime('%Y-%m-%d') + "\')"
+        ExecuteCMD(query)
+
+        query = "SELECT * FROM lampiranpekerja"
+        data = RunSelect(query)
+        if len(data) < 9:
+            iid = 'LP000' + str(len(data) + 1)
+        elif len(data) < 99:
+            iid = 'LP00' + str(len(data) + 1)
+        elif len(data) < 999:
+            iid = 'LP0' + str(len(data) + 1)
+        else:
+            iid = 'LP' + str(len(data) + 1)
+        # query = "INSERT INTO lampiranpekerja VALUES (\'" + pekerjaid + "\', \'" + perusahaanid + "\', \'" + filename + "\')"
+        # ExecuteCMD(query)
 
 
 from app.controllers import *

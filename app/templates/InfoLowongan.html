@@ -206,9 +206,9 @@
 		</div>
 	</section>
 
-	<form action="" method="POST" style="text-align: center;">
+	<form action="" method="POST" style="text-align: center;" id="formlamar" enctype="multipart/form-data">
 		<span class="btn btn-primary btn-file" style="background-color: #79A0EF; width: 15%; border-radius: 10px;">
-			Lamar<input type="file">
+			Lamar<input type="file" name="applyfiles" id="lamar">
 		</span>
 	</form>
 
@@ -237,7 +237,9 @@
 	</footer>
 </body>
 <script>
-
+document.getElementById("lamar").onchange = function() {
+    document.getElementById("formlamar").submit();
+};
 </script>
 
 </html>
