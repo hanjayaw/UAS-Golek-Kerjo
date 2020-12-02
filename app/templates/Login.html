@@ -17,7 +17,7 @@
     </script>
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Arvo&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="Login.css">
+    <link rel="stylesheet" href="{{url_for('static', filename='css/Login.css')}}">
     <title>Document</title>
 </head>
 
@@ -70,7 +70,7 @@
     <!-- Daftar Form -->
     <div class="container container-form">
         <h1>LOGIN</h1>
-        <form action="">
+        <form method="POST">
             <div class="emailinput">
                 <input type="email" id="inputemail" class="inputform" placeholder="Email" name="masukemail">
             </div>
