@@ -40,13 +40,13 @@
                     </ul>
                     <ul class="navbar-nav text-uppercase ml-auto">
                         <li class="nav-item" style="top: auto; right: auto;">
-                            <input type="image" src="{{url_for('static', filename='images/bell_1.png')}}" alt="Submit" width="25" height="25" class="mx-md-1 mx-lg-2 mx-xl-3">
+                            <input type="image" src="{{url_for('static', filename='images/bell_1.png')}}" id="myBtn" alt="Submit" width="25" height="25" class="mx-md-1 mx-lg-2 mx-xl-3">
                         </li>
                         <li class="nav-item" style="top: auto;">
                             <small>Hai, {{session["user"]}}</small>
                         </li>
                         <li class="nav-item" style="top: auto; right: auto;">
-                            <img src='{{url_for("static", filename="profile/")}}{{session["profilepicture"]}}' alt="Submit" width="25" height="25" class="mx-md-1 mx-lg-2 mx-xl-3">
+                            <img src='{{url_for("static", filename="profile/")}}{{session["profilepicture"]}}' style="border-radius: 50%;" alt="Submit" width="30" height="30" class="mx-md-1 mx-lg-2 mx-xl-3">
                         </li>
                     </ul>
                 </div>
@@ -95,8 +95,44 @@
 
     
 {% endif %}
+<div id="myModal" class="modal">
+<!-- Modal content -->
+    <div class="modal-content">
+      <span class="close">&times;</span>
+      <p>Some text in the Modal..</p>
+    </div>
+</div>
 
+<script>
+    // Get the modal
+    var modal = document.getElementById("myModal");
+    
+    // Get the button that opens the modal
+    var btn = document.getElementById("myBtn");
+    
+    // Get the <span> element that closes the modal
+    var span = document.getElementsByClassName("close")[0];
+    
+    // When the user clicks the button, open the modal 
+    btn.onclick = function() {
+      modal.style.display = "block";
+    }
+    
+    // When the user clicks on <span> (x), close the modal
+    span.onclick = function() {
+      modal.style.display = "none";
+    }
+    
+    // When the user clicks anywhere outside of the modal, close it
+    window.onclick = function(event) {
+      if (event.target == modal) {
+        modal.style.display = "none";
+      }
+    }
+    </script>
+    
 {% block content %} {% endblock %}
+
 
     <footer class="gk-footer">
         <div class="container">
@@ -125,505 +161,44 @@
         </div>
     </footer>
 </body>
-<!-- 
 <style>
-*{
-    margin:0;
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  padding-top: 100px; /* Location of the box */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
 }
 
-.ukuransearch{
-    width: 70%;
-    margin-left: 15%;
-    margin-top: -2%;
+/* Modal Content */
+.modal-content {
+  background-color: #fefefe;
+  padding: 20px;
+  border: 1px solid #888;
+  width: 10%;
+  height: 50%;
+  margin-left: 85%;
+  margin-top: -2%;
 }
 
-.UkuranJudul{
-margin-top: 5%;
-margin-left: 3%;
+/* The Close Button */
+.close {
+  color: #aaaaaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
 }
 
-.slick-next,.slick-arrow::before{
-   color: #000000!important;
+.close:hover,
+.close:focus {
+  color: #000;
+  text-decoration: none;
+  cursor: pointer;
 }
-
-.slick-prev,.slick-arrow::before{
-   color: #000000!important;
-}
-
-body{
-    font-family: 'raleway', sans-serif;
-    font-size: 14px;
-    font-weight: 400;
-    color: #777777;
-}
-
-h1{
-    font-size: 36px;
-    color: #555555;
-    font-weight: bold;
-}
-
-h3{
-    font-size: 24px;
-    color: #131c8f;
-    font-weight: bold;
-}
-
-#team img{
-    margin-top: -50px;
-}
-
-#team i{
-    font-size: 26px;
-    color: #75b410;
-}
-
-#team p{
-    font-weight: 500;
-}
-
-#team .card{
-    border-radius: 0;
-    box-shadow: 5px 5px 15px #feb690;
-    transition: all 0.3s ease-in;
-    -webkit-transition: all 0.3s ease-in;
-    -moz-transition: all 0.3s ease-in;
-}
-
-#team .card:hover{
-    background: #feb690;
-    color:#ffffff;
-    border-radius: 5px;
-    border: none;
-    box-shadow: 5px 5px 10px #8a7d7d;
-}
-
-#team .card:hover h3, #team .card:hover i{
-    color: #ffffff;
-}
-
-.pad15{
-    box-shadow: 15px 15px #79A0EF;
-    outline: 1px solid grey;    
-}
-
-.filter{
-    margin-right: 0;
-}
-
-.form{
-    width: 200%!important;
-}
-
-    .navbarsearch{
-        margin-top: 5%;
-    }
-
-    .navbar{
-    max-height: 8vh;
-}
-
-   .ukuran h4{
-    margin-top: 5%;
-    margin-left: 3%;
-
-}
-
-    /* .ukuransliderphoto{
-    height: 100px;
-    width: 1250px;
-    left: 290px;
-    top: 200px;
-    position: absolute;
-    } */
-
-    .ukuranfotosearch{
-    height: 3vh;
-    width: 2%;
-    top: 10%;
-    right: 10%;
-    position: absolute;
-    }
-
-    .ukurantextlowongan{
-        margin-top: 5%;
-        margin-left: 43%;
-    }
-
-    .ukuranfotofilter{
-    height: 3vh;
-    width: 2%;
-    top: 10%;
-    right: 5%;
-    position: absolute;
-    }
-
-    .ukurantombolprev{ 
-    height: 5vh;
-    width: 20%;
-    }
-
-    .ukurantombolnext{
-    height: 5vh;
-    width: 20%;
-    }
-
-    .ukurantombolprevperusahaan{
-    height: 5vh;
-    width: 50px;
-    left: -8%;
-    top: 30%;
-    background-color: #000000;
-    position: absolute;
-    }
-
-    .ukurantombolnextperusahaan{
-    height: 5vh;
-    width: 50px;
-    right: 280%;
-    top: 30%;
-    background-color: #000000;
-    position: absolute;
-    }
-
-
-    .ukuransliderperusahaan{
-        width: 70%;
-        top: 10%;
-        left: 15%;
-    }
-
-    .ukuransliderlowongan{
-        top: 50px;
-        left: 25%;
-        height: 10%;
-    }
- /* Footer
- .footer-img {
-        width: 50px;
-    }
-
-    .footer-list p {
-        display: inline-block;
-        color: white;
-        margin-left: 5%;
-    }
-
-    .footer-list {
-        margin-top: 20%;
-    }
-
-    .footer-list li {
-        list-style: none;
-        margin-bottom: 3%;
-    }
-
-    .gk-footer {
-        margin-top: 15%;
-        background-color: #79A0EF;
-        height: auto;
-
-    }
-
-    #gk-logo {
-        max-width: 100%;
-        max-height: 50%;
-        margin-top: 23%;
-        margin-left: 5%;
-    }
-
-    .gk-text {
-        margin-top: 7%;
-        margin-left: -5%;
-        text-align: justify;
-        color: white;
-    } */
-
-    /* Testimoni */
-    .testimoni-container {
-        margin-top: 5%;
-    }
-
-    /* .img-area{
-        position: absolute;
-        width: 100px;
-        height: 100px;
-        border: 5px solid #fff;
-        overflow:hidden;
-        top: 15px;
-        left: 40%;
-        border-radius: 50%;    
-    }
-    .img-area img{
-        width: 100%;        
-    } */
-    .carousel-indicators {
-        left: 0;
-        top: auto;
-        bottom: -70px;
-    }
-
-    .carousel-indicators li {
-        background: #79A0EF;
-        border-radius: 50%;
-        width: 25px;
-        height: 5px;
-    }
-
-    .img-text {
-        width: 100%;
-        height: 30vh;
-        display: block;
-        text-align: center;
-        padding-top: 5%;
-        margin-bottom: 10px;
-
-    }
-
-    .box {
-        text-align: center;
-        align-items: center;
-        justify-content: center;
-        background-color: #ffffff;
-        border: #000000;
-        box-shadow: 15px 15px #FEB690;
-        padding-top: 5%;
-        padding-left: 8%;
-        color: rgb(0, 0, 0);
-        position: relative;
-        margin-bottom: 30px;
-    }
-
-    /* Services */
-    .pelayananimg {
-        width: 60%;
-    }
-
-    .title {
-
-        display: flex;
-        justify-content: center;
-        text-align: center;
-        z-index: 1;
-        background-color: #e3edff;
-        font-size: 350%;
-        margin: 0;
-        padding-top: 3%;
-    }
-
-    .service {
-        display: flex;
-        justify-content: center;
-        text-align: center;
-        align-items: center;
-        min-height: 70vh;
-        background-color: #e3edff
-    }
-
-    .service-container .card {
-        position: relative;
-        width: 350px;
-        padding: 50px;
-        margin: 20px;
-        background-color: white;
-        box-shadow: 0 5px 15px rgba(0, 0, 0, .1);
-        border-radius: 4px;
-        margin-top: 3%;
-        box-sizing: border-box;
-        overflow: hidden;
-
-    }
-
-    .service-container {
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: center;
-        align-items: center;
-    }
-
-    .service-container .card .numb {
-        position: relative;
-        width: 80px;
-        height: 80px;
-        color: #88a9eb;
-        top: 10%;
-        background: #88a9eb;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        margin: 0 auto;
-        border-radius: 50%;
-        font-size: 150%;
-        transition: 1s;
-    }
-
-
-    .service-container .card:nth-child(1) .numb {
-        box-shadow: 0 0 0 0 #79A0EF;
-        background-color: #79A0EF;
-
-    }
-
-    .service-container .card:nth-child(1):hover .numb {
-        box-shadow: 0 0 0 400px #79A0EF;
-
-    }
-
-    .service-container .card:nth-child(2) .numb {
-        box-shadow: 0 0 0 0 #79A0EF;
-        background-color: #79A0EF;
-
-    }
-
-    .service-container .card:nth-child(2):hover .numb {
-        box-shadow: 0 0 0 400px #79A0EF;
-
-    }
-
-    .service-container .card:nth-child(3) .numb {
-        box-shadow: 0 0 0 0 #79A0EF;
-        background-color: #79A0EF;
-
-    }
-
-    .service-container .card:nth-child(3):hover .numb {
-        box-shadow: 0 0 0 400px #79A0EF;
-
-    }
-
-    .service-container .card .content {
-        position: relative;
-        z-index: 1;
-        transition: 0, 5s;
-    }
-
-
-    /* About Us */
-    #about-us {
-        margin-top: 5%;
-        margin-bottom: 5%;
-    }
-
-    .about-img {
-        max-width: 100%;
-        padding: 5%;
-    }
-
-    #about-img {
-        position: absolute;
-        right: -10%;
-        z-index: 1;
-    }
-
-    .about-text {
-        background-color: #79A0EF;
-        padding: 10%;
-        color: white;
-        /* padding-left: 10%; */
-    }
-
-    /* Search Location Awal */
-    /* .landing-search-location {
-        background-image: url(windows-C6T6vr1sQI0-unsplash_.png);
-        background-size: cover;
-        width: 100%;
-        height: 100vh;
-    } */
-    .top-container {
-        position: relative;
-        color: black;
-    }
-
-    .header {
-        width: 100%;
-        height: auto;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        position: relative;
-    }
-
-    .text {
-        background-color: white;
-        position: absolute;
-        left: 50%;
-        top: 50%;
-        transform: translate(-50%, -50%);
-        width: 50%;
-        height: auto;
-        padding-top: 5%;
-        padding-bottom: 3%;
-        align-items: center;
-        justify-content: center;
-        text-align: center;
-        border-radius: 20px;
-    }
-
-    #search-input {
-        width: 65%;
-        height: 7vh;
-        font-size: 24px;
-        margin-top: -5%;
-        margin-left: 15%;
-        text-align: center;
-        border-radius: 100px;
-        outline: none;
-    }
-
-    #search-submit {
-        margin-top: -8%;
-        margin-left: 82%;
-        padding: 1% 1% 1% 1%;
-        border-radius: 20px;
-        color: white;
-        background-color: #79A0EF;
-        outline: none;
-        border: none;
-    }
-
-
-    @media screen and (max-width: 1000px) {
-        #about-img {
-            position: static;
-            right: none;
-            z-index: none;
-        }
-    }
-
-    @media screen and (max-width: 700px) {
-        .text {
-            width: 50%;
-            height: auto;
-        }
-
-        .text h2 {
-            font-size: 50%;
-        }
-
-        #search-input {
-            width: 50%;
-            font-size: 50%;
-            height: 3vh;
-        }
-
-        #search-submit {
-            width: 30%;
-            font-size: 50%;
-            height: 3vh;
-            margin-bottom: 10px;
-        }
-
-        .about-text {
-            font-size: 70%;
-        }
-
-        #gk-logo {
-            margin-left: -30%;
-        }
-
-
-    }
-    .card{
-        margin-bottom: 5%;
-    }
-</style> -->
+</style>
