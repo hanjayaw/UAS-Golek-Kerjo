@@ -62,6 +62,8 @@ def daftarpage():
 def masukpage():
     if "user" in session:
         # To Be Continued
+        # To Be Continued
+        # To Be Continued
         return redirect(url_for('perusahaan'))
     else:
         if request.method == "POST":
@@ -84,7 +86,14 @@ def masukpage():
                 session["user"] = nama
                 session["iduser"] = idpekerja
                 session["profilepicture"] = profilpekerja
+                # To Be Continued
+                # To Be Continued
+                # To Be Continued
+
                 return redirect(url_for('perusahaan'))
+            # To Be Continued
+            # To Be Continued
+            # To Be Continued
 
             return "Yes"
         else:
@@ -122,8 +131,3 @@ def infolowongan(idlowongan):
                                phone=results[0][8],
                                kualif=results[0][9].split(","),
                                desk=results[0][10].split(","))
-
-
-@app.route('/master', methods=["POST", "GET"])
-def master():
-    return render_template('master.html')
