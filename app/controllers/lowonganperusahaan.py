@@ -1,7 +1,7 @@
-from flask import Flask, render_template, request
+from flask import Flask, render_template, request, session
 from app import app, ExecuteCMD, RunSelect, RunSelectOne
 import math 
-
+app.secret_key = 'Golekbarangkerjo'
 
 
 
@@ -45,3 +45,8 @@ def perusahaan():
     sql = "SELECT p.nama_perusahaan, k.kota, COUNT(p.id_perusahaan) , p.logo_perusahaan from jobs j, kota k, perusahaan p where p.id_kota = k.id_kota and j.id_perusahaan = p.id_perusahaan GROUP BY p.id_perusahaan LIMIT " +str(currentindex)+", " +str(n_size)+";"
     hasil = RunSelect(sql)
     return render_template('perusahaan.html',results = results, hasil = hasil, pages=n_pages, currentpage=int(currentpage))
+
+@app.route('/logout')
+def logout():
+    session.pop()
+    return 'yes'

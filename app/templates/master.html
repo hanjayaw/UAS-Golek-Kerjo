@@ -39,11 +39,14 @@
                         </li>
                     </ul>
                     <ul class="navbar-nav text-uppercase ml-auto">
-                        <li class="nav-item">
-                            <h1>{{session["user"]}}</h1>
+                        <li class="nav-item" style="top: auto; right: auto;">
+                            <input type="image" src="{{url_for('static', filename='images/bell_1.png')}}" alt="Submit" width="25" height="25" class="mx-md-1 mx-lg-2 mx-xl-3">
                         </li>
-                        <li class="nav-item">
-                            <a href="" class="nav-link mx-md-1 mx-lg-2 mx-xl-3">Login</a>
+                        <li class="nav-item" style="top: auto;">
+                            <small>Hai, {{session["user"]}}</small>
+                        </li>
+                        <li class="nav-item" style="top: auto; right: auto;">
+                            <img src='{{url_for("static", filename="profile/")}}{{session["profilepicture"]}}' alt="Submit" width="25" height="25" class="mx-md-1 mx-lg-2 mx-xl-3">
                         </li>
                     </ul>
                 </div>
