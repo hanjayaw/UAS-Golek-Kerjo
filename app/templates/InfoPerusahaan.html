@@ -19,7 +19,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Arvo&display=swap" rel="stylesheet">
 
     <!-- CSS -->
-    <link rel="stylesheet" href="InfoPerusahaan.css">
+    <link rel="stylesheet" href="{{url_for('static', filename='css/InfoPerusahaan.css')}}">
     <title>GolekKerjo</title>
 </head>
 
@@ -72,7 +72,10 @@
     <!-- ImagePerusahaan -->
     <section class="ImagePerusahaan">
         <div class="image-perusahaan">
-            <img src="facebook-waw1_bfp.png" alt="">
+            <img src="{{imageperusahaan}}" alt="">
+            <!-- Image Perusahaan -->
+            <!-- Image Perusahaan -->
+            <!-- Image Perusahaan -->
         </div>
     </section>
 
@@ -82,20 +85,15 @@
             <div class="row main-row">
                 <div class="col-lg-4 col-md-12 col-sm-12">
                     <div class="company-img">
-                        <img src="download_ber.png" class="img-fluid" id="company-img">
+                        <img src="{{logoperusahaan}}" class="img-fluid" id="company-img">
                     </div>
                 </div>
                 <div class="col-lg-8 col-md-12 col-sm-12 company-text">
                     <div class="company-title mb-3">
                         <h3>Tentang Perusahaan</h3>
                     </div>
-                    <div class="company-desc mb-2">
-                        <p>Facebook, Inc. adalah sebuah layanan jejaring sosial
-                            berkantor pusat di Menlo Park, California, Amerika
-                            Serikat yang diluncurkan pada bulan Februari 2004.
-                            Per September 2012, Facebook memiliki lebih dari satu miliar pengguna
-                            aktif,lebih dari separuhnya menggunakan telepon genggam.
-                            Pengguna harus mendaftar sebelum dapat menggunakan situs ini.</p>
+                    <div class="company-desc mb-2" id="text-tentang">
+                        <p>bbbbbbbbbbbbbbbbbbbsajlfjsajfksajflksajfkjasdfasdfasdfafasdasfasasdfasfasfdasfasfasasafdsadfasfdasfasfdfadasdfsafasdfsafasdfsadfasfdsaasdfdsafdfadasfsfasdfsdafadsfafdsafasfdsadfasfdfsafasfsafjdlkfjlaksjfkjsadjlfasjfdklaskflkasjflkasjflskdaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa</p>
 
                     </div>
                 </div>
@@ -361,13 +359,21 @@
 
     });
 
-
-
-
     $("clickem").click(function () {
         window.location = $(this).find("a").attr("href");
         return false;
     });
-</script>
 
+    var long_string = document.getElementById("text-tentang").textContent;
+    long_string.split('');
+    var hasil
+    for (x of long_string){
+
+    }
+
+
+    document.getElementById('text-tentang').innerHTML()
+
+    document.getElementById('text-tentang').innerHTML = long_string.replace(/(.{50})/g, "$1<br>");
+</script>
 </html>
