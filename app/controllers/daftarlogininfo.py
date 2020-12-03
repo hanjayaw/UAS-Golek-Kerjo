@@ -12,7 +12,7 @@ def daftarpage():
     if "user" in session:
         return "Selamat anda telah login ternyata " + session["user"]
     else:
-
+        session.permanent = True
         if request.method == "POST":
             name = request.form["daftarname"].lower()
             email = request.form["daftaremail"].lower()
@@ -66,6 +66,7 @@ def masukpage():
         # To Be Continued
         return redirect(url_for('perusahaan'))
     else:
+        session.permanent = True
         if request.method == "POST":
             email = request.form["masukemail"].lower()
             password = request.form["masukpassword"]
@@ -145,5 +146,8 @@ def infoperusahaan(idperusahaan):
 
 @app.route('/logout')
 def logout():
-    session.pop()
+    session.pop("user", None)
+    session.pop("email", None)
+    session.pop("iduser", None)
+    session.pop("profilepicture", None)
     return 'Sudah Logout'
