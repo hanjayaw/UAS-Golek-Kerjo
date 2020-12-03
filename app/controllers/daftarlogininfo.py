@@ -100,21 +100,26 @@ def masukpage():
             return render_template('Login.html')
 
 
-@app.route('/searched/<idlowongan>', methods=["POST", "GET"])
+@app.route('/searched/lowongan/<idlowongan>', methods=["POST", "GET"])
 def infolowongan(idlowongan):
     if request.method == "POST":
-        query = "SELECT perusahaan.id_perusahaan FROM perusahaan, jobs WHERE perusahaan.id_perusahaan = jobs.id_perusahaan AND id_jobs = \'" + idlowongan.upper(
-        ) + "\';"
-        results = RunSelect(query)
+        if "user" in session:
+            query = "SELECT perusahaan.id_perusahaan FROM perusahaan, jobs WHERE perusahaan.id_perusahaan = jobs.id_perusahaan AND id_jobs = \'" + idlowongan.upper(
+            ) + "\';"
+            results = RunSelect(query)
 
-        files = request.files["applyfiles"]
-        pekerjaid = session["iduser"]
-        perusahaanid = results[0][0]
-        saveApplyFiles(files=files,
-                       pekerjaid=pekerjaid,
-                       perusahaanid=perusahaanid)
-        return ''
+            files = request.files["applyfiles"]
+            pekerjaid = session["iduser"]
+            perusahaanid = results[0][0]
+            saveApplyFiles(files=files,
+                           pekerjaid=pekerjaid,
+                           perusahaanid=perusahaanid)
+            return redirect(url_for('lowongan'))
+        else:
+            return redirect(url_for('masukpage'))
+
     else:
+
         query = "SELECT p.logo_perusahaan, j.tipe_job, j.duration_job, k.kota, j.minimum_gaji, j.maximum_gaji, p.website, p.email, p.telepon_perusahaan, j.kualifikasi_job, j.deskripsi_job FROM jobs j, perusahaan p, kota k WHERE j.id_perusahaan = p.id_perusahaan AND p.id_kota = k.id_kota AND j.id_jobs = \'" + idlowongan.upper(
         ) + "\';"
         results = RunSelect(query)
@@ -131,3 +136,14 @@ def infolowongan(idlowongan):
                                phone=results[0][8],
                                kualif=results[0][9].split(","),
                                desk=results[0][10].split(","))
+
+
+@app.route('/searched/perusahaan/<idperusahaan>')
+def infoperusahaan(idperusahaan):
+    return render_template('InfoPerusahaan.html')
+
+
+@app.route('/logout')
+def logout():
+    session.pop()
+    return 'Sudah Logout'
