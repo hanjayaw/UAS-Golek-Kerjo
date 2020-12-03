@@ -150,4 +150,5 @@ def logout():
     session.pop("email", None)
     session.pop("iduser", None)
     session.pop("profilepicture", None)
-    return 'Sudah Logout'
+    return 'Yes'
+    # return redirect(url_for('')) Landing Page

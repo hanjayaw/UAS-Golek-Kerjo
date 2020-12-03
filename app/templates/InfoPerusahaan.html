@@ -365,13 +365,15 @@
     });
 
     var long_string = document.getElementById("text-tentang").textContent;
-    long_string.split('');
+    long_string.split(' ');
     var hasil
+    var counter = 0
     for (x of long_string){
+        counter++;
+        hasil = hasil + " " + x
+        
 
     }
-
-
     document.getElementById('text-tentang').innerHTML()
 
     document.getElementById('text-tentang').innerHTML = long_string.replace(/(.{50})/g, "$1<br>");
