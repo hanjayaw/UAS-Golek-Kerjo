@@ -141,7 +141,19 @@ def infolowongan(idlowongan):
 
 @app.route('/searched/perusahaan/<idperusahaan>')
 def infoperusahaan(idperusahaan):
-    return render_template('InfoPerusahaan.html')
+    query = "SELECT p.foto_perusahaan, p.logo_perusahaan, p.deskripsi_perusahaan, p.website, p.email, p.telepon_perusahaan FROM perusahaan p WHERE p.id_perusahaan = \'" + idperusahaan + "\'"
+    results = RunSelect(query)
+
+    query = "SELECT p.logo_perusahaan, j.tipe_job, p.nama_perusahaan, k.kota, j.minimum_gaji FROM kota k, jobs j, perusahaan p WHERE p.id_perusahaan = j.id_perusahaan AND k.id_kota = p.id_kota AND p.id_perusahaan = \'" + idperusahaan + "\'"
+    results2 = RunSelect(query)
+    return render_template('InfoPerusahaan.html',
+                           imageperusahaan=results[0][0],
+                           logoperusahaan=results[0][1],
+                           deskripsiperusahaan=results[0][2],
+                           website=results[0][3],
+                           email=results[0][4],
+                           phone=results[0][5],
+                           results=results2)
 
 
 @app.route('/logout')

@@ -141,10 +141,14 @@
 					<img src="{{url_for('static', filename='images/website.png')}}" alt="Instagram" id="instagram-logo"
 						class="sixfour">
 					{% if website != "" %}
-					<p style="padding-top: 5%;"><a href="https://www.{{website}}">Website</a></p>
+                        {% if 'https://www' not in website %}
+                            <p style="padding-top: 5%;"><a href="https://www.{{website}}">Website</a></p>
+                        {% else if 'https://' not in website %}
+                            <p style="padding-top: 5%;"><a href="https://{{website}}">Website</a></p>
+                        {% endif %}
 					{% else %}
-					<p style="padding-top: 5%;"><i>No Website</i></p>
-					{% endif %}
+					    <p style="padding-top: 5%;"><i>No Website</i></p>
+                    {% endif %}
 				</div>
 				<div class="col col-lg-3 col-md-3 col-sm-4 center-kontak-logo">
 					<img src="{{url_for('static', filename='images/email.png')}}" alt="Email" id="email-logo"
