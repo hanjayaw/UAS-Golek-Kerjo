@@ -4,5 +4,6 @@
         "pylint_flask_sqlalchemy",
         "pylint_flask"
     ],
-    "python.formatting.provider": "yapf"
+    "python.formatting.provider": "yapf",
+    "python.pythonPath": "env\\Scripts\\python.exe"
 }

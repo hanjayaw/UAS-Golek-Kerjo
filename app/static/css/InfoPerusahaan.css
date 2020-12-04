@@ -1,99 +1,4 @@
-/* Card */
-.tipe-pekerjaan {
-    display: flex;
-    justify-content: center;
-    text-align: center;
-    align-items: center;
-    min-height: 70vh;
-    background-color: #e3edff
-}
-
-.tipe-container .card-1 {
-    position: relative;
-    width: 350px;
-    padding: 50px;
-    margin: 20px;
-    background-color: white;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, .1);
-    border-radius: 4px;
-    margin-top: 3%;
-    box-sizing: border-box;
-    overflow: hidden;
-
-}
-
-.tipe-container {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-items: center;
-}
-
-.tipe-container .card-1 .numb {
-    position: relative;
-    width: 80px;
-    height: 80px;
-    color: #88a9eb;
-    top: 10%;
-    background: #88a9eb;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin: 0 auto;
-    border-radius: 50%;
-    font-size: 150%;
-    transition: 1s;
-}
-
-
-.tipe-container .card-1:nth-child(1) .numb {
-    box-shadow: 0 0 0 0 #79A0EF;
-    background-color: #79A0EF;
-
-}
-
-.tipe-container .card-1:nth-child(1):hover .numb {
-    box-shadow: 0 0 0 400px #79A0EF;
-
-}
-
-.tipe-container .card-1:nth-child(2) .numb {
-    box-shadow: 0 0 0 0 #79A0EF;
-    background-color: #79A0EF;
-
-}
-
-.tipe-container .card-1:nth-child(2):hover .numb {
-    box-shadow: 0 0 0 400px #79A0EF;
-
-}
-
-.tipe-container .card-1:nth-child(3) .numb {
-    box-shadow: 0 0 0 0 #79A0EF;
-    background-color: #79A0EF;
-
-}
-
-.tipe-container .card-1:nth-child(3):hover .numb {
-    box-shadow: 0 0 0 400px #79A0EF;
-
-}
-
-.tipe-container .card-1 .content {
-    position: relative;
-    z-index: 3;
-    transition: 0, 5s;
-}
-
-.carousel-control-next,
-.carousel-control-prev {
-    filter: invert(100%);
-}
-
-.carousel-indicators li {
-    filter: invert(100%);
-}
-
+/* Slider */
 
 .card {
     border-radius: 0;
@@ -163,6 +68,23 @@
 
 
 }
+
+#lowongan img {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.slick-next,
+.slick-arrow::before {
+    color: #000000 !important;
+}
+
+.slick-prev,
+.slick-arrow::before {
+    color: #000000 !important;
+}
+
 
 /* Kontak */
 .sixfour {

@@ -143,11 +143,11 @@ def infolowongan(idlowongan):
 def infoperusahaan(idperusahaan):
     query = "SELECT p.foto_perusahaan, p.logo_perusahaan, p.deskripsi_perusahaan, p.website, p.email, p.telepon_perusahaan FROM perusahaan p WHERE p.id_perusahaan = \'" + idperusahaan + "\'"
     results = RunSelect(query)
-
+    image = results[0][0]
     query = "SELECT p.logo_perusahaan, j.tipe_job, p.nama_perusahaan, k.kota, j.minimum_gaji FROM kota k, jobs j, perusahaan p WHERE p.id_perusahaan = j.id_perusahaan AND k.id_kota = p.id_kota AND p.id_perusahaan = \'" + idperusahaan + "\'"
     results2 = RunSelect(query)
     return render_template('InfoPerusahaan.html',
-                           imageperusahaan=results[0][0],
+                           imageperusahaan=image,
                            logoperusahaan=results[0][1],
                            deskripsiperusahaan=results[0][2],
                            website=results[0][3],

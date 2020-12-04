@@ -16,6 +16,19 @@
         integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous">
     </script>
     <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link rel="stylesheet" href="{{ url_for('static', filename='/bootstrap/css/bootstrap.min.css') }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick-theme.min.css"
+        integrity="sha512-17EgCFERpgZKcm0j0fEq1YCJuyAWdz9KUtv1EjVuaOz8pDnh/0nZxmU6BBXwaaxqoi9PQXnRWqlcDB027hgv9A=="
+        crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.css"
+        integrity="sha512-yHknP1/AwR+yx26cB1y0cjvQUMvEa2PFzt1c9LlS4pRQ5NOTZFWbhBig+X9G9eYW/8m0/4OXNx8pxJ6z57x0dw=="
+        crossorigin="anonymous" />
+    <script src="{{ url_for('static', filename='/js/jquery3.5.1.js') }}"></script>
+    <script src="{{ url_for('static', filename='/popper/js/popper.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='/bootstrap/js/bootstrap.min.js') }}"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.js"
+        integrity="sha512-HGOnQO9+SP1V92SrtZfjqxxtLmVzqZpjFFekvzZVWoiASSQgSr4cw9Kqd2+l8Llp4Gm0G8GIFJ4ddwZilcdb8A=="
+        crossorigin="anonymous"></script>
     <link href="https://fonts.googleapis.com/css2?family=Arvo&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="{{url_for('static', filename='css/index.css')}}">
 
@@ -73,7 +86,8 @@
     <!-- ImagePerusahaan -->
     <section class="ImagePerusahaan">
         <div class="image-perusahaan">
-            <img src="{{url_for('static', filename='images/')}}{{imageperusahaan}}" alt="" style="width: 100%; height: 100vh;">
+            <img src="{{url_for('static', filename='images/')}}{{imageperusahaan}}" alt=""
+                style="width: 100%; height: 100vh;">
             <!-- Image Perusahaan -->
             <!-- Image Perusahaan -->
             <!-- Image Perusahaan -->
@@ -86,7 +100,8 @@
             <div class="row main-row">
                 <div class="col-lg-4 col-md-12 col-sm-12">
                     <div class="company-img">
-                        <img src="{{url_for('static', filename='images/')}}{{logoperusahaan}}" class="img-fluid" id="company-img">
+                        <img src="{{url_for('static', filename='images/')}}{{logoperusahaan}}" class="img-fluid"
+                            id="company-img">
                     </div>
                 </div>
                 <div class="col-lg-8 col-md-12 col-sm-12 company-text">
@@ -103,69 +118,74 @@
 
     <!-- Kontak -->
     <section class="section-kontak" id="kontak">
-		<div class="container-fluid kontak-container">
-			<p id="text-kontak">Kontak</p>
-		</div>		
-		<div class="container-fluid ">
-			<div class="row align-items-center">
-				<div class="col col-lg-3 col-md-3 col-sm-4 center-kontak-logo">
-					<img src="{{url_for('static', filename='images/website.png')}}" alt="Instagram" id="instagram-logo"
-						class="sixfour">
+        <div class="container-fluid kontak-container">
+            <p id="text-kontak">Kontak</p>
+        </div>
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col col-lg-3 col-md-3 col-sm-4 center-kontak-logo">
+                    <img src="{{url_for('static', filename='images/website.png')}}" alt="Instagram" id="instagram-logo"
+                        class="sixfour">
                     {% if website != "" %}
-                        {% if 'https://www' not in website %}
-                            <p style="padding-top: 5%;"><a href="https://www.{{website}}">Website</a></p>
-                        {% elif 'https://' not in website %}
-                            <p style="padding-top: 5%;"><a href="https://{{website}}">Website</a></p>
+                        {% if 'https://' in website %}
+                        <p style="padding-top: 5%;"><a href="{{website}}">Website</a></p>
+                        {% elif 'www' in website %}
+                        <p style="padding-top: 5%;"><a href="https://{{website}}">Website</a></p>
+                        {% else %}
+                        <p style="padding-top: 5%;"><a href="https://www{{website}}">Website</a></p>
                         {% endif %}
-					{% else %}
-					    <p style="padding-top: 5%;"><i>No Website</i></p>
+                    {% else %}
+                        <p style="padding-top: 5%;"><i>No Website</i></p>
                     {% endif %}
                     <!-- Website -->
                     <!-- Website -->
                     <!-- Website -->
-				</div>
-				<div class="col col-lg-3 col-md-3 col-sm-4 center-kontak-logo">
-					<img src="{{url_for('static', filename='images/email.png')}}" alt="Email" id="email-logo"
-						class="sixfour">
-					{% if email != "" %}
-					<p style="padding-top: 5%;">{{email}}</p>
-					{% else %}
-					<p style="padding-top: 5%;">No Email</p>
+                </div>
+                <div class="col col-lg-3 col-md-3 col-sm-4 center-kontak-logo">
+                    <img src="{{url_for('static', filename='images/email.png')}}" alt="Email" id="email-logo"
+                        class="sixfour">
+                    {% if email != "" %}
+                    <p style="padding-top: 5%;">{{email}}</p>
+                    {% else %}
+                    <p style="padding-top: 5%;">No Email</p>
                     {% endif %}
                     <!-- Email -->
                     <!-- Email -->
                     <!-- Email -->
-				</div>
-				<div class="col col-lg-3 col-md-3 col-sm-4 center-kontak-logo">
-					<img src="{{url_for('static', filename='images/Phone_be.png')}}" alt="Telepon" id="telepon-logo"
-						class="sixfour">
-					{% if phone != "" %}
-					<p style="padding-top: 5%;">{{phone}}</p>
-					{% else %}
-					<p style="padding-top: 5%;">No Phone</p>
+                </div>
+                <div class="col col-lg-3 col-md-3 col-sm-4 center-kontak-logo">
+                    <img src="{{url_for('static', filename='images/Phone_be.png')}}" alt="Telepon" id="telepon-logo"
+                        class="sixfour">
+                    {% if phone != "" %}
+                    <p style="padding-top: 5%;">{{phone}}</p>
+                    {% else %}
+                    <p style="padding-top: 5%;">No Phone</p>
                     {% endif %}
                     <!-- Phone -->
                     <!-- Phone -->
                     <!-- Phone -->
-				</div>
-			</div>
-		</div>
-	</section>
-
-    <!-- Slider Lowongan Perusahaan -->
-    <section class = "Rekomendasi">
-        <div class = "container my-3 py-5 text-center">
-            <div class="row">
-                <div class = "col">
-                    <h3> Rekomendasi Lowongan</h3>
                 </div>
             </div>
-            <div class = "row mt-5 slider">
+        </div>
+    </section>
+
+    <!-- Slider Lowongan Perusahaan -->
+    <section class="LowonganBaru">
+        <div class="container my-3 py-5 text-center">
+            <div class="row">
+                <div class="col">
+                    {% if results %}
+                        <h3>Lowongan baru</h3>
+                    {% endif %}
+                </div>
+            </div>
+            <div class="row mt-5 slider">
                 {%for item in results%}
-                <div class = "col-md-12">
-                    <div class = "card mb-5">
-                        <div class = "card-body">
-                            <img src = "static/images/{{item[0]}}" class = "img-fluid rounded-circle mb-3  mx-auto" id = "lowongan" style="width: 10%; height: 10%">
+                <div class="col-md-12">
+                    <div class="card-2 mb-5">
+                        <div class="card-body" style="width: 100%; height: 50%;">
+                            <img src="{{url_for('static', filename='images/')}}{{item[0]}}" class="img-fluid rounded-circle mb-3  mx-auto"
+                                id="lowongan" style="width: 30; height: 60">
                             <h5>{{item[1]}}</h5>
                             <p>{{item[2]}}</p>
                             <p>{{item[3]}}</p>
@@ -214,43 +234,45 @@
 
 <script src="{{ url_for('static', filename='/js/jquery3.5.1.js') }}"></script>
 <script src="{{ url_for('static', filename='/popper/js/popper.min.js') }}"></script>
-<script src= "{{ url_for('static', filename='/bootstrap/js/bootstrap.min.js') }}"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.js" integrity="sha512-HGOnQO9+SP1V92SrtZfjqxxtLmVzqZpjFFekvzZVWoiASSQgSr4cw9Kqd2+l8Llp4Gm0G8GIFJ4ddwZilcdb8A==" crossorigin="anonymous"></script>
+<script src="{{ url_for('static', filename='/bootstrap/js/bootstrap.min.js') }}"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.js"
+    integrity="sha512-HGOnQO9+SP1V92SrtZfjqxxtLmVzqZpjFFekvzZVWoiASSQgSr4cw9Kqd2+l8Llp4Gm0G8GIFJ4ddwZilcdb8A=="
+    crossorigin="anonymous"></script>
 <script type="text/javascript">
-$('.slider').slick({
-  dots: true,
-  infinite: false,
-  speed: 300,
-  slidesToShow: 3,
-  slidesToScroll: 3,
-  responsive: [
-    {
-      breakpoint: 1024,
-      settings: {
-        slidesToShow: 2,
-        slidesToScroll: 2,
-        infinite: true,
-        dots: true
-      }
-    },
-    {
-      breakpoint: 600,
-      settings: {
-        slidesToShow: 2,
-        slidesToScroll: 2
-      }
-    },
-    {
-      breakpoint: 480,
-      settings: {
-        slidesToShow: 1,
-        slidesToScroll: 1
-      }
-    }
-    // You can unslick at a given breakpoint now by adding:
-    // settings: "unslick"
-    // instead of a settings object
-  ]
-});
+    $('.slider').slick({
+        dots: true,
+        infinite: false,
+        speed: 300,
+        slidesToShow: 3,
+        slidesToScroll: 3,
+        responsive: [{
+                breakpoint: 1024,
+                settings: {
+                    slidesToShow: 2,
+                    slidesToScroll: 2,
+                    infinite: true,
+                    dots: true
+                }
+            },
+            {
+                breakpoint: 600,
+                settings: {
+                    slidesToShow: 2,
+                    slidesToScroll: 2
+                }
+            },
+            {
+                breakpoint: 480,
+                settings: {
+                    slidesToShow: 1,
+                    slidesToScroll: 1
+                }
+            }
+            // You can unslick at a given breakpoint now by adding:
+            // settings: "unslick"
+            // instead of a settings object
+        ]
+    });
 </script>
+
 </html>
