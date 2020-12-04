@@ -31,7 +31,7 @@ hr{
     content: "";
     border-radius: 15px;
     border:none;
-    background: url("cloud-computing.png") no-repeat left center;
+    background: url(/static/images/cloud-computing.png) no-repeat left center;
     background-size: 20px;
 }
 
@@ -48,11 +48,9 @@ hr{
     color: white !important;
 }
 #inputnama {
-    background: url("user_d.png") no-repeat left center;
+    background: url(/static/images/user.png)no-repeat left center;
     background-size: 25px;
     width: 100%;
-    /* outline: gray; */
-    /* border: 2px lightgray solid; */
     border-radius: 15px;
 
     background-color:white;
@@ -67,7 +65,7 @@ input[type="text"] {
 
 
 #inputjenis {
-    background: url("gender-symbols.png") no-repeat left center;
+    background:  url(/static/images/gender-symbols.png) no-repeat left center;
     background-size: 25px;
     width: 100%;
     border-radius: 15px;
@@ -79,7 +77,7 @@ input[type="text"] {
 
 
 #inputtanggal{
-    background: url("birthday-cupcake.png") no-repeat left center;
+    background: url(/static/images/birthday-cupcake.png) no-repeat left center;
     background-size: 25px;
     width: 100%;
     border-radius: 15px;
@@ -90,7 +88,7 @@ input[type="text"] {
 }
 
 .dropdown-lulusan{
-    background: url("mortarboard.png") no-repeat left center;
+    background: url(/static/images/mortarboard.png) no-repeat left center;
     background-size: 25px;
     width: 100%;
     border-radius: 15px;
@@ -102,7 +100,7 @@ input[type="text"] {
 }
 
 #inputalamat{
-    background: url("home.png") no-repeat left center;
+    background: url(/static/images/home.png) no-repeat left center;
     background-size: 25px;
     width: 100%;
     border-radius: 15px;
@@ -113,7 +111,7 @@ input[type="text"] {
 }
 
 .dropdown-kota{
-    background: url("buildings@2x.png") no-repeat left center;
+    background: url(/static/images/buildings@2x.png) no-repeat left center;
     background-size: 25px;
     width: 100%;
     border-radius: 15px;
@@ -124,7 +122,7 @@ input[type="text"] {
 }
 
 .dropdown-provinsi{
-    background: url("africa.png") no-repeat left center;
+    background: url(/static/images/africa.png) no-repeat left center;
     background-size: 25px;
     width: 100%;
     border-radius: 15px;
@@ -136,7 +134,7 @@ input[type="text"] {
 
 #inputtelpon{
 
-    background: url("communication.png") no-repeat left center;
+    background: url(/static/images/communication.png) no-repeat left center;
     background-size: 25px;
     width: 100%;
     border-radius: 15px;
@@ -150,7 +148,7 @@ input[type="text"] {
 
 #inputinsta{
 
-    background: url("InstagramLogo_a.png") no-repeat left center;
+    background: url(/static/images/Instagramlogo_a.png)no-repeat left center;
     background-size: 25px;
     width: 100%;
     border-radius: 15px;
@@ -164,7 +162,7 @@ input[type="text"] {
 
 #inputlink{
 
-    background: url("NoPath_-_Copy_5_.png") no-repeat left center;
+    background: url(/static/images/NoPath_-_Copy_5_.png)no-repeat left center;
     background-size: 25px;
     width: 100%;
     border-radius: 15px;
@@ -178,7 +176,7 @@ input[type="text"] {
 }
 
 #inputemail{
-    background: url("Email_bb.png") no-repeat left center;
+    background: url(/static/images/Email_bb.png) no-repeat left center;
     background-size: 25px;
     width: 100%;
     border-radius: 15px;
@@ -191,7 +189,7 @@ input[type="text"] {
 }
 
 #KTP{
-    background: url("driver-license.png") no-repeat left center;
+    background: url(/static/images/driver-license.png) no-repeat left center;
     background-size: 25px;
     width: 100%;
     border-radius: 15px;
@@ -205,7 +203,7 @@ input[type="text"] {
 }
 
 .dropdown-job{
-    background: url("suitcase.png") no-repeat left center;
+    background: url(/static/images/suitcase.png) no-repeat left center;
     background-size: 25px;
     width: 100%;
     border-radius: 15px;
@@ -219,7 +217,7 @@ input[type="text"] {
 }
 
 .dropdown-tipe{
-    background: url("job-offer_.png") no-repeat left center;
+    background: url(/static/images/job-offer_.png) no-repeat left center;
     background-size: 25px;
     width: 100%;
     border-radius: 15px;
@@ -236,5 +234,23 @@ input#Range{
     height: 10vh;
 }
 
+.btn-file {
+    position: relative;
+    overflow: hidden;
+}
 
+.btn-file input[type=file] {
+    position: absolute;
+    top: 0;
+    right: 0;
+    min-width: 100%;
+    min-height: 100%;
+    font-size: 100px;
+    text-align: right;
+    filter: alpha(opacity=0);
+    opacity: 0;
+    outline: none;
+    cursor: inherit;
+    display: block;
+}
 
