@@ -11,14 +11,80 @@
                     <button class="btn  border border-left-0" type="button" style="width:30%;">
                         <img src="static/img/search.png" width="25%">
                     </button>
-                    <button class="btn  border border-left-0" type="button" style="width: 30%;">
+                    <button class="btn  border border-left-0" type="button" style="width: 30%;" id="myBtn1">
                         <img src="static/img/funnel_zu@2x.png" width="25%">
                     </button>
                 </span>
             </div>
         </form>
     </div>
-</nav>  
+</nav>
+
+<form>
+    <div id="myModal1" class="modal1">
+        <!-- Modal content -->
+        <div class="modal1-content">
+            <span class="close1">&times;</span>
+            <div>
+                <label style="width:25%; margin-left:5%">Lokasi:</label>
+                <label style="width:25%; margin-left:5%">Tipe Pekerjaan:</label>
+                <label style="width:25%; margin-left:5%">Jenis Pekerjaan:</label>
+            </div>
+            <div class="advance" id="add">
+                <select id="lokasi" style="width:25%; height:35px; margin-left:5%">
+                    <option value="volvo">Surabaya</option>
+                </select>
+                <select id="tipe-pekerjaan" style="width:25%; height:35px; margin-left:5%">
+                    <option value="volvo">Akuntan</option>
+                </select>
+                <select id="jenis-pekerjaan" style="width:25%; height:35px; margin-left:5%">
+                    <option value="volvo">Full Time</option>
+                </select>
+            </div>
+            <div style="margin-top:5%; text-align:center">
+                <label for="gaji-minim" style="height:35px">Gaji Minimum(RP):</label>
+                <input type="number" name="gaji-minim" min="1" id="no1">
+            </div>
+            <div style="text-align:center">
+                <label for="gaji-max" style="height:35px">Gaji Maximum(RP):</label>
+                <input type="number" name="gaji-max" min="1" id="no2">
+            </div>
+            <div>
+                <button
+                    style="width:10%; height:35px ; margin-left:45%; margin-top:5%; background-color:#79A0EF; color: #ffffff; border:none; border-radius:10px">Selesai</button>
+            </div>
+        </div>
+    </div>
+</form>
+
+<script>
+    // Get the modal
+    var modal = document.getElementById("myModal1");
+
+    // Get the button that opens the modal
+    var btn = document.getElementById("myBtn1");
+
+    // Get the <span> element that closes the modal
+    var span = document.getElementsByClassName("close1")[0];
+
+    // When the user clicks the button, open the modal 
+    btn.onclick = function () {
+        modal.style.display = "block";
+    }
+
+    // When the user clicks on <span> (x), close the modal
+    span.onclick = function () {
+        modal.style.display = "none";
+    }
+
+    // When the user clicks anywhere outside of the modal, close it
+    window.onclick = function (event) {
+        if (event.target == modal) {
+            modal.style.display = "none";
+        }
+    }
+
+</script>
 
 
 
@@ -37,8 +103,59 @@
 
 
 
+<style>
+    .modal1 {
+        display: none;
+        /* Hidden by default */
+        position: fixed;
+        /* Stay in place */
+        z-index: 1;
+        /* Sit on top */
+        padding-top: 100px;
+        /* Location of the box */
+        left: auto;
+        top: auto;
+        width: 100%;
+        /* Full width */
+        height: 100%;
+        /* Full height */
+        overflow: auto;
+        /* Enable scroll if needed */
+        background-color: rgb(0, 0, 0);
+        /* Fallback color */
+        background-color: rgba(0, 0, 0, 0.4);
+        /* Black w/ opacity */
+    }
 
+    /* Modal Content */
+    .modal1-content {
+        background-color: #ffffff;
+        padding: 3%;
+        border: 1% solid #888;
+        width: auto;
+        height: auto;
+        margin-top: -10%;
+        /* margin-left: 10%;
+        margin-right: 10%;
+        margin-bottom: 10%; */
 
+    }
 
+    /* The Close Button */
+    .close1 {
+        color: #ff0000;
+        margin-left: 95%;
+        top: 10%;
+        font-size: 30px;
+        font-weight: bold;
+    }
+
+    .close1:hover,
+    .close1:focus {
+        color: #000;
+        text-decoration: none;
+        cursor: pointer;
+    }
+</style>
 
 {% endblock %}
