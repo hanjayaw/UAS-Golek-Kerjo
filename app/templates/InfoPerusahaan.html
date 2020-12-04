@@ -17,6 +17,7 @@
     </script>
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Arvo&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{{url_for('static', filename='css/index.css')}}">
 
     <!-- CSS -->
     <link rel="stylesheet" href="{{url_for('static', filename='css/InfoPerusahaan.css')}}">
@@ -72,7 +73,7 @@
     <!-- ImagePerusahaan -->
     <section class="ImagePerusahaan">
         <div class="image-perusahaan">
-            <img src="{{imageperusahaan}}" alt="">
+            <img src="{{url_for('static', filename='images/')}}{{imageperusahaan}}" alt="" style="width: 100%; height: 100vh;">
             <!-- Image Perusahaan -->
             <!-- Image Perusahaan -->
             <!-- Image Perusahaan -->
@@ -85,16 +86,15 @@
             <div class="row main-row">
                 <div class="col-lg-4 col-md-12 col-sm-12">
                     <div class="company-img">
-                        <img src="{{logoperusahaan}}" class="img-fluid" id="company-img">
+                        <img src="{{url_for('static', filename='images/')}}{{logoperusahaan}}" class="img-fluid" id="company-img">
                     </div>
                 </div>
                 <div class="col-lg-8 col-md-12 col-sm-12 company-text">
                     <div class="company-title mb-3">
                         <h3>Tentang Perusahaan</h3>
                     </div>
-                    <div class="company-desc mb-2" id="text-tentang">
-                        <p>bbbbbbbbbbbbbbbbbbbsajlfjsajfksajflksajfkjasdfasdfasdfafasdasfasasdfasfasfdasfasfasasafdsadfasfdasfasfdfadasdfsafasdfsafasdfsadfasfdsaasdfdsafdfadasfsfasdfsdafadsfafdsafasfdsadfasfdfsafasfsafjdlkfjlaksjfkjsadjlfasjfdklaskflkasjflkasjflskdaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa</p>
-
+                    <div class="company-desc mb-2" style="word-wrap: break-word;">
+                        <p id="text-tentang">{{deskripsiperusahaan}}</p>
                     </div>
                 </div>
             </div>
@@ -103,122 +103,81 @@
 
     <!-- Kontak -->
     <section class="section-kontak" id="kontak">
-        <div class="container-fluid kontak-container">
-            <p id="text-kontak">Kontak</p>
-        </div>
-        <div class="container">
-            <div class="row align-items-center">
-                <div class="col col-lg-3 col-md-3 col-sm-4 center-kontak-logo">
-                    <img src="InstagramLogo_a.png" alt="Instagram" id="instagram-logo" class="sixfour">
-                    <p style="padding-top: 5%;">Instagram</p>
+		<div class="container-fluid kontak-container">
+			<p id="text-kontak">Kontak</p>
+		</div>		
+		<div class="container-fluid ">
+			<div class="row align-items-center">
+				<div class="col col-lg-3 col-md-3 col-sm-4 center-kontak-logo">
+					<img src="{{url_for('static', filename='images/website.png')}}" alt="Instagram" id="instagram-logo"
+						class="sixfour">
+                    {% if website != "" %}
+                        {% if 'https://www' not in website %}
+                            <p style="padding-top: 5%;"><a href="https://www.{{website}}">Website</a></p>
+                        {% elif 'https://' not in website %}
+                            <p style="padding-top: 5%;"><a href="https://{{website}}">Website</a></p>
+                        {% endif %}
+					{% else %}
+					    <p style="padding-top: 5%;"><i>No Website</i></p>
+                    {% endif %}
+                    <!-- Website -->
+                    <!-- Website -->
+                    <!-- Website -->
+				</div>
+				<div class="col col-lg-3 col-md-3 col-sm-4 center-kontak-logo">
+					<img src="{{url_for('static', filename='images/email.png')}}" alt="Email" id="email-logo"
+						class="sixfour">
+					{% if email != "" %}
+					<p style="padding-top: 5%;">{{email}}</p>
+					{% else %}
+					<p style="padding-top: 5%;">No Email</p>
+                    {% endif %}
+                    <!-- Email -->
+                    <!-- Email -->
+                    <!-- Email -->
+				</div>
+				<div class="col col-lg-3 col-md-3 col-sm-4 center-kontak-logo">
+					<img src="{{url_for('static', filename='images/Phone_be.png')}}" alt="Telepon" id="telepon-logo"
+						class="sixfour">
+					{% if phone != "" %}
+					<p style="padding-top: 5%;">{{phone}}</p>
+					{% else %}
+					<p style="padding-top: 5%;">No Phone</p>
+                    {% endif %}
+                    <!-- Phone -->
+                    <!-- Phone -->
+                    <!-- Phone -->
+				</div>
+			</div>
+		</div>
+	</section>
+
+    <!-- Slider Lowongan Perusahaan -->
+    <section class = "Rekomendasi">
+        <div class = "container my-3 py-5 text-center">
+            <div class="row">
+                <div class = "col">
+                    <h3> Rekomendasi Lowongan</h3>
                 </div>
-                <div class="col col-lg-3 col-md-3 col-sm-4 center-kontak-logo">
-                    <img src="email.png" alt="Email" id="email-logo" class="sixfour">
-                    <p style="padding-top: 5%;">Email</p>
+            </div>
+            <div class = "row mt-5 slider">
+                {%for item in results%}
+                <div class = "col-md-12">
+                    <div class = "card mb-5">
+                        <div class = "card-body">
+                            <img src = "static/images/{{item[0]}}" class = "img-fluid rounded-circle mb-3  mx-auto" id = "lowongan" style="width: 10%; height: 10%">
+                            <h5>{{item[1]}}</h5>
+                            <p>{{item[2]}}</p>
+                            <p>{{item[3]}}</p>
+                            <p>{{item[4]}}</p>
+                            <button type="button" class="btn btn-outline-dark">Info</button>
+                        </div>
+                    </div>
                 </div>
-                <div class="col col-lg-3 col-md-3 col-sm-4 center-kontak-logo">
-                    <img src="Phone_be.png" alt="Telepon" id="telepon-logo" class="sixfour">
-                    <p style="padding-top: 5%;">Email</p>
-                </div>
+                {%endfor%}
             </div>
         </div>
     </section>
-
-    <!-- Slider Lowongan Perusahaan -->
-    <div class="container slider-lowongan-perusahaan" style="margin-top: 5%;">
-        <div class="row">
-            <div class="MultiCarousel" data-items="1,3,5,6" data-slide="1" id="MultiCarousel" data-interval="500">
-                <div class="MultiCarousel-inner">
-                    <a href="https://google.com">
-                    <div class="item">
-                            <div class="pad15" class="clickem">
-                                <img src="download_ber.png" alt="" style="border-radius: 40px; width: 60px;">
-                                <p>Data Scientist</p>
-                                <p>Facebook</p>
-                                <p>Jakarta</p>
-                                <p>Rp. 10.000.000</p>
-                            </div>
-                        </div>
-                    </a>
-                    <div class="item">
-                        <div class="pad15">
-                            <img src="download_ber.png" alt="" style="border-radius: 40px; width: 60px;">
-                            <p>Data Scientist</p>
-                            <p>Facebook</p>
-                            <p>Jakarta</p>
-                            <p>Rp. 10.000.000</p>
-                        </div>
-                    </div>
-                    <div class="item">
-                        <div class="pad15">
-                            <img src="download_ber.png" alt="" style="border-radius: 40px; width: 60px;">
-                            <p>Data Scientist</p>
-                            <p>Facebook</p>
-                            <p>Jakarta</p>
-                            <p>Rp. 10.000.000</p>
-                        </div>
-                    </div>
-                    <div class="item">
-                        <div class="pad15">
-                            <img src="download_ber.png" alt="" style="border-radius: 40px; width: 60px;">
-                            <p>Data Scientist</p>
-                            <p>Facebook</p>
-                            <p>Jakarta</p>
-                            <p>Rp. 10.000.000</p>
-                        </div>
-                    </div>
-                    <div class="item">
-                        <div class="pad15">
-                            <img src="download_ber.png" alt="" style="border-radius: 40px; width: 60px;">
-                            <p>Data Scientist</p>
-                            <p>Facebook</p>
-                            <p>Jakarta</p>
-                            <p>Rp. 10.000.000</p>
-                        </div>
-                    </div>
-                    <div class="item">
-                        <div class="pad15">
-                            <img src="download_ber.png" alt="" style="border-radius: 40px; width: 60px;">
-                            <p>Data Scientist</p>
-                            <p>Facebook</p>
-                            <p>Jakarta</p>
-                            <p>Rp. 10.000.000</p>
-                        </div>
-                    </div>
-                    <div class="item">
-                        <div class="pad15">
-                            <img src="download_ber.png" alt="" style="border-radius: 40px; width: 60px;">
-                            <p>Data Scientist</p>
-                            <p>Facebook</p>
-                            <p>Jakarta</p>
-                            <p>Rp. 10.000.000</p>
-                        </div>
-                    </div>
-                    <div class="item">
-                        <div class="pad15">
-                            <img src="download_ber.png" alt="" style="border-radius: 40px; width: 60px;">
-                            <p>Data Scientist</p>
-                            <p>Facebook</p>
-                            <p>Jakarta</p>
-                            <p>Rp. 10.000.000</p>
-                        </div>
-                    </div>
-                    <div class="item">
-                        <div class="pad15">
-                            <img src="download_ber.png" alt="" style="border-radius: 40px; width: 60px;">
-                            <p>Data Scientist</p>
-                            <p>Facebook</p>
-                            <p>Jakarta</p>
-                            <p>Rp. 10.000.000</p>
-                        </div>
-                    </div>
-                </div>
-                <button class="btn btn-primary leftLst">
-                    <</button> <button class="btn btn-primary rightLst">>
-                </button>
-            </div>
-        </div>
-    </div>
 
     <!-- Footer -->
     <footer class="gk-footer">
@@ -252,130 +211,46 @@
     </footer>
 
 </body>
-<script>
-    $(document).ready(function () {
-        var itemsMainDiv = ('.MultiCarousel');
-        var itemsDiv = ('.MultiCarousel-inner');
-        var itemWidth = "";
 
-        $('.leftLst, .rightLst').click(function () {
-            var condition = $(this).hasClass("leftLst");
-            if (condition)
-                click(0, this);
-            else
-                click(1, this)
-        });
-
-        ResCarouselSize();
-
-
-
-
-        $(window).resize(function () {
-            ResCarouselSize();
-        });
-
-        //this function define the size of the items
-        function ResCarouselSize() {
-            var incno = 0;
-            var dataItems = ("data-items");
-            var itemClass = ('.item');
-            var id = 0;
-            var btnParentSb = '';
-            var itemsSplit = '';
-            var sampwidth = $(itemsMainDiv).width();
-            var bodyWidth = $('body').width();
-            $(itemsDiv).each(function () {
-                id = id + 1;
-                var itemNumbers = $(this).find(itemClass).length;
-                btnParentSb = $(this).parent().attr(dataItems);
-                itemsSplit = btnParentSb.split(',');
-                $(this).parent().attr("id", "MultiCarousel" + id);
-
-
-                if (bodyWidth >= 1200) {
-                    incno = itemsSplit[2];
-                    itemWidth = sampwidth / incno;
-                } else if (bodyWidth >= 992) {
-                    incno = itemsSplit[2];
-                    itemWidth = sampwidth / incno;
-                } else if (bodyWidth >= 768) {
-                    incno = itemsSplit[1];
-                    itemWidth = sampwidth / incno;
-                } else {
-                    incno = itemsSplit[0];
-                    itemWidth = sampwidth / incno;
-                }
-                $(this).css({
-                    'transform': 'translateX(0px)',
-                    'width': itemWidth * itemNumbers
-                });
-                $(this).find(itemClass).each(function () {
-                    $(this).outerWidth(itemWidth);
-                });
-
-                $(".leftLst").addClass("over");
-                $(".rightLst").removeClass("over");
-
-            });
-        }
-
-
-        //this function used to move the items
-        function ResCarousel(e, el, s) {
-            var leftBtn = ('.leftLst');
-            var rightBtn = ('.rightLst');
-            var translateXval = '';
-            var divStyle = $(el + ' ' + itemsDiv).css('transform');
-            var values = divStyle.match(/-?[\d\.]+/g);
-            var xds = Math.abs(values[4]);
-            if (e == 0) {
-                translateXval = parseInt(xds) - parseInt(itemWidth * s);
-                $(el + ' ' + rightBtn).removeClass("over");
-
-                if (translateXval <= itemWidth / 2) {
-                    translateXval = 0;
-                    $(el + ' ' + leftBtn).addClass("over");
-                }
-            } else if (e == 1) {
-                var itemsCondition = $(el).find(itemsDiv).width() - $(el).width();
-                translateXval = parseInt(xds) + parseInt(itemWidth * s);
-                $(el + ' ' + leftBtn).removeClass("over");
-
-                if (translateXval >= itemsCondition - itemWidth / 2) {
-                    translateXval = itemsCondition;
-                    $(el + ' ' + rightBtn).addClass("over");
-                }
-            }
-            $(el + ' ' + itemsDiv).css('transform', 'translateX(' + -translateXval + 'px)');
-        }
-
-        //It is used to get some elements from btn
-        function click(ell, ee) {
-            var Parent = "#" + $(ee).parent().attr("id");
-            var slide = $(Parent).attr("data-slide");
-            ResCarousel(ell, Parent, slide);
-        }
-
-    });
-
-    $("clickem").click(function () {
-        window.location = $(this).find("a").attr("href");
-        return false;
-    });
-
-    var long_string = document.getElementById("text-tentang").textContent;
-    long_string.split(' ');
-    var hasil
-    var counter = 0
-    for (x of long_string){
-        counter++;
-        hasil = hasil + " " + x
-        
-
+<script src="{{ url_for('static', filename='/js/jquery3.5.1.js') }}"></script>
+<script src="{{ url_for('static', filename='/popper/js/popper.min.js') }}"></script>
+<script src= "{{ url_for('static', filename='/bootstrap/js/bootstrap.min.js') }}"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.js" integrity="sha512-HGOnQO9+SP1V92SrtZfjqxxtLmVzqZpjFFekvzZVWoiASSQgSr4cw9Kqd2+l8Llp4Gm0G8GIFJ4ddwZilcdb8A==" crossorigin="anonymous"></script>
+<script type="text/javascript">
+$('.slider').slick({
+  dots: true,
+  infinite: false,
+  speed: 300,
+  slidesToShow: 3,
+  slidesToScroll: 3,
+  responsive: [
+    {
+      breakpoint: 1024,
+      settings: {
+        slidesToShow: 2,
+        slidesToScroll: 2,
+        infinite: true,
+        dots: true
+      }
+    },
+    {
+      breakpoint: 600,
+      settings: {
+        slidesToShow: 2,
+        slidesToScroll: 2
+      }
+    },
+    {
+      breakpoint: 480,
+      settings: {
+        slidesToShow: 1,
+        slidesToScroll: 1
+      }
     }
-    document.getElementById('text-tentang').innerHTML()
-
-    document.getElementById('text-tentang').innerHTML = long_string.replace(/(.{50})/g, "$1<br>");
+    // You can unslick at a given breakpoint now by adding:
+    // settings: "unslick"
+    // instead of a settings object
+  ]
+});
 </script>
 </html>
