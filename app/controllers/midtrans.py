@@ -12,7 +12,7 @@ snap = midtransclient.Snap(is_production=False,
 # Build API parameter
 param = {
     "transaction_details": {
-        "order_id": "test-transaction-124",
+        "order_id": "test-transaction-125",
         "gross_amount": 200000
     },
     "credit_card": {
