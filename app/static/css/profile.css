@@ -1,0 +1,240 @@
+body {
+    font-family: 'Arvo', serif;
+    margin: 0px;
+    padding: 0px;
+}
+
+.Profile {
+    background-color: #F4F8FF;
+    padding-bottom:5%;
+}
+
+
+.bg-blue-nav{
+    background-color: #79A0EF;
+}
+
+.btn-blue{
+    background-color:  #79A0EF;
+    border-radius: 20px;
+    border:none;
+}
+
+hr{
+    width:100%;
+    height:2%;
+    background-color:  #79A0EF;
+
+}
+
+.custom-file-input ~ .custom-file-label::after {
+    content: "";
+    border-radius: 15px;
+    border:none;
+    background: url("cloud-computing.png") no-repeat left center;
+    background-size: 20px;
+}
+
+.button-bawah{
+    border-radius: 20px;
+    border:none;
+    width:15%
+
+
+
+}
+
+.navbar a {
+    color: white !important;
+}
+#inputnama {
+    background: url("user_d.png") no-repeat left center;
+    background-size: 25px;
+    width: 100%;
+    /* outline: gray; */
+    /* border: 2px lightgray solid; */
+    border-radius: 15px;
+
+    background-color:white;
+    background-position-y: center;
+    font-size: 100%;
+    background-position-x: 1%;
+}
+
+input[type="text"] {
+    padding-left: 35px;
+}
+
+
+#inputjenis {
+    background: url("gender-symbols.png") no-repeat left center;
+    background-size: 25px;
+    width: 100%;
+    border-radius: 15px;
+    background-color:white;
+    background-position-y: center;
+    font-size: 100%;
+    background-position-x: 1%;
+}
+
+
+#inputtanggal{
+    background: url("birthday-cupcake.png") no-repeat left center;
+    background-size: 25px;
+    width: 100%;
+    border-radius: 15px;
+    background-color:white;
+    background-position-y:center ;
+    font-size: 100%;
+    background-position-x: 1%;
+}
+
+.dropdown-lulusan{
+    background: url("mortarboard.png") no-repeat left center;
+    background-size: 25px;
+    width: 100%;
+    border-radius: 15px;
+    background-color:white;
+    background-position-y: center;
+    font-size: 100%;
+    background-position-x: 1%;
+
+}
+
+#inputalamat{
+    background: url("home.png") no-repeat left center;
+    background-size: 25px;
+    width: 100%;
+    border-radius: 15px;
+    background-color:white;
+    background-position-y: center;
+    font-size: 100%;
+    background-position-x: 1%;
+}
+
+.dropdown-kota{
+    background: url("buildings@2x.png") no-repeat left center;
+    background-size: 25px;
+    width: 100%;
+    border-radius: 15px;
+    background-color:white;
+    background-position-y: center;
+    font-size: 100%;
+    background-position-x: 1%; 
+}
+
+.dropdown-provinsi{
+    background: url("africa.png") no-repeat left center;
+    background-size: 25px;
+    width: 100%;
+    border-radius: 15px;
+    background-color:white;
+    background-position-y: center;
+    font-size: 100%;
+    background-position-x: 1%; 
+}
+
+#inputtelpon{
+
+    background: url("communication.png") no-repeat left center;
+    background-size: 25px;
+    width: 100%;
+    border-radius: 15px;
+    background-color:white;
+    background-position-y: center;
+    font-size: 100%;
+    background-position-x: 2%; 
+    padding-left:40px;
+
+}
+
+#inputinsta{
+
+    background: url("InstagramLogo_a.png") no-repeat left center;
+    background-size: 25px;
+    width: 100%;
+    border-radius: 15px;
+    background-color:white;
+    background-position-y: center;
+    font-size: 100%;
+    background-position-x: 2%; 
+    padding-left:40px;
+
+}
+
+#inputlink{
+
+    background: url("NoPath_-_Copy_5_.png") no-repeat left center;
+    background-size: 25px;
+    width: 100%;
+    border-radius: 15px;
+    background-color:white;
+    background-position-y: center;
+    font-size: 100%;
+    background-position-x: 2%; 
+    padding-left:40px;
+  
+
+}
+
+#inputemail{
+    background: url("Email_bb.png") no-repeat left center;
+    background-size: 25px;
+    width: 100%;
+    border-radius: 15px;
+    background-color:white;
+    background-position-y: center;
+    font-size: 100%;
+    background-position-x: 2%; 
+    padding-left:40px;
+
+}
+
+#KTP{
+    background: url("driver-license.png") no-repeat left center;
+    background-size: 25px;
+    width: 100%;
+    border-radius: 15px;
+    background-color:white;
+    background-position-y: center;
+    font-size: 100%;
+    background-position-x: 1%; 
+    padding-left:35px;
+
+
+}
+
+.dropdown-job{
+    background: url("suitcase.png") no-repeat left center;
+    background-size: 25px;
+    width: 100%;
+    border-radius: 15px;
+    background-color:white;
+    background-position-y: center;
+    font-size: 100%;
+    background-position-x: 1%; 
+    padding-left:35px;
+
+
+}
+
+.dropdown-tipe{
+    background: url("job-offer_.png") no-repeat left center;
+    background-size: 25px;
+    width: 100%;
+    border-radius: 15px;
+    background-color:white;
+    background-position-y: center;
+    font-size: 100%;
+    background-position-x: 1%; 
+    padding-left:35px;
+
+
+}
+
+input#Range{
+    height: 10vh;
+}
+
+
+
