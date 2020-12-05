@@ -1,5 +1,5 @@
 from flask import Flask, render_template, request, flash, session, redirect, url_for
-from app import app, RunSelect, ExecuteCMD, saveApplyFiles
+from app import app, RunSelect, ExecuteCMD, saveApplyFilesLampiran
 from datetime import timedelta
 
 app.secret_key = "golekbarengkerjo"
@@ -101,8 +101,9 @@ def masukpage():
             return render_template('Login.html')
 
 
-@app.route('/searched/lowongan/<idlowongan>', methods=["POST", "GET"])
+@app.route('/searchedlowongan/<idlowongan>', methods=["POST", "GET"])
 def infolowongan(idlowongan):
+    return 'yes'
     if request.method == "POST":
         if "user" in session:
             query = "SELECT perusahaan.id_perusahaan FROM perusahaan, jobs WHERE perusahaan.id_perusahaan = jobs.id_perusahaan AND id_jobs = \'" + idlowongan.upper(
@@ -112,15 +113,13 @@ def infolowongan(idlowongan):
             files = request.files["applyfiles"]
             pekerjaid = session["iduser"]
             perusahaanid = results[0][0]
-            saveApplyFiles(files=files,
-                           pekerjaid=pekerjaid,
-                           perusahaanid=perusahaanid)
+            saveApplyFilesLampiran(files=files,
+                                   pekerjaid=pekerjaid,
+                                   perusahaanid=perusahaanid)
             return redirect(url_for('lowongan'))
         else:
             return redirect(url_for('masukpage'))
-
     else:
-
         query = "SELECT p.logo_perusahaan, j.tipe_job, j.duration_job, k.kota, j.minimum_gaji, j.maximum_gaji, p.website, p.email, p.telepon_perusahaan, j.kualifikasi_job, j.deskripsi_job FROM jobs j, perusahaan p, kota k WHERE j.id_perusahaan = p.id_perusahaan AND p.id_kota = k.id_kota AND j.id_jobs = \'" + idlowongan.upper(
         ) + "\';"
         results = RunSelect(query)
@@ -139,7 +138,7 @@ def infolowongan(idlowongan):
                                desk=results[0][10].split(","))
 
 
-@app.route('/searched/perusahaan/<idperusahaan>')
+@app.route('/searchedperusahaan/<idperusahaan>')
 def infoperusahaan(idperusahaan):
     query = "SELECT p.foto_perusahaan, p.logo_perusahaan, p.deskripsi_perusahaan, p.website, p.email, p.telepon_perusahaan FROM perusahaan p WHERE p.id_perusahaan = \'" + idperusahaan + "\'"
     results = RunSelect(query)

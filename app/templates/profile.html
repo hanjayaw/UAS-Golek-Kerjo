@@ -4,8 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="static/bootstrap/css/bootstrap.min.css">
-    <link rel="stylesheet" href="static/css/profile.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='/bootstrap/css/bootstrap.min.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='/css/profile.css') }}">
 </head>
 <body>
     <div class="container-fluid p-0">
@@ -67,6 +67,20 @@
                     </div>
                 </div>
             </div>
+
+
+
+
+               <div class = "row pt-4 mx-auto">
+                   <div class = "col">
+                <form action="" method="POST" style="text-align: center; justify-content: center; align-items: center;" id="formprofil" enctype="multipart/form-data">
+                    <span class="btn btn-primary btn-file" style="background-color: #79A0EF; width: 15%; border-radius: 20px; height: 5%; border:none;">
+                        Ubah profil <input type="file" name="applyfiles" id="profil">
+                    </span>
+                </form>
+                </div>
+               </div>
+
 
             <div class="row pt-3">
                 <div class = "col">
@@ -248,7 +262,7 @@
                     <span style="position:absolute; color:black; min-width:100px;">
                     <span id="Value"></span>
                     </span>
-                    <input type="range" id="Range" max="50000000" min="1000000" style="width:100%;"> 
+                    <input type="range" id="Range" max="50000000" min="1000000" name= "gaji"style="width:100%;"> 
                   </div>
 
 

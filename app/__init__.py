@@ -1,6 +1,6 @@
 #https://zonacoding.com/article/penerapan-mvc-di-flask-python
 
-from flask import Flask  ## import Flask dari package flask
+from flask import Flask, url_for  ## import Flask dari package flask
 from flaskext.mysql import MySQL
 from werkzeug.utils import secure_filename
 from datetime import datetime
@@ -11,7 +11,7 @@ app.debug = True
 mysql = MySQL()
 mysql.init_app(app)
 
-UPLOAD_FOLDER = 'C:/Users/jieme/Desktop/UAS-Golek-Kerjo/UAS-Golek-Kerjo/app/static/filelampiran'
+UPLOAD_FOLDER = os.path.join(app.root_path, 'static/filelampiran/')
 app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
 ALLOWED_EXTENSIONS = {'jpg', 'jpeg', 'png', 'pdf', 'docx', 'doc'}
 
@@ -67,7 +67,7 @@ def allowed_file(filename):
            filename.rsplit('.', 1)[1].lower() in ALLOWED_EXTENSIONS
 
 
-def saveApplyFiles(files, pekerjaid, perusahaanid):
+def saveApplyFilesLampiran(files, pekerjaid, perusahaanid):
     global conn, cursor
     if files and allowed_file(files.filename):
         query = "SELECT * FROM pekerjatoperusahaan"
@@ -82,7 +82,7 @@ def saveApplyFiles(files, pekerjaid, perusahaanid):
             iid = 'PR' + str(len(data) + 1)
 
         pkp = iid
-        query = "INSERT INTO pekerjatoperusahaan VALUES (\'" + iid + "\', \'" + perusahaanid + "\', \'" + pekerjaid + "\', \'" + datetime.today(
+        query = "CALL InsertPKP (\'" + perusahaanid + "\', \'" + pekerjaid + "\', \'" + datetime.today(
         ).strftime('%Y-%m-%d') + "\')"
         ExecuteCMD(query)
 
