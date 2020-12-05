@@ -73,9 +73,9 @@
 
                <div class = "row pt-4 mx-auto">
                    <div class = "col">
-                <form action="" method="POST" style="text-align: center; justify-content: center; align-items: center;" id="formprofil" enctype="multipart/form-data">
+                <form action="{{ url_for('profile')}}" method="POST" style="text-align: center; justify-content: center; align-items: center;" id="formprofil" enctype="multipart/form-data">
                     <span class="btn btn-primary btn-file" style="background-color: #79A0EF; width: 15%; border-radius: 20px; height: 5%; border:none;">
-                        Ubah profil <input type="file" name="applyfiles" id="profil">
+                        Ubah profil <input type="file" name="applyprofil" id="profil">
                     </span>
                 </form>
                 </div>
@@ -115,24 +115,24 @@
        
 
 
-            <form>
+            <form action="" method="POST" >
                 <div class="form-row mt-3 ">
                   <div class="col">
-                     <input type="text" class="form-control" placeholder="Nama" id=inputnama>
+                     <input type="text" class="form-control" placeholder="Nama" id=inputnama name="namaprofil">
                   </div>
                   <div class="col">
-                    <input type="text" class="form-control" placeholder="Jenis Kelamin" id=inputjenis>
+                    <input type="text" class="form-control" placeholder="Jenis Kelamin" id=inputjenis name="genderprofil">
                   </div>
                 </div>
                 <div class="form-row mt-3 ">
                   <div class="col">
-                    <input type="text" class="form-control" placeholder="Tanggal Lahir" id=inputtanggal>
+                    <input type="text" class="form-control" placeholder="Tanggal Lahir" id=inputtanggal name= "umur">
                   </div>
                   <div class="form-group col">
-                    <select id="inputState" class="form-control dropdown-lulusan" style="padding-left:30px;">
-                      <option selected>S1</option>
-                      <option>S2</option>
-                      <option>SMA<option>
+                    <select id="inputState" class="form-control dropdown-lulusan" style="padding-left:30px;" name="lulusan">
+                      <option value="S1"selected>S1</option>
+                      <option value="S2" >S2</option>
+                      <option value="SMA">SMA<option>
                     </select>
                 </div>
 
@@ -150,22 +150,22 @@
 
                 <div class="form-row mt-3 ">
                     <div class="col">
-                      <input type="text" class="form-control" placeholder="Alamat" id="inputalamat">
+                      <input type="text" class="form-control" placeholder="Alamat" id="inputalamat" name="alamatprofil">
                     </div>
                     <div class="form-group col">
-                        <select id="inputState" class="form-control dropdown-kota" style="padding-left:30px;">
-                          <option selected>Surabaya</option>
-                          <option>Jakarta</option>
-                          <option>Bandung<option>
+                        <select id="inputState" class="form-control dropdown-kota" style="padding-left:30px;" name="kota">
+                         {%for item in kota%}
+                          <option value="{{item[1]}}"selected>{{item[0]}}</option>
+                        {%endfor%}
                         </select>
                     </div>
                 </div>
                 <div class="form-row ">
                     <div class="form-group col-6 col-sm-6 col-md-6 col-lg-6">
-                        <select id="inputState" class="form-control dropdown-provinsi" style="padding-left:30px;">
-                          <option selected>Jawa Timur</option>
-                          <option>Jawa Tengah</option>
-                          <option>Jawa Barat<option>
+                        <select id="inputState" class="form-control dropdown-provinsi" style="padding-left:30px;" name="provinsi">
+                        {%for item in provinsi%}
+                          <option value ="{{item[1]}}"selected>{{item[0]}}</option>
+                        {%endfor%}
                         </select>
                     </div>
 
@@ -183,20 +183,20 @@
 
                 <div class="form-row mt-3 ">
                     <div class="col">
-                      <input type="text" class="form-control" placeholder="No telepon" id="inputtelpon" >
+                      <input type="text" class="form-control" placeholder="No telepon" id="inputtelpon" name= "nomortelpon" >
                     </div>
                     <div class="col">
-                      <input type="text" class="form-control" placeholder="Instagram" id="inputinsta">
+                      <input type="text" class="form-control" placeholder="Instagram" id="inputinsta" name= "instagram">
                     </div>
                 </div>
 
 
                 <div class="form-row mt-3 ">
                     <div class="col">
-                      <input type="text" class="form-control" placeholder="Linkedin" id="inputlink">
+                      <input type="text" class="form-control" placeholder="Linkedin" id="inputlink" name="linkedin">
                     </div>
                     <div class="col">
-                      <input type="text" class="form-control" placeholder="E-mail" id="inputemail">
+                      <input type="email" class="form-control" placeholder="E-mail" id="inputemail" name="email">
                     </div>
                 </div>
 
@@ -212,7 +212,7 @@
                     <div class="row mt-3">
                         <div class = "col-6 col-sm-6 col-md-6 col-lg-6">
                             <div class="custom-file">
-                                <input type="file" class="custom-file-input" id="customFile"lang= "in">
+                                <input type="file" class="custom-file-input" id="customFile"lang= "in" name="applyktp" >
                                 <label class="custom-file-label text-left" for="customFile" id="KTP"> KTP</label>
                             </div>
                     
@@ -232,18 +232,19 @@
 
                     <div class="form-row mt-3 ">
                         <div class="form-group col">
-                            <select id="inputState" class="form-control dropdown-job">
-                              <option selected>Marketing</option>
-                              <option>Sekretaris</option>
-                              <option>Chef<option>
+                            <select id="inputState" class="form-control dropdown-job" name="job">
+                            {%for item in jobs%}
+                              <option value="{{item[1]}}" selected>{{item[0]}}</option>
+                            {%endfor%}
+        
                             </select>
                         </div>
                     
                     <div class="form-group col ">
-                            <select id="inputState" class="form-control dropdown-tipe">
-                              <option selected>Full time</option>
-                              <option>Part time</option>
-                              <option>Freelance<option>
+                            <select id="inputState" class="form-control dropdown-tipe" name="tipejob">
+                              <option value="Fulltime" selected>Full time</option>
+                              <option value="Parttime">Part time</option>
+                              <option value="Freelance">Freelance<option>
                               </select>
 
                     </div>
@@ -269,11 +270,19 @@
 
             </div>
 
+            {% with messages = get_flashed_messages() %}
+                {% if messages %}
+                    {% for msg in messages %}
+                        <h6 style="color: red; margin-top: 2%;">{{msg}}</h6>
+                    {% endfor %}
+                {% endif %}
+            {% endwith %}
+
 
             <div class="row mt-3 text-center">
                 <div class = "col">
-                    <button class="btn btn-danger button-bawah"type="submit">Keluar</button>
-                    <button class="btn btn-success button-bawah" type="submit">Simpan</button>
+                    <button class="btn btn-danger button-bawah"type="submit" href = "/logout">Keluar</button>
+                    <button class="btn btn-success button-bawah"type="submit" href="">Simpan</button>
                 
                     
                 </div>
@@ -284,7 +293,7 @@
 
     
 
-            </form>
+        </form>
 
 
 
