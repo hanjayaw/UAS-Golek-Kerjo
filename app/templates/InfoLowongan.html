@@ -143,7 +143,7 @@
 					{% if website != "" %}
                         {% if 'https://www' not in website %}
                             <p style="padding-top: 5%;"><a href="https://www.{{website}}">Website</a></p>
-                        {% else if 'https://' not in website %}
+                        {% elif 'https://' not in website %}
                             <p style="padding-top: 5%;"><a href="https://{{website}}">Website</a></p>
                         {% endif %}
 					{% else %}

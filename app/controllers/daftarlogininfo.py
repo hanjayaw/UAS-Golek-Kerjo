@@ -103,7 +103,6 @@ def masukpage():
 
 @app.route('/searchedlowongan/<idlowongan>', methods=["POST", "GET"])
 def infolowongan(idlowongan):
-    return 'yes'
     if request.method == "POST":
         if "user" in session:
             query = "SELECT perusahaan.id_perusahaan FROM perusahaan, jobs WHERE perusahaan.id_perusahaan = jobs.id_perusahaan AND id_jobs = \'" + idlowongan.upper(

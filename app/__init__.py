@@ -101,9 +101,9 @@ def saveApplyFilesLampiran(files, pekerjaid, perusahaanid):
 
         filename = pkp + iid
         full = filename + '.' + extension[1]
+        files.save(os.path.join(app.config['UPLOAD_FOLDER'], full))
         query = "INSERT INTO lampiranpekerja VALUES (\'" + iid + "\', \'" + pkp + "\', \'" + full + "\')"
         ExecuteCMD(query)
-        files.save(os.path.join(app.config['UPLOAD_FOLDER'], full))
 
 
 from app.controllers import *
