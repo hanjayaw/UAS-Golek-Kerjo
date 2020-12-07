@@ -3,17 +3,17 @@ from app import app, RunSelect, ExecuteCMD, saveApplyFilesLampiran
 from datetime import timedelta
 
 app.secret_key = "golekbarengkerjo"
-# app.permanent_session_lifetime = timedelta(weeks=12)
+app.permanent_session_lifetime = timedelta(weeks=12)
 
 
 # Code di bawah sini
 @app.route('/daftar', methods=["POST", "GET"])
 def daftarpage():
     if "user" in session:
-        return "Selamat anda telah login ternyata " + session["user"]
+        return redirect(url_for('landingpage'))
     else:
-        session.permanent = True
         if request.method == "POST":
+            session.permanent = True
             name = request.form["daftarname"].lower()
             email = request.form["daftaremail"].lower()
             password = request.form["daftarpassword"]
@@ -44,7 +44,7 @@ def daftarpage():
                         ExecuteCMD(qry)
                         session["user"] = name
                         session["iduser"] = iid
-                        return "Selamat anda telah mendaftar " + name
+                        return redirect(url_for('landingpage'))
                     else:
                         flash('Password harus 8 - 12 karakter')
                         return render_template('Daftar.html')
@@ -61,9 +61,6 @@ def daftarpage():
 @app.route('/masuk', methods=["POST", "GET"])
 def masukpage():
     if "user" in session:
-        # To Be Continued
-        # To Be Continued
-        # To Be Continued
         return redirect(url_for('perusahaan'))
     else:
         session.permanent = True
@@ -95,8 +92,8 @@ def masukpage():
             # To Be Continued
             # To Be Continued
             # To Be Continued
-
-            return "tidak login"
+            flash("Email atau Password Salah")
+            return render_template('Login.html')
         else:
             return render_template('Login.html')
 
