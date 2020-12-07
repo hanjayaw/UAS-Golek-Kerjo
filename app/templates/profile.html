@@ -1,56 +1,8 @@
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='/bootstrap/css/bootstrap.min.css') }}">
-    <link rel="stylesheet" href="{{ url_for('static', filename='/css/profile.css') }}">
-</head>
+{% extends 'master.html' %}
+{% block content %}
 
 <body>
-    <div class="container-fluid p-0">
-        <nav class="navbar navbar-expand-md fixed-top navbar-light bg-blue-nav">
-            <div class="container-fluid">
-                <a href="" class="navbar-brand text-uppercase d-md-none">GolekKerjo
-                </a>
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar"
-                    aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="collapse navbar-collapse" id="navbar">
-                    <ul class="navbar-nav text-uppercase">
-                        <li class="nav-item">
-                            <a href="" class="nav-link">GolekKerjo<span class="sr-only">(current)</span></a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="" class="nav-link mx-md-1 mx-lg-2 mx-xl-3">Lowongan</a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="" class="nav-link mx-md-1 mx-lg-2 mx-xl-3">Perusahaan</a>
-                        </li>
-
-                        <li class="nav-item">
-                            <a href="" class="nav-link mx-md-1 mx-lg-2 mx-xl-3">Hubungi Kami</a>
-                        </li>
-                    </ul>
-                    <ul class="navbar-nav text-uppercase ml-auto">
-                        <a class="navbar-brand" href="#">
-                            <img src="static/images/bell_1_s.png" width="30" height="30" alt="" loading="lazy">
-                        </a>
-                        <li class="nav-item">
-                            <a href="" class="nav-link mx-md-1 mx-lg-2 mx-xl-3">Hi{{session["user"]}}</a>
-                        </li>
-                        <a class="navbar-brand" href="#">
-                            <img src='{{url_for("static", filename="profile/")}}{{session["profilepicture"]}}' width="30" height="30" alt="" loading="lazy">
-                        </a>
-
-                    </ul>
-                </div>
-            </div>
-        </nav>
-    </div>
+ 
 
 
     <section class="Profile">
@@ -64,7 +16,11 @@
             <div class="row pt-3">
                 <div class="col">
                     <div class="profile-image">
+                        {% if session["profilepicture"] %}
                         <img class="img-fluid" src='{{url_for("static", filename="profile/")}}{{session["profilepicture"]}}' style="width: 20%;">
+                        {% else %}
+                        <img class="img-fluid" src='{{url_for("static", filename="images/emptyprofile.png")}}' style="width: 20%;">
+                        {% endif %}
                     </div>
                 </div>
             </div>
@@ -352,7 +308,11 @@
         </div>
     </section>
 
-
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='/bootstrap/css/bootstrap.min.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='/css/profile.css') }}">
 
 
 
@@ -383,6 +343,5 @@
     document.getElementById("formprofil").submit();
     };
 </script>
+{% endblock %}
 
-
-</html>
