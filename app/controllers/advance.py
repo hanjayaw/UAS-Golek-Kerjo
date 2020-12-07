@@ -16,7 +16,7 @@ def advance():
         
         #qry = "SELECT tipe_job , nama_perusahaan , kota , minimum_gaji , logo_perusahaan FROM jobs , perusahaan , kota WHERE perusahaan.id_kota = kota.id_kota AND jobs.id_perusahaan = perusahaan.id_perusahaan AND (tipe_job LIKE \'%"+searching+"%\' OR nama_perusahaan LIKE \'%"+searching+"%\') AND duration_job LIKE \'%"+jenisjobs+"%\' AND tipe_job LIKE \'%"+tipejob+"%\' AND kota LIKE \'%"+namakota+"%\'"
         
-        qry = "SELECT tipe_job , nama_perusahaan , kota , minimum_gaji , logo_perusahaan FROM jobs , perusahaan , kota WHERE perusahaan.id_kota = kota.id_kota AND jobs.id_perusahaan = perusahaan.id_perusahaan AND (tipe_job LIKE \'%"+searching+"%\' OR nama_perusahaan LIKE \'%"+searching+"%\')"
+        qry = "SELECT tipe_job , nama_perusahaan , kota , minimum_gaji , logo_perusahaan , id_jobs FROM jobs , perusahaan , kota WHERE perusahaan.id_kota = kota.id_kota AND jobs.id_perusahaan = perusahaan.id_perusahaan AND (tipe_job LIKE \'%"+searching+"%\' OR nama_perusahaan LIKE \'%"+searching+"%\')"
         results = RunSelect(qry)
         return render_template('advance.html', results = results, kota = kota, jenis = jenis)
     return render_template('advance.html', kota = kota, jenis = jenis) 
