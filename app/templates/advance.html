@@ -33,14 +33,20 @@
                 <label style="width:25%; margin-left:5%">Jenis Pekerjaan:</label>
             </div>
             <div class="advance" id="add">
-                <select id="lokasi" style="width:25%; height:35px; margin-left:5%">
-                    <option value="volvo">Surabaya</option>
+                <select id="lokasi" style="width:25%; height:35px; margin-left:5%" name="namakota">
+                    {%for item in kota%}
+                    <option>{{item[0]}}</option>
+                    {% endfor %}
                 </select>
-                <select id="tipe-pekerjaan" style="width:25%; height:35px; margin-left:5%">
-                    <option value="volvo">Akuntan</option>
+                <select id="tipe-pekerjaan" style="width:25%; height:35px; margin-left:5%" name="jenis">
+                    {%for item in jenis%}
+                    <option>{{item[0]}}</option>
+                    {% endfor %}
                 </select>
-                <select id="jenis-pekerjaan" style="width:25%; height:35px; margin-left:5%">
-                    <option value="volvo">Full Time</option>
+                <select id="jenis-pekerjaan" style="width:25%; height:35px; margin-left:5%" name="durasi">
+                    <option>Full Time</option>
+                    <option>Part Time</option>
+                    <option>Freelance</option>
                 </select>
             </div>
             <div style="margin-top:5%; text-align:center">
@@ -52,8 +58,7 @@
                 <input type="number" name="gaji-max" min="1" id="no2">
             </div>
             <div>
-                <button
-                    style="width:10%; height:35px ; margin-left:45%; margin-top:5%; background-color:#79A0EF; color: #ffffff; border:none; border-radius:10px">Selesai</button>
+                <button type="submit" style="width:10%; height:35px ; margin-left:45%; margin-top:5%; background-color:#79A0EF; color: #ffffff; border:none; border-radius:10px">Selesai</button>
             </div>
         </div>
     </div>

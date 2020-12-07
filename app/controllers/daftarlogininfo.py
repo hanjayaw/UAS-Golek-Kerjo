@@ -44,7 +44,7 @@ def daftarpage():
                         ExecuteCMD(qry)
                         session["user"] = name
                         session["iduser"] = iid
-                        return "Selamat anda telah mendaftar " + name
+                        return redirect(url_for('landingpage'))
                     else:
                         flash('Password harus 8 - 12 karakter')
                         return render_template('Daftar.html')
@@ -96,7 +96,7 @@ def masukpage():
             # To Be Continued
             # To Be Continued
 
-            return "Yes"
+            return redirect(url_for('landingpage'))
         else:
             return render_template('Login.html')
 
