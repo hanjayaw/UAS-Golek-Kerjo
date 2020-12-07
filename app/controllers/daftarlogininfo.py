@@ -88,7 +88,7 @@ def masukpage():
                 # To Be Continued
                 # To Be Continued
 
-                return redirect(url_for('perusahaan'))
+                return redirect(url_for('landingpage'))
             # To Be Continued
             # To Be Continued
             # To Be Continued
