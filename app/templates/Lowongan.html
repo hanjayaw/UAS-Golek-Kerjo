@@ -1,75 +1,11 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='/bootstrap/css/bootstrap.min.css') }}">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick-theme.min.css" integrity="sha512-17EgCFERpgZKcm0j0fEq1YCJuyAWdz9KUtv1EjVuaOz8pDnh/0nZxmU6BBXwaaxqoi9PQXnRWqlcDB027hgv9A==" crossorigin="anonymous" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.css" integrity="sha512-yHknP1/AwR+yx26cB1y0cjvQUMvEa2PFzt1c9LlS4pRQ5NOTZFWbhBig+X9G9eYW/8m0/4OXNx8pxJ6z57x0dw==" crossorigin="anonymous" />
-    <link rel="stylesheet" href="{{ url_for('static', filename='/css/index.css') }}">
-</head>
-<body>
-    <div class="container-fluid p-0">
-        <nav class="navbar navbar-expand-md fixed-top navbar-light bg-blue">
-            <div class="container-fluid">
-                <a href="" class="navbar-brand text-uppercase d-md-none">GolekKerjo
-                </a>
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar"
-                    aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="collapse navbar-collapse" id="navbar">
-                    <ul class="navbar-nav text-uppercase">
-                        <li class="nav-item">
-                            <a href="" class="nav-link">GolekKerjo<span
-                                    class="sr-only">(current)</span></a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="" class="nav-link mx-md-1 mx-lg-2 mx-xl-3">Lowongan</a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="" class="nav-link mx-md-1 mx-lg-2 mx-xl-3">Perusahaan</a>
-                        </li>
-    
-                        <li class="nav-item">
-                            <a href="" class="nav-link mx-md-1 mx-lg-2 mx-xl-3">Hubungi Kami</a>
-                        </li>
-                    </ul>
-                    <ul class="navbar-nav text-uppercase ml-auto">
-                        <li class="nav-item">
-                            <a href="" class="nav-link mx-md-1 mx-lg-2 mx-xl-3">Daftar</a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="" class="nav-link mx-md-1 mx-lg-2 mx-xl-3">Login</a>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </nav>
-    </div>  
-<!-- <div class = "container-fluid mt-5">
-    <nav class="navbar navbar-light bg-light justify-content-between">
-            <div class="container-fluid pt-1 ml-2">
-                <h4 class = "navbar-brand text-dark">GolekKerjo</h4>
-                <form class="form-inline mx-auto">
-                    <input class="form-control mr-sm-2 search-bar" type="search" placeholder="Search" aria-label="Search">
-                </form>
-                <form class = "form-inline">
-                    <img src="img/search.png" style="width: 15%;">
-                    <img src ="img/funnel_zu@2x.png" style="width: 15%; margin-left: 5%;">
-                    </form>
-            </div>
-              
-        
-        </nav>
-
-
-</div> -->
-
-
+{% extends 'master.html' %}
+{% block content %}
+<link rel="stylesheet" href="{{ url_for('static', filename='/bootstrap/css/bootstrap.min.css') }}">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick-theme.min.css" integrity="sha512-17EgCFERpgZKcm0j0fEq1YCJuyAWdz9KUtv1EjVuaOz8pDnh/0nZxmU6BBXwaaxqoi9PQXnRWqlcDB027hgv9A==" crossorigin="anonymous" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.css" integrity="sha512-yHknP1/AwR+yx26cB1y0cjvQUMvEa2PFzt1c9LlS4pRQ5NOTZFWbhBig+X9G9eYW/8m0/4OXNx8pxJ6z57x0dw==" crossorigin="anonymous" />
+<link rel="stylesheet" href="{{ url_for('static', filename='/css/index.css') }}">
 <!-- search not in navbar collapse -->
-<nav class="navbar navbar-expand-md navbar-dark bg-light mt-5 p-3">
+<nav class="navbar navbar-expand-md navbar-dark bg-light p-3" style="margin-top: 5%;">
     <div class="d-flex flex-grow-1">
         <h4 class="navbar-brand text-dark ml-2">GolekKerjo</h4>
         <form class="mr-3 my-auto ml-3 mx-auto w-100 d-inline-block order-1">
@@ -86,12 +22,10 @@
             </div>
         </form>
     </div>
-
 </nav>
 
 
-<section class = "carousel" style="width: 70%; top: 10%; left: 15%;">
-
+<section class = "carousel" style="width: 70%; left: 15%;">
     <div id="carouselWithIndicators" class="carousel slide" data-ride="carousel">
         <ol class="carousel-indicators">
             <li data-target="#carouselWithIndicators" data-slide-to="0" class="active"></li>
@@ -246,31 +180,6 @@
         {% endif %}
     {% endfor %}
 </ul>
-
-<footer class="gk-footer">
-    <div class="container">
-        <div class="row text-center">
-            <div class="col-sm-6 col-12 gk-logo">
-                <img src="static/img/golek-kerjo.png" alt="" id="gk-logo">
-            </div>
-            <div class="col-sm-6 col-12">
-                <ul class="footer-list">
-                    <li><img src="static/img/InstagramLogo_be.png" alt="" class="footer-img">
-                        <p>GolekKerjo</p>
-                    </li>
-                    <li><img src="static/img/linked2.png" alt="" class="footer-img">
-                        <p>GolekKerjo</p>
-                    </li>
-                    <li><img src="static/img/Facebook.png" alt="" class="footer-img">
-                        <p>GolekKerjo</p>
-                    </li>
-                </ul>
-            </div>
-        </div>
-    </div>
-</footer>
-</body>
-
 <script src="{{ url_for('static', filename='/js/jquery3.5.1.js') }}"></script>
 <script src="{{ url_for('static', filename='/popper/js/popper.min.js') }}"></script>
 <script src= "{{ url_for('static', filename='/bootstrap/js/bootstrap.min.js') }}"></script>
@@ -312,6 +221,4 @@ $('.slider').slick({
   ]
 });
 </script>
-
-
-</html>
+{% endblock %}
