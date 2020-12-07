@@ -21,7 +21,7 @@
 </nav>
 <div class="container">
     <div id="carouselExampleControls" class="carousel slide mt-5" data-ride="carousel"
-        style="width: 70%; top: 2%; left: 15%;">
+        style="width: 120%; top: 2%; left: -10%;">
         <div class="carousel-inner">
             <div class="carousel-item active">
                 <img class="d-block w-100"
@@ -39,7 +39,8 @@
     </div>
     <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev" style="height: 5% !important; margin: 0;
     position: absolute;
-    top: 50%;
+    top: 62%;
+    left: 5%;
     -ms-transform: translateY(-50%);
     transform: translateY(-50%);">
         <span class="carousel-control-prev-icon ukurantombolprev" aria-hidden="true"></span>
@@ -47,7 +48,8 @@
     </a>
     <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next" style="height: 5% !important; margin: 0;
     position: absolute;
-    top: 50%;
+    top: 62%;
+    right: 5%;
     -ms-transform: translateY(-50%);
     transform: translateY(-50%);">
         <span class="carousel-control-next-icon ukurantombolnext" aria-hidden="true"></span>
@@ -72,7 +74,7 @@
                         <h5>{{item[0]}}</h5>
                         <p>{{item[1]}}</p>
                         <p>{{item[2]}} Lowongan</p>
-                        <button type="button" class="btn btn-outline-dark">Info</button>
+                        <a href="/searchedperusahaan/{{item[4]}}" class="btn btn-outline-dark">Info</a>
                     </div>
                 </div>
             </div>
@@ -99,7 +101,7 @@
                         <h5>{{item[0]}}</h5>
                         <p>{{item[1]}}</p>
                         <p>{{item[2]}} Lowongan</p>
-                        <button type="button" class="btn btn-outline-dark">Info</button>
+                        <a href="/searchedperusahaan/{{item[4]}}" class="btn btn-outline-dark">Info</a>
                     </div>
                 </div>
             </div>
