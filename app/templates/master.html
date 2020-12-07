@@ -29,7 +29,9 @@
                 <div class="collapse navbar-collapse" id="navbar">
                     <ul class="navbar-nav text-uppercase">
                         <li class="nav-item">
-                            <a href="https://127.0.0.1/" class="nav-link navbar-left" style="width: 70px;"><img src="{{url_for('static', filename='images/Logo.png')}}" alt="" style="width: 100%;"><span class="sr-only">(current)</span></a>
+                            <a href="https://127.0.0.1/" class="nav-link navbar-left" style="width: 70px;"><img
+                                    src="{{url_for('static', filename='images/Logo.png')}}" alt=""
+                                    style="width: 100%;"><span class="sr-only">(current)</span></a>
                         </li>
                         <li class="nav-item">
                             <a href="/lowongan" class="nav-link mx-md-1 mx-lg-2 mx-xl-3">Lowongan</a>
@@ -48,17 +50,20 @@
                             <input type="image" src="{{url_for('static', filename='images/bell_1.png')}}"
                                 style="width: 70%; vertical-align: middle;">
                         </a>
-                        <li class="nav-item" style="top: auto; margin: 0px; text-align: center; vertical-align: middle;">
+                        <li class="nav-item"
+                            style="top: auto; margin: 0px; text-align: center; vertical-align: middle;">
                             <small>Hai, {{session["user"]}}</small>
                         </li>
                         <li class="nav-item" style="top: auto; right: auto;text-align: center; vertical-align: middle;">
-                            {% if session["profilepicture"] %}
-                            <img src='{{url_for("static", filename="profile/")}}{{session["profilepicture"]}}'
-                                style="border-radius: 50%;" alt="Submit" width="30" height="30">
-                            {% else %}
-                            <img src='{{url_for("static", filename="images/emptyprofile.png")}}'
-                                style="border-radius: 50%;" alt="Submit" width="30" height="30">
-                            {% endif %}
+                            <a href="/profile">
+                                {% if session["profilepicture"] %}
+                                <img src='{{url_for("static", filename="profile/")}}{{session["profilepicture"]}}'
+                                    style="border-radius: 50%;" alt="Submit" width="30" height="30">
+                                {% else %}
+                                <img src='{{url_for("static", filename="images/emptyprofile.png")}}'
+                                    style="border-radius: 50%;" alt="Submit" width="30" height="30">
+                                {% endif %}
+                            </a>
                         </li>
                     </ul>
                 </div>
@@ -78,25 +83,27 @@
                 <div class="collapse navbar-collapse" id="navbar">
                     <ul class="navbar-nav text-uppercase">
                         <li class="nav-item">
-                            <a href="" class="nav-link">GolekKerjo<span class="sr-only">(current)</span></a>
+                            <a href="https://127.0.0.1/" class="nav-link navbar-left" style="width: 70px;"><img
+                                src="{{url_for('static', filename='images/Logo.png')}}" alt=""
+                                style="width: 100%;"><span class="sr-only">(current)</span></a>
                         </li>
                         <li class="nav-item">
-                            <a href="" class="nav-link mx-md-1 mx-lg-2 mx-xl-3">Lowongan</a>
+                            <a href="/lowongan" class="nav-link mx-md-1 mx-lg-2 mx-xl-3">Lowongan</a>
                         </li>
                         <li class="nav-item">
-                            <a href="" class="nav-link mx-md-1 mx-lg-2 mx-xl-3">Perusahaan</a>
+                            <a href="/perusahaan" class="nav-link mx-md-1 mx-lg-2 mx-xl-3">Perusahaan</a>
                         </li>
 
                         <li class="nav-item">
-                            <a href="" class="nav-link mx-md-1 mx-lg-2 mx-xl-3">Hubungi Kami</a>
+                            <a href="/hubungikami" class="nav-link mx-md-1 mx-lg-2 mx-xl-3">Hubungi Kami</a>
                         </li>
                     </ul>
                     <ul class="navbar-nav text-uppercase ml-auto">
                         <li class="nav-item">
-                            <a href="" class="nav-link mx-md-1 mx-lg-2 mx-xl-3">Daftar</a>
+                            <a href="/daftar" class="nav-link mx-md-1 mx-lg-2 mx-xl-3">Daftar</a>
                         </li>
                         <li class="nav-item">
-                            <a href="" class="nav-link mx-md-1 mx-lg-2 mx-xl-3">Login</a>
+                            <a href="/masuk" class="nav-link mx-md-1 mx-lg-2 mx-xl-3">Masuk</a>
                         </li>
                     </ul>
                 </div>
@@ -131,11 +138,12 @@
                 <!-- AMIN -->
                 <div class="col">
                     <ul class="footer-list">
-                        <li><img src="{{url_for('static', filename='images/linkedinlogo.png')}}" alt="" class="footer-img">
+                        <li><img src="{{url_for('static', filename='images/linkedinlogo.png')}}" alt=""
+                                class="footer-img">
                             <p>GolekKerjo</p>
                         </li>
-                        <li><img src="{{url_for('static', filename='images/download.png')}}" alt=""
-                                class="footer-img" style="width: 50; margin-left: 0%;">
+                        <li><img src="{{url_for('static', filename='images/download.png')}}" alt="" class="footer-img"
+                                style="width: 50; margin-left: 0%;">
                             <p>GolekKerjo</p>
                         </li>
                     </ul>
@@ -199,7 +207,7 @@
         visibility: visible;
         opacity: 1;
     }
-    
+
     .popup {
         margin: 70px auto;
         padding: 20px;
