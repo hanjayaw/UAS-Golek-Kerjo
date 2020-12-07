@@ -156,7 +156,7 @@ body {
 
 .carousel-control-next,
 .carousel-control-prev {
-    filter: invert(100%);
+    filter: invert(50%);
 }
 
 .carousel-indicators li {

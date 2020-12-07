@@ -29,29 +29,29 @@
                 <div class="collapse navbar-collapse" id="navbar">
                     <ul class="navbar-nav text-uppercase">
                         <li class="nav-item">
-                            <a href="" class="nav-link">GolekKerjo<span class="sr-only">(current)</span></a>
+                            <a href="https://127.0.0.1/" class="nav-link navbar-left" style="width: 70px;"><img src="{{url_for('static', filename='images/Logo.png')}}" alt="" style="width: 100%;"><span class="sr-only">(current)</span></a>
                         </li>
                         <li class="nav-item">
-                            <a href="" class="nav-link mx-md-1 mx-lg-2 mx-xl-3">Lowongan</a>
+                            <a href="/lowongan" class="nav-link mx-md-1 mx-lg-2 mx-xl-3">Lowongan</a>
                         </li>
                         <li class="nav-item">
-                            <a href="" class="nav-link mx-md-1 mx-lg-2 mx-xl-3">Perusahaan</a>
+                            <a href="/perusahaan" class="nav-link mx-md-1 mx-lg-2 mx-xl-3">Perusahaan</a>
                         </li>
 
                         <li class="nav-item">
-                            <a href="" class="nav-link mx-md-1 mx-lg-2 mx-xl-3">Hubungi Kami</a>
+                            <a href="/hubungikami" class="nav-link mx-md-1 mx-lg-2 mx-xl-3">Hubungi Kami</a>
                         </li>
                     </ul>
                     <ul class="navbar-nav text-uppercase ml-auto">
 
-                        <a class="button" href="#popup1" style="margin-left: 10px;">
+                        <a class="button" href="#popup1" style="text-align: center; margin-right: 5%;">
                             <input type="image" src="{{url_for('static', filename='images/bell_1.png')}}"
-                                style="width: 100%;">
+                                style="width: 70%; vertical-align: middle;">
                         </a>
-                        <li class="nav-item" style="top: auto; margin: 0px; margin-left: 10px; padding-top: 5px;">
+                        <li class="nav-item" style="top: auto; margin: 0px; text-align: center; vertical-align: middle;">
                             <small>Hai, {{session["user"]}}</small>
                         </li>
-                        <li class="nav-item" style="top: auto; right: auto;">
+                        <li class="nav-item" style="top: auto; right: auto;text-align: center; vertical-align: middle;">
                             <img src='{{url_for("static", filename="profile/")}}{{session["profilepicture"]}}'
                                 style="border-radius: 50%;" alt="Submit" width="30" height="30">
                         </li>
@@ -121,18 +121,15 @@
                     <img src="{{url_for('static', filename='images/Golek_Kerjo_3.png')}}" alt="" id="gk-logo">
                 </div>
                 <div class="col gk-text">
-                    Golek Kerjo adalah platform job recruitment dengan visi membantu anak muda untuk dapat menemukan
-                    platform mereka menyalurkan aspirasi mereka. Misi kita adalah membantu perusahaan menemukan
-                    anak muda yang cocok bagi perusahaan dan untuk anak muda mencari jati diri dan karir yang
-                    sesuai dengan dirinya.
+                    Golek Kerjo adalah platform job recruitment .
                 </div>
                 <!-- AMIN -->
                 <div class="col">
                     <ul class="footer-list">
-                        <li><img src="{{url_for('static', filename='images/download.png')}}" alt="" class="footer-img">
+                        <li><img src="{{url_for('static', filename='images/linkedinlogo.png')}}" alt="" class="footer-img">
                             <p>GolekKerjo</p>
                         </li>
-                        <li><img src="{{url_for('static', filename='images/NoPath_-_Copy_5.png')}}" alt=""
+                        <li><img src="{{url_for('static', filename='images/download.png')}}" alt=""
                                 class="footer-img" style="width: 50; margin-left: 0%;">
                             <p>GolekKerjo</p>
                         </li>
