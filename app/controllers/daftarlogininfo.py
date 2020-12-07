@@ -96,7 +96,7 @@ def masukpage():
             # To Be Continued
             # To Be Continued
 
-            return "Yes"
+            return "tidak login"
         else:
             return render_template('Login.html')
 
