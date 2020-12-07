@@ -31,19 +31,13 @@ def daftarpage():
                         qry = "SELECT * FROM pekerja"
                         data = RunSelect(qry)
 
-                        if len(data) < 9:
-                            iid = 'P000' + str(len(data) + 1)
-                        elif len(data) < 99:
-                            iid = 'P00' + str(len(data) + 1)
-                        elif len(data) < 999:
-                            iid = 'P0' + str(len(data) + 1)
-                        else:
-                            iid = 'P' + str(len(data) + 1)
-
                         qry = "CALL Pendaftaran(\'" + name + "\', \'" + email + "\', \'" + password + "\')"
                         ExecuteCMD(qry)
+
+                        qry = "SELECT id_pekerja FROM pekerja WHERE email = \'" + email + "\'"
+                        iid = RunSelect(qry)
                         session["user"] = name
-                        session["iduser"] = iid
+                        session["iduser"] = iid[0][0]
                         return redirect(url_for('landingpage'))
                     else:
                         flash('Password harus 8 - 12 karakter')
