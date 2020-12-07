@@ -16,9 +16,9 @@ def lowongan():
         currentindex = int(currentpage) * n_size - n_size
     else:
         currentindex = 0
-    sql = "SELECT `tipe_job`, `minimum_gaji`, `nama_perusahaan` ,`kota`, `logo_perusahaan` from jobs j, kota k, perusahaan p where p.id_kota = k.id_kota and j.id_perusahaan = p.id_perusahaan limit 6"
+    sql = "SELECT `tipe_job`, `minimum_gaji`, `nama_perusahaan` ,`kota`, `logo_perusahaan`, `id_jobs` from jobs j, kota k, perusahaan p where p.id_kota = k.id_kota and j.id_perusahaan = p.id_perusahaan limit 6"
     results = RunSelect(sql)
-    sql = "SELECT `tipe_job`, `minimum_gaji`, `nama_perusahaan` ,`kota`, `logo_perusahaan` from jobs j, kota k, perusahaan p where p.id_kota = k.id_kota and j.id_perusahaan = p.id_perusahaan limit " + str(
+    sql = "SELECT `tipe_job`, `minimum_gaji`, `nama_perusahaan` ,`kota`, `logo_perusahaan`, `id_jobs` from jobs j, kota k, perusahaan p where p.id_kota = k.id_kota and j.id_perusahaan = p.id_perusahaan limit " + str(
         currentindex) + ", " + str(n_size) + ";"
     hasil = RunSelect(sql)
     return render_template('lowongan.html',

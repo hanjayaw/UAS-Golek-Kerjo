@@ -73,7 +73,7 @@ body {
     justify-content: center;
     text-align: center;
     align-items: center;
-    min-height: 70vh;
+    min-height: 40vh;
     background-color: #e3edff
 }
 
@@ -183,8 +183,10 @@ body {
 
 .card:hover h5 {
     color: black;
+}
 
-
+h5 {
+    margin-top: 5px;
 }
 
 .card-2 {
