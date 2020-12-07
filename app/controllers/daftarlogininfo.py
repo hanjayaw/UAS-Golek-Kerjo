@@ -40,7 +40,7 @@ def daftarpage():
                         else:
                             iid = 'P' + str(len(data) + 1)
 
-                        qry = "CALL Pendaftaran(\'" + iid + "\', \'" + name + "\', \'" + email + "\', \'" + password + "\')"
+                        qry = "CALL Pendaftaran(\'" + name + "\', \'" + email + "\', \'" + password + "\')"
                         ExecuteCMD(qry)
                         session["user"] = name
                         session["iduser"] = iid
