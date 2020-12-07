@@ -133,6 +133,7 @@ def infolowongan(idlowongan):
                                kualif=results[0][9].split(","),
                                desk=results[0][10].split(","))
 
+
 @app.route('/searchedperusahaan/<idperusahaan>')
 def infoperusahaan(idperusahaan):
     query = "SELECT p.foto_perusahaan, p.logo_perusahaan, p.deskripsi_perusahaan, p.website, p.email, p.telepon_perusahaan FROM perusahaan p WHERE p.id_perusahaan = \'" + idperusahaan + "\'"
@@ -156,5 +157,5 @@ def logout():
     session.pop("email", None)
     session.pop("iduser", None)
     session.pop("profilepicture", None)
-    return 'Yes'
+    return redirect(url_for('landingpage'))
     # return redirect(url_for('')) Landing Page
