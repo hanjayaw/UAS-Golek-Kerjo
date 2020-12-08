@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!-- <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -47,7 +47,7 @@
                 </div>
             </div>
         </nav>
-    </div>  
+    </div>   -->
 <!-- <div class = "container-fluid mt-5">
     <nav class="navbar navbar-light bg-light justify-content-between">
             <div class="container-fluid pt-1 ml-2">
@@ -66,6 +66,10 @@
 
 
 </div> -->
+{% extends 'master.html' %}
+{% block content %}
+
+
 
 
 <!-- search not in navbar collapse -->
@@ -90,31 +94,32 @@
 </nav>
 
 
-<section class = "carousel" style="width: 70%; top: 10%; left: 15%;">
+<section class = "carousel">
 
-    <div id="carouselWithIndicators" class="carousel slide" data-ride="carousel">
-        <ol class="carousel-indicators">
+    <div id="carouselWithIndicators" class="carousel slide" data-ride="carousel"
+    style="width: 70%; top: 10%; left: 15%;">
+        <ol class="carousel-indicators" >
             <li data-target="#carouselWithIndicators" data-slide-to="0" class="active"></li>
             <li data-target="#carouselWithIndicators" data-slide-to="1"></li>
             <li data-target="#carouselWithIndicators" data-slide-to="2"></li>
         </ol>
         <div class="carousel-inner mt-1">
             <div class="carousel-item carousel-image-1 active">
-                <img class="d-block w-100" src="static/img/quotes.jpg" alt="First slide" style="width:100%; height:70vh">
+                <img class="d-block w-100" src="static/img/quotes.jpg" alt="First slide">
                 <div class="carousel-caption overlay">
                     <h3 class="text-light"></h3>
                     <p></p>
                 </div>
             </div>
             <div class="carousel-item carousel-image-2">
-                <img class="d-block w-100" src="static/img/career.jpg" alt="Second slide" style="width:100%; height:70vh">
+                <img class="d-block w-100" src="static/img/career.jpg" alt="Second slide">
                 <div class="carousel-caption overlay">
                     <h3 class="text-light"></h3>
                     <p></p>
                 </div>
             </div>
             <div class="carousel-item carousel-image-3">
-                <img class="d-block w-100" src="static/img/job.jpg" alt="Third slide" style="width:100%; height:70vh">
+                <img class="d-block w-100" src="static/img/job.jpg" alt="Third slide">
                 <div class="carousel-caption overlay">
                     <h3 class="text-dark"></h3>
                     <p></p>
@@ -170,7 +175,7 @@
             <div class = "col-md-12">
                 <div class = "card mb-5" style="width: 100%; height: 50%;">
                     <div class = "card-body">
-                        <img src = "static/images/{{item[4]}}" class = "img-fluid rounded-circle mb-3  mx-auto" id = "lowongan" style="width: 10%; height: 10%">
+                        <img src = "static/images/{{item[4]}}" class = "img-fluid rounded-circle mb-3  mx-auto" id = "lowongan" style="width: 30; height: 30;">
                         <h5>{{item[0]}}</h5>
                         <p>{{item[2]}}</p>
                         <p>{{item[3]}}</p>
@@ -196,7 +201,7 @@
             <div class = "col-md-12">
                 <div class = "card-2 mb-5">
                     <div class = "card-body" style="width: 100%; height: 50%;">
-                        <img src = "static/images/{{item[4]}}" class = "img-fluid rounded-circle mb-3  mx-auto" id = "lowongan"  style="width: 10%; height: 10%">
+                        <img src = "static/images/{{item[4]}}" class = "img-fluid rounded-circle mb-3  mx-auto" id = "lowongan"  style="width: 30; height: 30;">
                         <h5>{{item[0]}}</h5>
                         <p>{{item[2]}}</p>
                         <p>{{item[3]}}</p>
@@ -223,7 +228,7 @@
             <div class = "col-md-4 col-sm-6 col-6">
                 <div class = "card-3 mb-5">
                     <div class = "card-body" style="width: 100%; height: 50%;">
-                        <img src = "static/images/{{item[4]}}" class = "img-fluid rounded-circle mb-3  mx-auto" id = "lowongan"  style="width: 10%; height: 10%">
+                        <img src = "static/images/{{item[4]}}" class = "img-fluid rounded-circle mb-3  mx-auto" id = "lowongan"  style="width: 30; height: 30;">
                         <h5>{{item[0]}}</h5>
                         <p>{{item[2]}}</p>
                         <p>{{item[3]}}</p>
@@ -247,6 +252,10 @@
     {% endfor %}
 </ul>
 
+
+
+
+<!-- 
 <footer class="gk-footer">
     <div class="container">
         <div class="row text-center">
@@ -269,7 +278,7 @@
         </div>
     </div>
 </footer>
-</body>
+</body> -->
 
 <script src="{{ url_for('static', filename='/js/jquery3.5.1.js') }}"></script>
 <script src="{{ url_for('static', filename='/popper/js/popper.min.js') }}"></script>
@@ -311,7 +320,10 @@ $('.slider').slick({
     // instead of a settings object
   ]
 });
+
+
 </script>
 
+{% endblock %}
 
-</html>
+
