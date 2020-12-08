@@ -5,13 +5,18 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="{{ url_for('static', filename='/bootstrap/css/bootstrap.min.css') }}">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick-theme.min.css" integrity="sha512-17EgCFERpgZKcm0j0fEq1YCJuyAWdz9KUtv1EjVuaOz8pDnh/0nZxmU6BBXwaaxqoi9PQXnRWqlcDB027hgv9A==" crossorigin="anonymous" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.css" integrity="sha512-yHknP1/AwR+yx26cB1y0cjvQUMvEa2PFzt1c9LlS4pRQ5NOTZFWbhBig+X9G9eYW/8m0/4OXNx8pxJ6z57x0dw==" crossorigin="anonymous" />
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/index.css') }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick-theme.min.css"
+        integrity="sha512-17EgCFERpgZKcm0j0fEq1YCJuyAWdz9KUtv1EjVuaOz8pDnh/0nZxmU6BBXwaaxqoi9PQXnRWqlcDB027hgv9A=="
+        crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.css"
+        integrity="sha512-yHknP1/AwR+yx26cB1y0cjvQUMvEa2PFzt1c9LlS4pRQ5NOTZFWbhBig+X9G9eYW/8m0/4OXNx8pxJ6z57x0dw=="
+        crossorigin="anonymous" />
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/index.css') }}">    
     <title>Document</title>
 </head>
+
 <body>
-{% if "user" in session %}
+    {% if "user" in session %}
     <div class="container-fluid p-0">
         <nav class="navbar navbar-expand-md fixed-top navbar-light bg-blue">
             <div class="container-fluid">
@@ -24,36 +29,46 @@
                 <div class="collapse navbar-collapse" id="navbar">
                     <ul class="navbar-nav text-uppercase">
                         <li class="nav-item">
-                            <a href="" class="nav-link">GolekKerjo<span
-                                    class="sr-only">(current)</span></a>
+                            <a href="/" class="nav-link navbar-left" style="width: 70px;"><img src="{{url_for('static', filename='images/Logo.png')}}" alt="" style="width: 100%;"><span class="sr-only">(current)</span></a>
                         </li>
                         <li class="nav-item">
-                            <a href="" class="nav-link mx-md-1 mx-lg-2 mx-xl-3">Lowongan</a>
+                            <a href="/lowongan" class="nav-link mx-md-1 mx-lg-2 mx-xl-3">Lowongan</a>
                         </li>
                         <li class="nav-item">
-                            <a href="" class="nav-link mx-md-1 mx-lg-2 mx-xl-3">Perusahaan</a>
+                            <a href="/perusahaan" class="nav-link mx-md-1 mx-lg-2 mx-xl-3">Perusahaan</a>
                         </li>
-    
+
                         <li class="nav-item">
-                            <a href="" class="nav-link mx-md-1 mx-lg-2 mx-xl-3">Hubungi Kami</a>
+                            <a href="/hubungikami" class="nav-link mx-md-1 mx-lg-2 mx-xl-3">Hubungi Kami</a>
                         </li>
                     </ul>
                     <ul class="navbar-nav text-uppercase ml-auto">
-                        <li class="nav-item" style="top: auto; right: auto;">
-                            <input type="image" src="{{url_for('static', filename='images/bell_1.png')}}" id="myBtn" alt="Submit" width="25" height="25" class="mx-md-1 mx-lg-2 mx-xl-3">
-                        </li>
-                        <li class="nav-item" style="top: auto;">
+
+                        <a class="button" href="#popup1" style="text-align: center; margin-right: 5%;">
+                            <input type="image" src="{{url_for('static', filename='images/bell_1.png')}}"
+                                style="width: 70%; vertical-align: middle;">
+                        </a>
+                        <li class="nav-item"
+                            style="top: auto; margin: 0px; text-align: center; vertical-align: middle;">
                             <small>Hai, {{session["user"]}}</small>
                         </li>
-                        <li class="nav-item" style="top: auto; right: auto;">
-                            <img src='{{url_for("static", filename="profile/")}}{{session["profilepicture"]}}' style="border-radius: 50%;" alt="Submit" width="30" height="30" class="mx-md-1 mx-lg-2 mx-xl-3">
+                        <li class="nav-item" style="top: auto; right: auto;text-align: center; vertical-align: middle;">
+                            <a href="/profile">
+                                {% if session["profilepicture"] %}
+                                <img src='{{url_for("static", filename="profile/")}}{{session["profilepicture"]}}'
+                                    style="border-radius: 50%;" alt="Submit" width="30" height="30">
+                                {% else %}
+                                <img src='{{url_for("static", filename="images/emptyprofile.png")}}'
+                                    style="border-radius: 50%;" alt="Submit" width="30" height="30">
+                                {% endif %}
+                            </a>
                         </li>
                     </ul>
                 </div>
             </div>
         </nav>
-    </div>  
-{% else %}
+    </div>
+    {% else %}
     <div class="container-fluid p-0">
         <nav class="navbar navbar-expand-md fixed-top navbar-light bg-blue">
             <div class="container-fluid">
@@ -66,73 +81,46 @@
                 <div class="collapse navbar-collapse" id="navbar">
                     <ul class="navbar-nav text-uppercase">
                         <li class="nav-item">
-                            <a href="" class="nav-link">GolekKerjo<span
-                                    class="sr-only">(current)</span></a>
+                            <a href="/" class="nav-link navbar-left" style="width: 70px;"><img src="{{url_for('static', filename='images/Logo.png')}}" alt="" style="width: 100%;"><span class="sr-only">(current)</span></a>
                         </li>
                         <li class="nav-item">
-                            <a href="" class="nav-link mx-md-1 mx-lg-2 mx-xl-3">Lowongan</a>
+                            <a href="/lowongan" class="nav-link mx-md-1 mx-lg-2 mx-xl-3">Lowongan</a>
                         </li>
                         <li class="nav-item">
-                            <a href="" class="nav-link mx-md-1 mx-lg-2 mx-xl-3">Perusahaan</a>
+                            <a href="/perusahaan" class="nav-link mx-md-1 mx-lg-2 mx-xl-3">Perusahaan</a>
                         </li>
-    
+
                         <li class="nav-item">
-                            <a href="" class="nav-link mx-md-1 mx-lg-2 mx-xl-3">Hubungi Kami</a>
+                            <a href="/hubungikami" class="nav-link mx-md-1 mx-lg-2 mx-xl-3">Hubungi Kami</a>
                         </li>
                     </ul>
                     <ul class="navbar-nav text-uppercase ml-auto">
                         <li class="nav-item">
-                            <a href="" class="nav-link mx-md-1 mx-lg-2 mx-xl-3">Daftar</a>
+                            <a href="/daftar" class="nav-link mx-md-1 mx-lg-2 mx-xl-3">Daftar</a>
                         </li>
                         <li class="nav-item">
-                            <a href="" class="nav-link mx-md-1 mx-lg-2 mx-xl-3">Login</a>
+                            <a href="/masuk" class="nav-link mx-md-1 mx-lg-2 mx-xl-3">Login</a>
                         </li>
                     </ul>
                 </div>
             </div>
         </nav>
-    </div>  
-
-    
-{% endif %}
-<div id="myModal" class="modal">
-<!-- Modal content -->
-    <div class="modal-content">
-      <span class="close">&times;</span>
-      <p>Some text in the Modal..</p>
     </div>
-</div>
 
-<script>
-    // Get the modal
-    var modal = document.getElementById("myModal");
-    
-    // Get the button that opens the modal
-    var btn = document.getElementById("myBtn");
-    
-    // Get the <span> element that closes the modal
-    var span = document.getElementsByClassName("close")[0];
-    
-    // When the user clicks the button, open the modal 
-    btn.onclick = function() {
-      modal.style.display = "block";
-    }
-    
-    // When the user clicks on <span> (x), close the modal
-    span.onclick = function() {
-      modal.style.display = "none";
-    }
-    
-    // When the user clicks anywhere outside of the modal, close it
-    window.onclick = function(event) {
-      if (event.target == modal) {
-        modal.style.display = "none";
-      }
-    }
-    </script>
-    
-{% block content %} {% endblock %}
 
+    {% endif %}
+
+    {% block content %} {% endblock %}
+
+    <div id="popup1" class="overlay">
+        <div class="popup">
+            <input type="number" name="gaji-minim" min="1" id="no1">
+            <a class="close" href="#">&times;</a>
+            <div class="content">
+                Thank to pop me out of that button, but now i'm done so you can close this window.
+            </div>
+        </div>
+    </div>
 
     <footer class="gk-footer">
         <div class="container">
@@ -141,18 +129,17 @@
                     <img src="{{url_for('static', filename='images/Golek_Kerjo_3.png')}}" alt="" id="gk-logo">
                 </div>
                 <div class="col gk-text">
-                    Golek Kerjo adalah platform job recruitment dengan visi membantu anak muda untuk dapat menemukan
-                    platform mereka menyalurkan aspirasi mereka. Misi kita adalah membantu perusahaan menemukan
-                    anak muda yang cocok bagi perusahaan dan untuk anak muda mencari jati diri dan karir yang
-                    sesuai dengan dirinya. 
+                    Golek Kerjo adalah platform job recruitment .
                 </div>
                 <!-- AMIN -->
                 <div class="col">
                     <ul class="footer-list">
-                        <li><img src="{{url_for('static', filename='images/download.png')}}" alt="" class="footer-img">
+                        <li><img src="{{url_for('static', filename='images/linkedinlogo.png')}}" alt=""
+                                class="footer-img">
                             <p>GolekKerjo</p>
                         </li>
-                        <li><img src="{{url_for('static', filename='images/NoPath_-_Copy_5.png')}}" alt="" class="footer-img"style="width: 50; margin-left: 0%;">
+                        <li><img src="{{url_for('static', filename='images/download.png')}}" alt="" class="footer-img"
+                                style="width: 50; margin-left: 0%;">
                             <p>GolekKerjo</p>
                         </li>
                     </ul>
@@ -162,43 +149,104 @@
     </footer>
 </body>
 <style>
-.modal {
-  display: none; /* Hidden by default */
-  position: fixed; /* Stay in place */
-  z-index: 1; /* Sit on top */
-  padding-top: 100px; /* Location of the box */
-  left: 0;
-  top: 0;
-  width: 100%; /* Full width */
-  height: 100%; /* Full height */
-  overflow: auto; /* Enable scroll if needed */
-  background-color: rgb(0,0,0); /* Fallback color */
-  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
-}
+    body {
+        font-family: 'Arvo', serif;
+        background-size: cover;
+        height: 100vh;
+    }
 
-/* Modal Content */
-.modal-content {
-  background-color: #ffffff;
-  padding: 20px;
-  border: 1px solid #888;
-  width: 15%;
-  height: 50%;
-  margin-left: 82%;
-  margin-top: -2%;
-}
+    h1 {
+        text-align: center;
+        font-family: Tahoma, Arial, sans-serif;
+        color: #ffffff;
+        margin: 80px 0;
+    }
 
-/* The Close Button */
-.close {
-  color: #aaaaaa;
-  float: right;
-  font-size: 28px;
-  font-weight: bold;
-}
+    .box {
+        width: 40%;
+        margin: 0 auto;
+        background: rgba(255, 255, 255, 0);
+        padding: 35px;
+        border: 2px solid rgba(255, 255, 255, 0);
+        border-radius: 20px/50px;
+        background-clip: padding-box;
+        text-align: center;
+    }
 
-.close:hover,
-.close:focus {
-  color: #000;
-  text-decoration: none;
-  cursor: pointer;
-}
+    .button {
+        font-size: 1em;
+        padding: 0px;
+        color: rgba(255, 255, 255, 0);
+        text-decoration: none;
+        cursor: pointer;
+        transition: all 0.3s ease-out;
+        width: 15%;
+    }
+
+    .button:hover {
+        background: #ffffff00;
+    }
+
+    .overlay {
+        position: fixed;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        background: rgba(0, 0, 0, 0.7);
+        transition: opacity 500ms;
+        visibility: hidden;
+        opacity: 0;
+    }
+
+    .overlay:target {
+        visibility: visible;
+        opacity: 1;
+    }
+
+    .popup {
+        margin: 70px auto;
+        padding: 20px;
+        background: rgb(255, 255, 255);
+        border-radius: 5px;
+        width: 30%;
+        position: relative;
+        transition: all 5s ease-in-out;
+    }
+
+    .popup h2 {
+        margin-top: 0;
+        color: rgb(250, 250, 250);
+        font-family: Tahoma, Arial, sans-serif;
+    }
+
+    .popup .close {
+        position: absolute;
+        top: 20px;
+        right: 30px;
+        transition: all 200ms;
+        font-size: 30px;
+        font-weight: bold;
+        text-decoration: none;
+        color: #333;
+    }
+
+    .popup .close:hover {
+        color: #06D85F;
+    }
+
+    .popup .content {
+        max-height: 30%;
+        overflow: auto;
+    }
+
+    @media screen and (max-width: 700px) {
+        .box {
+            width: 70%;
+        }
+
+        .popup {
+            width: 70%;
+        }
+    }
 </style>

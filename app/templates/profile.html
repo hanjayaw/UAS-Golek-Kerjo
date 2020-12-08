@@ -1,69 +1,26 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='/bootstrap/css/bootstrap.min.css') }}">
-    <link rel="stylesheet" href="{{ url_for('static', filename='/css/profile.css') }}">
-</head>
+{% extends 'master.html' %}
+{% block content %}
+
 <body>
-    <div class="container-fluid p-0">
-        <nav class="navbar navbar-expand-md fixed-top navbar-light bg-blue-nav">
-            <div class="container-fluid">
-                <a href="" class="navbar-brand text-uppercase d-md-none">GolekKerjo
-                </a>
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar"
-                    aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="collapse navbar-collapse" id="navbar">
-                    <ul class="navbar-nav text-uppercase">
-                        <li class="nav-item">
-                            <a href="" class="nav-link">GolekKerjo<span
-                                    class="sr-only">(current)</span></a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="" class="nav-link mx-md-1 mx-lg-2 mx-xl-3">Lowongan</a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="" class="nav-link mx-md-1 mx-lg-2 mx-xl-3">Perusahaan</a>
-                        </li>
-    
-                        <li class="nav-item">
-                            <a href="" class="nav-link mx-md-1 mx-lg-2 mx-xl-3">Hubungi Kami</a>
-                        </li>
-                    </ul>
-                    <ul class="navbar-nav text-uppercase ml-auto">
-                        <a class="navbar-brand" href="#">
-                            <img src="static/images/bell_1_s.png" width="30" height="30" alt="" loading="lazy">
-                          </a>
-                        <li class="nav-item">
-                            <a href="" class="nav-link mx-md-1 mx-lg-2 mx-xl-3">Hi Dewi</a>
-                        </li>
-                        <a class="navbar-brand" href="#">
-                            <img src="static/images/circle-cropped.png" width="30" height="30" alt="" loading="lazy">
-                          </a>
-
-                    </ul>
-                </div>
-            </div>
-        </nav>
-    </div>  
+ 
 
 
-    <section class = "Profile">
-        <div class = "container my-3 py-5 text-center">
+    <section class="Profile">
+        <div class="container my-3 py-5 text-center">
             <div class="row pt-5">
-                <div class = "col">
-                    <h3> Selamat datang, Dewi</h3>
+                <div class="col">
+                    <h3> Selamat datang,{{session["user"]}}</h3>
                 </div>
             </div>
 
             <div class="row pt-3">
-                <div class = "col">
-                    <div class = "profile-image">
-                        <img class = "img-fluid"src="static/images/circle-cropped.png" style="width: 20%;">  
+                <div class="col">
+                    <div class="profile-image">
+                        {% if session["profilepicture"] %}
+                        <img class="img-fluid" src='{{url_for("static", filename="profile/")}}{{session["profilepicture"]}}' style="width: 20%;">
+                        {% else %}
+                        <img class="img-fluid" src='{{url_for("static", filename="images/emptyprofile.png")}}' style="width: 20%;">
+                        {% endif %}
                     </div>
                 </div>
             </div>
@@ -71,101 +28,125 @@
 
 
 
-               <div class = "row pt-4 mx-auto">
-                   <div class = "col">
-                <form action="{{ url_for('profile')}}" method="POST" style="text-align: center; justify-content: center; align-items: center;" id="formprofil" enctype="multipart/form-data">
-                    <span class="btn btn-primary btn-file" style="background-color: #79A0EF; width: 15%; border-radius: 20px; height: 5%; border:none;">
-                        Ubah profil <input type="file" name="applyprofil" id="profil">
-                    </span>
-                </form>
+            <div class="row pt-4 mx-auto">
+                <div class="col">
+                    <form action="" method="POST" 
+                        style="text-align: center; justify-content: center; align-items: center;" id="formprofil"
+                        enctype="multipart/form-data">
+    
+                        <span class="btn btn-primary btn-file"
+                            style="background-color: #79A0EF; width: 15%; border-radius: 20px; height: 5%; border:none;">
+                            Ubah profil <input type="file" name="applyprofil" id="profil">
+                        </span>
+
+                    </form>
                 </div>
-               </div>
+            </div>
 
 
             <div class="row pt-3">
-                <div class = "col">
-                    <h3> Dewi@gmail.com</h3>
+                <div class="col">
+                    <h3>{{session["email"]}}</h3>
                 </div>
             </div>
 
             <div class="row pt-3">
-                <div class = "col">
+                <div class="col">
                     <h5> Free Account</h5>
-                   
+
                 </div>
             </div>
 
             <div class="row pt-3">
-                <div class = "col">
+                <div class="col">
                     <button type="button" class="btn btn-primary btn-blue">Jadi premium</button>
-                    
-                   
+
+
                 </div>
             </div>
 
 
 
             <div class="row mt-5">
-                <div class = "col">
-                   <h3 class="text-left"> Biodata</h3>
-                   <hr>
-                    
+                <div class="col">
+                    <h3 class="text-left"> Biodata</h3>
+                    <hr>
+
                 </div>
             </div>
-       
 
 
-            <form action="" method="POST" >
+
+            <form action="" method="POST" enctype=multipart/form-data>
                 <div class="form-row mt-3 ">
-                  <div class="col">
-                     <input type="text" class="form-control" placeholder="Nama" id=inputnama name="namaprofil">
-                  </div>
-                  <div class="col">
-                    <input type="text" class="form-control" placeholder="Jenis Kelamin" id=inputjenis name="genderprofil">
-                  </div>
+                    <div class="col">
+                        <input type="text" class="form-control" placeholder="Nama" id=inputnama name="namaprofil" value="{{namapekerja}}">
+                    </div>
+                    <div class="col">
+                        <input type="text" class="form-control" placeholder="Jenis Kelamin" id=inputjenis
+                            name="genderprofil" value="{{genderpekerja}}"> 
+                    </div>
                 </div>
                 <div class="form-row mt-3 ">
-                  <div class="col">
-                    <input type="text" class="form-control" placeholder="Tanggal Lahir" id=inputtanggal name= "umur">
-                  </div>
-                  <div class="form-group col">
-                    <select id="inputState" class="form-control dropdown-lulusan" style="padding-left:30px;" name="lulusan">
-                      <option value="S1"selected>S1</option>
-                      <option value="S2" >S2</option>
-                      <option value="SMA">SMA<option>
-                    </select>
-                </div>
+                    <div class="col">
+                        <input type="text" class="form-control" placeholder="Umur" id=inputtanggal name="umur" value = "{{umurpekerja}}">
+                    </div>
+                    <div class="form-group col">
+                        <select id="inputState" class="form-control dropdown-lulusan" style="padding-left:30px;"
+                            name="lulusan">
+                            {%for item in range(3) %}
+                                {% if lulusanpekerja == lulusannya[item] %}
+                                    <option value="{{lulusannya[item]}}" selected>{{lulusannya[item]}}</option>
+                                {% else %}
+                                    <option value="{{lulusannya[item]}}">{{lulusannya[item]}}</option>
+                                {% endif %}
+                            {%endfor%}
+                        </select>
+                    </div>
 
                 </div>
 
 
                 <div class="row mt-5">
-                    <div class = "col">
-                       <h3 class="text-left">Alamat</h3>
-                       <hr>
-                        
+                    <div class="col">
+                        <h3 class="text-left">Alamat</h3>
+                        <hr>
+
                     </div>
                 </div>
 
 
                 <div class="form-row mt-3 ">
                     <div class="col">
-                      <input type="text" class="form-control" placeholder="Alamat" id="inputalamat" name="alamatprofil">
+                        <input type="text" class="form-control" placeholder="Alamat" id="inputalamat"
+                            name="alamatprofil" value = "{{alamatpekerja}}">
                     </div>
                     <div class="form-group col">
-                        <select id="inputState" class="form-control dropdown-kota" style="padding-left:30px;" name="kota">
-                         {%for item in kota%}
-                          <option value="{{item[1]}}"selected>{{item[0]}}</option>
-                        {%endfor%}
+                        <select id="inputState" class="form-control dropdown-kota" style="padding-left:30px;"
+                            name="kota">
+                            
+                            {%for item in kota%}
+                            {% if item[0] == kota1 %}
+                                <option value="{{item[1]}}" selected>{{item[0]}}</option>
+                            {% else %}
+                                <option value="{{item[1]}}">{{item[0]}}</option>
+                            {% endif %}
+                            {%endfor%}
                         </select>
                     </div>
                 </div>
                 <div class="form-row ">
                     <div class="form-group col-6 col-sm-6 col-md-6 col-lg-6">
-                        <select id="inputState" class="form-control dropdown-provinsi" style="padding-left:30px;" name="provinsi">
-                        {%for item in provinsi%}
-                          <option value ="{{item[1]}}"selected>{{item[0]}}</option>
-                        {%endfor%}
+                        <select id="inputState" class="form-control dropdown-provinsi" style="padding-left:30px;"
+                            name="provinsi">
+
+                            {%for item in provinsi%}
+                            {% if item[0] == provinsi1%}
+                                <option value="{{item[1]}}" selected>{{item[0]}}</option>
+                            {% else %}
+                                <option value="{{item[1]}}">{{item[0]}}</option>
+                            {% endif %}
+                            {%endfor%}
                         </select>
                     </div>
 
@@ -173,146 +154,168 @@
                 </div>
 
                 <div class="row mt-5">
-                    <div class = "col">
-                       <h3 class="text-left"> Kontak </h3>
-                       <hr>
-                        
+                    <div class="col">
+                        <h3 class="text-left"> Kontak </h3>
+                        <hr>
+
                     </div>
                 </div>
 
 
                 <div class="form-row mt-3 ">
                     <div class="col">
-                      <input type="text" class="form-control" placeholder="No telepon" id="inputtelpon" name= "nomortelpon" >
+                        <input type="text" class="form-control" placeholder="No telepon" id="inputtelpon"
+                            name="nomortelpon" value="{{teleponpekerja}}">
                     </div>
                     <div class="col">
-                      <input type="text" class="form-control" placeholder="Instagram" id="inputinsta" name= "instagram">
+                        <input type="text" class="form-control" placeholder="Instagram" id="inputinsta"
+                            name="instagram" value="{{instagrampekerja}}">
                     </div>
                 </div>
 
 
                 <div class="form-row mt-3 ">
                     <div class="col">
-                      <input type="text" class="form-control" placeholder="Linkedin" id="inputlink" name="linkedin">
+                        <input type="text" class="form-control" placeholder="Linkedin" id="inputlink" name="linkedin" value="{{linkedinpekerja}}">
                     </div>
                     <div class="col">
-                      <input type="email" class="form-control" placeholder="E-mail" id="inputemail" name="email">
+                        <input type="email" class="form-control" placeholder="E-mail" id="inputemail" name="email" value="{{emailpekerja}}">
                     </div>
                 </div>
 
 
                 <div class="row mt-5">
-                    <div class = "col">
-                       <h3 class="text-left"> Data </h3>
-                       <hr>
-                        
+                    <div class="col">
+                        <h3 class="text-left"> Data </h3>
+                        <hr>
+
                     </div>
                 </div>
 
-                    <div class="row mt-3">
-                        <div class = "col-6 col-sm-6 col-md-6 col-lg-6">
+                <div class="row mt-3">
+                    <div class="col-6 col-sm-6 col-md-6 col-lg-6">
+                        {%if ktpfoto %}
                             <div class="custom-file">
-                                <input type="file" class="custom-file-input" id="customFile"lang= "in" name="applyktp" >
-                                <label class="custom-file-label text-left" for="customFile" id="KTP"> KTP</label>
+                                <input type="file" class="custom-file-input" id="customFile" lang="in" name="applyktp">
+                                <label class="custom-file-label text-left" for="customFile" id="KTP" >FILE SUDAH ADA</label>
                             </div>
-                    
+                        {%else%}
+                        <div class="custom-file">
+                            <input type="file" class="custom-file-input" id="customFile" lang="in" name="applyktp">
+                            <label class="custom-file-label text-left" for="customFile" id="KTP">KTP</label>
                         </div>
+                        {% endif %}
+
 
 
                     </div>
 
 
-                    <div class="row mt-5">
-                        <div class = "col">
-                           <h3 class="text-left"> Preferensi </h3>
-                           <hr>
-                            
-                        </div>
-                    </div>
+                </div>
 
-                    <div class="form-row mt-3 ">
-                        <div class="form-group col">
-                            <select id="inputState" class="form-control dropdown-job" name="job">
+
+                <div class="row mt-5">
+                    <div class="col">
+                        <h3 class="text-left"> Preferensi </h3>
+                        <hr>
+
+                    </div>
+                </div>
+
+                <div class="form-row mt-3 ">
+                    <div class="form-group col">
+                        <select id="inputState" class="form-control dropdown-job" name="job">
                             {%for item in jobs%}
-                              <option value="{{item[1]}}" selected>{{item[0]}}</option>
+                                {% if item[0] == tipepekerja%}
+                                    <option value="{{item[0]}}" selected>{{item[0]}}</option>
+                                {% else %}
+                                    <option value="{{item[0]}}">{{item[0]}}</option>
+                                {% endif %}
                             {%endfor%}
-        
-                            </select>
-                        </div>
-                    
+
+                        </select>
+                    </div>
+
                     <div class="form-group col ">
-                            <select id="inputState" class="form-control dropdown-tipe" name="tipejob">
-                              <option value="Fulltime" selected>Full time</option>
-                              <option value="Parttime">Part time</option>
-                              <option value="Freelance">Freelance<option>
-                              </select>
+                        <select id="inputState" class="form-control dropdown-tipe" name="tipejob">                            
+                            {% for items in range(3) %}
+                                {% if durasi == duration[items] %}
+                                    <option value="{{duration[items]}}" selected>{{duration[items]}}</option>
+                                {% else %}
+                                    <option value="{{duration[items]}}">{{duration[items]}}</option>
+                                {% endif %}
+                            {% endfor %}                            
+                        </select>
 
                     </div>
                 </div>
 
 
                 <div class="row mt-5">
-                    <div class = "col">
-                       <h3 class="text-center"> Gaji </h3>
-                    
-                        
+                    <div class="col">
+                        <h3 class="text-center"> Gaji </h3>
+
+
                     </div>
                 </div>
 
                 <div style="position:relative; margin:auto; width:90%">
                     <span style="position:absolute; color:black; min-width:100px;">
-                    <span id="Value"></span>
+                        <span id="Value"></span>
                     </span>
-                    <input type="range" id="Range" max="50000000" min="1000000" name= "gaji"style="width:100%;"> 
-                  </div>
-
-
-
-            </div>
-
-            {% with messages = get_flashed_messages() %}
-                {% if messages %}
-                    {% for msg in messages %}
-                        <h6 style="color: red; margin-top: 2%;">{{msg}}</h6>
-                    {% endfor %}
-                {% endif %}
-            {% endwith %}
-
-
-            <div class="row mt-3 text-center">
-                <div class = "col">
-                    <button class="btn btn-danger button-bawah"type="submit" href = "/logout">Keluar</button>
-                    <button class="btn btn-success button-bawah"type="submit" href="">Simpan</button>
-                
-                    
+                    <input type="range" id="Range" max="50000000" min="1000000" name="gaji" style="width:100%;" value="{{gajipekerja}}">
                 </div>
-            </div>
 
 
 
 
-    
-
-        </form>
-
-
-
-
-
-
-
-            
-
-            
+                {% with messages = get_flashed_messages() %}
+                {% if messages %}
+                {% for msg in messages %}
+                <h6 style="color: red; margin-top: 2%;">{{msg}}</h6>
+                {% endfor %}
+                {% endif %}
+                {% endwith %}
 
 
-        </div> 
+                <div class="row mt-3 text-center">
+                    <div class="col">
+                        <button class="btn btn-danger button-bawah" type="submit" href="/logout">Keluar</button>
+                        <button class="btn btn-success button-bawah" type="submit" href="">Simpan</button>
+
+
+                    </div>
+                </div>
+
+
+
+
+
+
+            </form>
+
+
+
+
+
+
+
+
+
+
+
+
+        </div>
     </section>
 
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='/bootstrap/css/bootstrap.min.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='/css/profile.css') }}">
 
 
 
-    
 </body>
 
 
@@ -320,32 +323,25 @@
 <script src="static/popper/js/popper.min.js"></script>
 <script src="static/bootstrap/js/bootstrap.min.js"></script>
 <script type="text/javascript">
+    var myRange = document.querySelector('#Range');
+    var myValue = document.querySelector('#Value');
+    var gaji = 'gaji';
+    var off = myRange.offsetWidth / (parseInt(myRange.max) - parseInt(myRange.min));
+    var px = ((myRange.valueAsNumber - parseInt(myRange.min)) * off) - (myValue.offsetParent.offsetWidth / 2);
 
-
-var myRange = document.querySelector('#Range');
-var myValue = document.querySelector('#Value');
-var gaji = 'gaji';
-var off = myRange.offsetWidth / (parseInt(myRange.max) - parseInt(myRange.min));
-var px =  ((myRange.valueAsNumber - parseInt(myRange.min)) * off) - (myValue.offsetParent.offsetWidth / 2);
-
-  myValue.parentElement.style.left = px + 'px';
-  myValue.parentElement.style.top = myRange.offsetHeight + 'px';
-  myValue.innerHTML = 'Rp' + " "+ myRange.value ;
-
-  myRange.oninput =function(){
-    let px = ((myRange.valueAsNumber - parseInt(myRange.min)) * off) - (myValue.offsetWidth / 2);
-    myValue.innerHTML = 'Rp' + " "+ myRange.value;
     myValue.parentElement.style.left = px + 'px';
-  };
+    myValue.parentElement.style.top = myRange.offsetHeight + 'px';
+    myValue.innerHTML = 'Rp' + " " + myRange.value;
 
+    myRange.oninput = function () {
+        let px = ((myRange.valueAsNumber - parseInt(myRange.min)) * off) - (myValue.offsetWidth / 2);
+        myValue.innerHTML = 'Rp' + " " + myRange.value;
+        myValue.parentElement.style.left = px + 'px';
+    };
 
-
-
-
-
-
-
+    document.getElementById("profil").onchange = function() {
+    document.getElementById("formprofil").submit();
+    };
 </script>
+{% endblock %}
 
-
-</html>

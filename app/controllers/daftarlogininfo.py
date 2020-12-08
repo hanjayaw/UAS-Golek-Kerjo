@@ -3,17 +3,17 @@ from app import app, RunSelect, ExecuteCMD, saveApplyFilesLampiran
 from datetime import timedelta
 
 app.secret_key = "golekbarengkerjo"
-# app.permanent_session_lifetime = timedelta(weeks=12)
+app.permanent_session_lifetime = timedelta(weeks=12)
 
 
 # Code di bawah sini
 @app.route('/daftar', methods=["POST", "GET"])
 def daftarpage():
     if "user" in session:
-        return "Selamat anda telah login ternyata " + session["user"]
+        return redirect(url_for('landingpage'))
     else:
-        session.permanent = True
         if request.method == "POST":
+            session.permanent = True
             name = request.form["daftarname"].lower()
             email = request.form["daftaremail"].lower()
             password = request.form["daftarpassword"]
@@ -31,20 +31,14 @@ def daftarpage():
                         qry = "SELECT * FROM pekerja"
                         data = RunSelect(qry)
 
-                        if len(data) < 9:
-                            iid = 'P000' + str(len(data) + 1)
-                        elif len(data) < 99:
-                            iid = 'P00' + str(len(data) + 1)
-                        elif len(data) < 999:
-                            iid = 'P0' + str(len(data) + 1)
-                        else:
-                            iid = 'P' + str(len(data) + 1)
-
-                        qry = "CALL Pendaftaran(\'" + iid + "\', \'" + name + "\', \'" + email + "\', \'" + password + "\')"
+                        qry = "CALL Pendaftaran(\'" + name + "\', \'" + email + "\', \'" + password + "\')"
                         ExecuteCMD(qry)
+
+                        qry = "SELECT id_pekerja FROM pekerja WHERE email = \'" + email + "\'"
+                        iid = RunSelect(qry)
                         session["user"] = name
-                        session["iduser"] = iid
-                        return "Selamat anda telah mendaftar " + name
+                        session["iduser"] = iid[0][0]
+                        return redirect(url_for('landingpage'))
                     else:
                         flash('Password harus 8 - 12 karakter')
                         return render_template('Daftar.html')
@@ -61,9 +55,6 @@ def daftarpage():
 @app.route('/masuk', methods=["POST", "GET"])
 def masukpage():
     if "user" in session:
-        # To Be Continued
-        # To Be Continued
-        # To Be Continued
         return redirect(url_for('perusahaan'))
     else:
         session.permanent = True
@@ -91,12 +82,12 @@ def masukpage():
                 # To Be Continued
                 # To Be Continued
 
-                return redirect(url_for('perusahaan'))
+                return redirect(url_for('landingpage'))
             # To Be Continued
             # To Be Continued
             # To Be Continued
-
-            return "Yes"
+            flash("Email atau Password Salah")
+            return render_template('Login.html')
         else:
             return render_template('Login.html')
 
@@ -160,5 +151,5 @@ def logout():
     session.pop("email", None)
     session.pop("iduser", None)
     session.pop("profilepicture", None)
-    return 'Yes'
+    return redirect(url_for('landingpage'))
     # return redirect(url_for('')) Landing Page

@@ -1,7 +1,9 @@
-from app import app ## import app dari package app yang kita buat
+from app import app  ## import app dari package app yang kita buat
+
 
 if __name__ == "__main__":
-    app.run()    
+   
+    app.run()
 
 #Ingat:
 #1. Jalankan '. venv/bin/activate'

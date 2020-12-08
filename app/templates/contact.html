@@ -1,74 +1,20 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="{{ url_for('static', filename='/bootstrap/css/bootstrap.min.css') }}">
-    <link rel="stylesheet" href="{{ url_for('static', filename='/css/contact.css') }}">
-
-    <title>contact form</title>
-</head>
-<body>
-    <div class="container-fluid p-0">
-        <nav class="navbar navbar-expand-md fixed-top navbar-light bg-blue-nav">
-            <div class="container-fluid">
-                <a href="" class="navbar-brand text-uppercase d-md-none">GolekKerjo
-                </a>
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar"
-                    aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="collapse navbar-collapse" id="navbar">
-                    <ul class="navbar-nav text-uppercase">
-                        <li class="nav-item">
-                            <a href="" class="nav-link">GolekKerjo<span
-                                    class="sr-only">(current)</span></a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="" class="nav-link mx-md-1 mx-lg-2 mx-xl-3">Lowongan</a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="" class="nav-link mx-md-1 mx-lg-2 mx-xl-3">Perusahaan</a>
-                        </li>
-    
-                        <li class="nav-item">
-                            <a href="" class="nav-link mx-md-1 mx-lg-2 mx-xl-3">Hubungi Kami</a>
-                        </li>
-                    </ul>
-                    <ul class="navbar-nav text-uppercase ml-auto">
-                        <a class="navbar-brand" href="#">
-                            <img src="static/images/bell_1_s.png" width="30" height="30" alt="" loading="lazy">
-                          </a>
-                        <li class="nav-item">
-                            <a href="" class="nav-link mx-md-1 mx-lg-2 mx-xl-3">Hi Dewi</a>
-                        </li>
-                        <a class="navbar-brand" href="#">
-                            <img src="static/images/circle-cropped.png" width="30" height="30" alt="" loading="lazy">
-                          </a>
-
-                    </ul>
-                </div>
-            </div>
-        </nav>
-    </div> 
-
-
-
-    <section class ="contact">
+{% extends 'master.html' %}
+{% block content %}
+<section class ="contact">
     <div class ="container">
-        <h2>Contact Us</h2>
+        <h2>Hubungi Kami</h2>
         <div class ="row100">
             <div class ="col">
                 <div class ="inputbox">
-                    <input type ="text" name="" required="required">
-                    <span class ="text">Name</span>
+                    <input type ="text" name="" required="required" style="color: white;">
+                    <span class ="text">Nama</span>
                     <span class ="line"></span>
                 </div>
             </div>
             <div class ="col">
                 <div class ="inputbox">
-                    <input type ="text" name="" required="required">
-                    <span class ="text">Email</span>
+                    <input type ="text" name="" required="required" style="color: white;">
+                    <span class ="text">E-mail</span>
                     <span class ="line"></span>
                 </div>
             </div>
@@ -76,22 +22,29 @@
         <div class ="row100">
             <div class ="col">
                 <div class ="inputbox textarea">
-                    <textarea required ="required"></textarea>
-                    <span class ="text">Type your messange</span>
+                    <textarea required ="required" style="color: white;"></textarea>
+                    <span class ="text">Ketik Pesan</span>
                     <span class ="line"></span>
                 </div>
             </div>
         </div>
         <div class ="row100">
             <div class ="col">
-                <input type ="submit" value ="send">
+                <input type ="submit" value ="Kirim" style="color: white;">
             </div>
         </div>
     </div>
-    </section>
-</body>
-
+</section>
 <script src="static/js/jquery3.5.1.js"></script>
 <script src="static/popper/js/popper.min.js"></script>
 <script src="static/bootstrap/js/bootstrap.min.js"></script>
-</html>
+<style>
+    textarea{
+        vertical-align: middle;
+        
+    }
+    
+</style>
+<link rel="stylesheet" href="{{ url_for('static', filename='/bootstrap/css/bootstrap.min.css') }}">
+<link rel="stylesheet" href="{{ url_for('static', filename='/css/contact.css') }}">
+{% endblock %}
