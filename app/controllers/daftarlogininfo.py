@@ -27,7 +27,7 @@ def daftarpage():
                         for items in results:
                             if email == items[0]:
                                 flash('Email telah digunakan')
-                                return render_template('Daftar.html')
+                                return render_template('daftar.html')
                         qry = "SELECT * FROM pekerja"
                         data = RunSelect(qry)
 
@@ -41,15 +41,15 @@ def daftarpage():
                         return redirect(url_for('landingpage'))
                     else:
                         flash('Password harus 8 - 12 karakter')
-                        return render_template('Daftar.html')
+                        return render_template('daftar.html')
                 else:
                     flash('Password dan Confirm Password berbeda')
-                    return render_template('Daftar.html')
+                    return render_template('daftar.html')
             else:
                 flash('Ada data yang tidak diisi')
-                return render_template('Daftar.html')
+                return render_template('daftar.html')
         else:
-            return render_template('Daftar.html')
+            return render_template('daftar.html')
 
 
 @app.route('/masuk', methods=["POST", "GET"])
@@ -87,9 +87,9 @@ def masukpage():
             # To Be Continued
             # To Be Continued
             flash("Email atau Password Salah")
-            return render_template('Login.html')
+            return render_template('login.html')
         else:
-            return render_template('Login.html')
+            return render_template('login.html')
 
 
 @app.route('/searchedlowongan/<idlowongan>', methods=["POST", "GET"])
@@ -114,7 +114,7 @@ def infolowongan(idlowongan):
         ) + "\';"
         results = RunSelect(query)
 
-        return render_template('InfoLowongan.html',
+        return render_template('infolowongan.html',
                                logoperusahaan=results[0][0],
                                lowongantitle=results[0][1],
                                durationlowongan=results[0][2],
