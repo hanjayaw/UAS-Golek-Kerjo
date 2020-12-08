@@ -17,17 +17,17 @@ UPLOAD_PROFILE = os.path.join(app.root_path, 'static/profile/')
 app.config['UPLOAD_PROFILE'] = UPLOAD_PROFILE
 ALLOWED_EXTENSIONS = {'jpg', 'jpeg', 'png', 'pdf', 'docx', 'doc'}
 
-# app.config['MYSQL_DATABASE_HOST'] = 'jmswijaya.com'
-# app.config['MYSQL_DATABASE_PORT'] = 3306
-# app.config['MYSQL_DATABASE_USER'] = 'isb19'
-# app.config['MYSQL_DATABASE_PASSWORD'] = 'Isb@2019'
-# app.config['MYSQL_DATABASE_DB'] = 'db_isb19_001'
-
-app.config['MYSQL_DATABASE_HOST'] = '127.0.0.1'
+app.config['MYSQL_DATABASE_HOST'] = 'jmswijaya.com'
 app.config['MYSQL_DATABASE_PORT'] = 3306
-app.config['MYSQL_DATABASE_USER'] = 'root'
-app.config['MYSQL_DATABASE_PASSWORD'] = ''
-app.config['MYSQL_DATABASE_DB'] = 'new_schema'
+app.config['MYSQL_DATABASE_USER'] = 'isb19'
+app.config['MYSQL_DATABASE_PASSWORD'] = 'Isb@2019'
+app.config['MYSQL_DATABASE_DB'] = 'db_isb19_001'
+
+# app.config['MYSQL_DATABASE_HOST'] = '127.0.0.1'
+# app.config['MYSQL_DATABASE_PORT'] = 3306
+# app.config['MYSQL_DATABASE_USER'] = 'root'
+# app.config['MYSQL_DATABASE_PASSWORD'] = ''
+# app.config['MYSQL_DATABASE_DB'] = 'new_schema'
 
 conn = cursor = None
 
