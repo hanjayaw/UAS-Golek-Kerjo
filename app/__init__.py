@@ -117,7 +117,7 @@ def saveApplyFilesLampiran(files, pekerjaid, perusahaanid):
 def saveKTP(ktp):
     global conn, cursor
     if ktp and allowed_file(ktp.filename):
-        qry = 'SELECT `nama_pekerja` from pekerja WHERE id_pekerja = \'' + session[
+        qry = 'SELECT `id_pekerja` from pekerja WHERE id_pekerja = \'' + session[
             "iduser"].upper() + '\';'
         nama = RunSelect(qry)
         ext = ktp.filename.split(".")
@@ -135,7 +135,7 @@ def saveKTP(ktp):
 def saveProfil(profil):
     global conn, cursor
     if profil and allowed_file(profil.filename):
-        qry = 'SELECT `nama_pekerja`, `profil_pekerja` from pekerja WHERE id_pekerja = \'' + session[
+        qry = 'SELECT `id_pekerja`, `profil_pekerja` from pekerja WHERE id_pekerja = \'' + session[
             "iduser"].upper() + '\';'
         nama = RunSelect(qry)
         ext = profil.filename.split(".")
