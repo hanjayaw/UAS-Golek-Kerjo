@@ -78,18 +78,32 @@ def allowed_file(filename):
 def saveApplyFilesLampiran(files, pekerjaid, perusahaanid):
     global conn, cursor
     if files and allowed_file(files.filename):
+        query = "SELECT * FROM pekerjatoperusahaan"
+        data = RunSelect(query)
+        if len(data) < 9:
+            iid = 'PR000' + str(len(data) + 1)
+        elif len(data) < 99:
+            iid = 'PR00' + str(len(data) + 1)
+        elif len(data) < 999:
+            iid = 'PR0' + str(len(data) + 1)
+        else:
+            iid = 'PR' + str(len(data) + 1)
+
+        pkp = iid
         query = "CALL InsertPKP (\'" + perusahaanid + "\', \'" + pekerjaid + "\', \'" + datetime.today(
         ).strftime('%Y-%m-%d') + "\')"
         ExecuteCMD(query)
 
-        query = "SELECT * FROM pekerjatoperusahaan"
-        data = RunSelect(query)
-        iid = 'PR' + str(len(data))
-        pkp = iid
-
         query = "SELECT * FROM lampiranpekerja"
         data = RunSelect(query)
-        iid = 'LP' + str(len(data) + 1)
+        if len(data) < 9:
+            iid = 'LP000' + str(len(data) + 1)
+        elif len(data) < 99:
+            iid = 'LP00' + str(len(data) + 1)
+        elif len(data) < 999:
+            iid = 'LP0' + str(len(data) + 1)
+        else:
+            iid = 'LP' + str(len(data) + 1)
 
         extension = files.filename.split(".")
 
