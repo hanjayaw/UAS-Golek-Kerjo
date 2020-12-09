@@ -106,8 +106,97 @@
             </div>
         </nav>
     </div>
+    {% endif %}
+    {% if "user" in session %}
+    <div class="container-fluid p-0">
+        <nav class="navbar navbar-expand-md navbar-light bg-blue">
+            <div class="container-fluid">
+                <a href="" class="navbar-brand text-uppercase d-md-none">GolekKerjo
+                </a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar"
+                    aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbar">
+                    <ul class="navbar-nav text-uppercase">
+                        <li class="nav-item">
+                            <a href="/" class="nav-link navbar-left" style="width: 70px;"><img src="{{url_for('static', filename='images/Logo.png')}}" alt="" style="width: 100%;"><span class="sr-only">(current)</span></a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="/lowongan" class="nav-link mx-md-1 mx-lg-2 mx-xl-3">Lowongan</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="/perusahaan" class="nav-link mx-md-1 mx-lg-2 mx-xl-3">Perusahaan</a>
+                        </li>
 
+                        <li class="nav-item">
+                            <a href="/hubungikami" class="nav-link mx-md-1 mx-lg-2 mx-xl-3">Hubungi Kami</a>
+                        </li>
+                    </ul>
+                    <ul class="navbar-nav text-uppercase ml-auto">
 
+                        <a class="button" href="#popup1" style="text-align: center; margin-right: 5%;">
+                            <input type="image" src="{{url_for('static', filename='images/bell_1.png')}}"
+                                style="width: 70%; vertical-align: middle;">
+                        </a>
+                        <li class="nav-item"
+                            style="top: auto; margin: 0px; text-align: center; vertical-align: middle;">
+                            <small>Hai, {{session["user"]}}</small>
+                        </li>
+                        <li class="nav-item" style="top: auto; right: auto;text-align: center; vertical-align: middle;">
+                            <a href="/profile">
+                                {% if session["profilepicture"] %}
+                                <img src='{{url_for("static", filename="profile/")}}{{session["profilepicture"]}}'
+                                    style="border-radius: 50%;" alt="Submit" width="30" height="30">
+                                {% else %}
+                                <img src='{{url_for("static", filename="images/emptyprofile.png")}}'
+                                    style="border-radius: 50%;" alt="Submit" width="30" height="30">
+                                {% endif %}
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </div>
+    {% else %}
+    <div class="container-fluid p-0">
+        <nav class="navbar navbar-expand-md navbar-light bg-blue">
+            <div class="container-fluid">
+                <a href="" class="navbar-brand text-uppercase d-md-none">GolekKerjo
+                </a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar"
+                    aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbar">
+                    <ul class="navbar-nav text-uppercase">
+                        <li class="nav-item">
+                            <a href="/" class="nav-link navbar-left" style="width: 70px;"><img src="{{url_for('static', filename='images/Logo.png')}}" alt="" style="width: 100%;"><span class="sr-only">(current)</span></a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="/lowongan" class="nav-link mx-md-1 mx-lg-2 mx-xl-3">Lowongan</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="/perusahaan" class="nav-link mx-md-1 mx-lg-2 mx-xl-3">Perusahaan</a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a href="/hubungikami" class="nav-link mx-md-1 mx-lg-2 mx-xl-3">Hubungi Kami</a>
+                        </li>
+                    </ul>
+                    <ul class="navbar-nav text-uppercase ml-auto">
+                        <li class="nav-item">
+                            <a href="/daftar" class="nav-link mx-md-1 mx-lg-2 mx-xl-3">Daftar</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="/masuk" class="nav-link mx-md-1 mx-lg-2 mx-xl-3">Login</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </div>
     {% endif %}
 
     {% block content %} {% endblock %}
