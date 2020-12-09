@@ -9,14 +9,21 @@ def advance():
     qryjenis = "SELECT tipe_job FROM jobs GROUP BY tipe_job"
     jenis = RunSelect(qryjenis)
     if request.method == "POST":
-        searching = request.form["search"]
-        jenisjobs = request.form.get("durasi")
-        tipejobs = request.form.get("tiptipe")
-        namakota = request.form.get("namakota")
+        searching = request.form.get("search", "")
+        jenisjobs = request.form.get("durasi", "")
+        tipejobs = request.form.get("jenis", "")
+        namakota = request.form.get("namakota", "")
+        if searching == "":
+            qry = "SELECT tipe_job , nama_perusahaan , kota , minimum_gaji , logo_perusahaan FROM jobs , perusahaan , kota WHERE perusahaan.id_kota = kota.id_kota AND jobs.id_perusahaan = perusahaan.id_perusahaan AND duration_job LIKE \'%"+jenisjobs+"%\' AND tipe_job LIKE \'%"+tipejobs+"%\' AND kota LIKE \'%"+namakota+"%\'"
+        # elif searching != "" and jenisjobs == "" and tipejobs == "" and namakota == "":
+        #    qry = "SELECT tipe_job , nama_perusahaan , kota , minimum_gaji , logo_perusahaan FROM jobs , perusahaan , kota WHERE perusahaan.id_kota = kota.id_kota AND jobs.id_perusahaan = perusahaan.id_perusahaan AND (UPPER(tipe_job) LIKE UPPER(\'%"+searching+"%\') OR UPPER(nama_perusahaan) LIKE UPPER(\'%"+searching+"%\'))"
+        else:
+            qry = "SELECT tipe_job , nama_perusahaan , kota , minimum_gaji , logo_perusahaan FROM jobs , perusahaan , kota WHERE perusahaan.id_kota = kota.id_kota AND jobs.id_perusahaan = perusahaan.id_perusahaan AND (UPPER(tipe_job) LIKE UPPER(\'%"+searching+"%\') OR UPPER(nama_perusahaan) LIKE UPPER(\'%"+searching+"%\')) AND (duration_job LIKE \'"+jenisjobs+"\' OR tipe_job LIKE \'"+tipejobs+"\' OR kota LIKE \'"+namakota+"\')"
         
-        #qry = "SELECT tipe_job , nama_perusahaan , kota , minimum_gaji , logo_perusahaan FROM jobs , perusahaan , kota WHERE perusahaan.id_kota = kota.id_kota AND jobs.id_perusahaan = perusahaan.id_perusahaan AND (tipe_job LIKE \'%"+searching+"%\' OR nama_perusahaan LIKE \'%"+searching+"%\') AND duration_job LIKE \'%"+jenisjobs+"%\' AND tipe_job LIKE \'%"+tipejob+"%\' AND kota LIKE \'%"+namakota+"%\'"
-        
-        qry = "SELECT tipe_job , nama_perusahaan , kota , minimum_gaji , logo_perusahaan , id_jobs FROM jobs , perusahaan , kota WHERE perusahaan.id_kota = kota.id_kota AND jobs.id_perusahaan = perusahaan.id_perusahaan AND (tipe_job LIKE \'%"+searching+"%\' OR nama_perusahaan LIKE \'%"+searching+"%\')"
+            # qry = "SELECT tipe_job , nama_perusahaan , kota , minimum_gaji , logo_perusahaan FROM jobs , perusahaan , kota WHERE perusahaan.id_kota = kota.id_kota AND jobs.id_perusahaan = perusahaan.id_perusahaan AND (UPPER(tipe_job) LIKE UPPER(\'%"+searching+"%\') OR UPPER(nama_perusahaan) LIKE UPPER(\'%"+searching+"%\')) AND (duration_job = \'"+jenisjobs+"\' OR tipe_job = \'"+tipejobs+"\' OR kota = \'"+namakota+"\')"
+
+            # qry = "SELECT tipe_job , nama_perusahaan , kota , minimum_gaji , logo_perusahaan FROM jobs , perusahaan , kota WHERE perusahaan.id_kota = kota.id_kota AND jobs.id_perusahaan = perusahaan.id_perusahaan AND (UPPER(tipe_job) LIKE UPPER(\'%"+searching+"%\') OR UPPER(nama_perusahaan) LIKE UPPER(\'%"+searching+"%\')) UNION SELECT tipe_job , nama_perusahaan , kota , minimum_gaji , logo_perusahaan FROM jobs , perusahaan , kota WHERE perusahaan.id_kota = kota.id_kota AND jobs.id_perusahaan = perusahaan.id_perusahaan AND duration_job LIKE \'%"+jenisjobs+"%\' AND tipe_job LIKE \'%"+tipejobs+"%\' AND kota LIKE \'%"+namakota+"%\'"
+
         results = RunSelect(qry)
         return render_template('advance.html', results = results, kota = kota, jenis = jenis)
     return render_template('advance.html', kota = kota, jenis = jenis) 
