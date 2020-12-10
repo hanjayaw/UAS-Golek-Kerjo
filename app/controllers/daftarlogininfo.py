@@ -106,7 +106,6 @@ def infolowongan(idlowongan):
             saveApplyFilesLampiran(files=files,
                                    pekerjaid=pekerjaid,
                                    perusahaanid=perusahaanid)
-            flash('sukses')
             return redirect(url_for('lowongan'))
         else:
             return redirect(url_for('masukpage'))
