@@ -80,14 +80,8 @@ def saveApplyFilesLampiran(files, pekerjaid, perusahaanid):
     if files and allowed_file(files.filename):
         query = "SELECT * FROM pekerjatoperusahaan"
         data = RunSelect(query)
-        if len(data) < 9:
-            iid = 'PR000' + str(len(data) + 1)
-        elif len(data) < 99:
-            iid = 'PR00' + str(len(data) + 1)
-        elif len(data) < 999:
-            iid = 'PR0' + str(len(data) + 1)
-        else:
-            iid = 'PR' + str(len(data) + 1)
+
+        iid = 'PR' + str(len(data) + 1)
 
         pkp = iid
         query = "CALL InsertPKP (\'" + perusahaanid + "\', \'" + pekerjaid + "\', \'" + datetime.today(
@@ -96,28 +90,22 @@ def saveApplyFilesLampiran(files, pekerjaid, perusahaanid):
 
         query = "SELECT * FROM lampiranpekerja"
         data = RunSelect(query)
-        if len(data) < 9:
-            iid = 'LP000' + str(len(data) + 1)
-        elif len(data) < 99:
-            iid = 'LP00' + str(len(data) + 1)
-        elif len(data) < 999:
-            iid = 'LP0' + str(len(data) + 1)
-        else:
-            iid = 'LP' + str(len(data) + 1)
+
+        iid = 'LP' + str(len(data) + 1)
 
         extension = files.filename.split(".")
 
         filename = pkp + iid
         full = filename + '.' + extension[1]
         files.save(os.path.join(app.config['UPLOAD_FOLDER'], full))
-        query = "INSERT INTO lampiranpekerja VALUES (\'" + iid + "\', \'" + pkp + "\', \'" + full + "\')"
+        query = "CALL InsertLampiran(\'" + pkp + "\', \'" + full + "\')"
         ExecuteCMD(query)
 
 
 def saveKTP(ktp):
     global conn, cursor
     if ktp and allowed_file(ktp.filename):
-        qry = 'SELECT `nama_pekerja` from pekerja WHERE id_pekerja = \'' + session[
+        qry = 'SELECT `id_pekerja` from pekerja WHERE id_pekerja = \'' + session[
             "iduser"].upper() + '\';'
         nama = RunSelect(qry)
         ext = ktp.filename.split(".")
@@ -135,7 +123,7 @@ def saveKTP(ktp):
 def saveProfil(profil):
     global conn, cursor
     if profil and allowed_file(profil.filename):
-        qry = 'SELECT `nama_pekerja`, `profil_pekerja` from pekerja WHERE id_pekerja = \'' + session[
+        qry = 'SELECT `id_pekerja`, `profil_pekerja` from pekerja WHERE id_pekerja = \'' + session[
             "iduser"].upper() + '\';'
         nama = RunSelect(qry)
         ext = profil.filename.split(".")
