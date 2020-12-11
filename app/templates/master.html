@@ -201,13 +201,13 @@
     {% endif %}
 
     {% block content %} {% endblock %}
-
     <div id="popup1" class="overlay">
-        <div class="popup">
-            <input type="number" name="gaji-minim" min="1" id="no1">
+        <div class="popup">            
             <a class="close" href="#">&times;</a>
             <div class="content">
-                Thank to pop me out of that button, but now i'm done so you can close this window.
+                {% for items in session["notification"] %}
+                    <a href="/searchedlowongan/{{items[2]}}"><img src="static/images/{{items[0]}}" alt=""><p style="display: inline-block; color: black; text-decoration:none;">{{items[1]}}</p><hr></a>
+                {% endfor %}
             </div>
         </div>
     </div>
