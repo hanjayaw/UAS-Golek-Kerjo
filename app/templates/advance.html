@@ -1,29 +1,28 @@
 {% extends 'master.html' %}
 {% block content %}
 
-<form method="POST">
-<nav class="navbar navbar-expand-md navbar-dark bg-light p-3">
-    <div class="d-flex flex-grow-1">
-        <h4 class="navbar-brand text-dark ml-2">GolekKerjo</h4>
-        <!-- <form class="mr-3 my-auto ml-3 mx-auto w-100 d-inline-block order-1" method="POST"> -->
+<form method="POST" id="calv">
+    <nav class="navbar navbar-expand-md navbar-dark bg-light p-3">
+        <div class="d-flex flex-grow-1">
+            <h4 class="navbar-brand text-dark ml-2">GolekKerjo</h4>
+            <!-- <form class="mr-3 my-auto ml-3 mx-auto w-100 d-inline-block order-1" method="POST"> -->
             <div class="input-group">
                 <input type="text" class="form-control border border-right-0" placeholder="Search..." name="search">
                 <span class="input-group-append">
                     <button class="btn  border border-left-0" type="submit" style="width:30%; height:80%; padding:0px;">
                         <img src="static/img/search.png" width="25%">
                     </button>
-                    <button class="btn  border border-left-0" type="button" style="width: 30%; padding:0px; height:80%;" id="filter">
+                    <button class="btn  border border-left-0" type="button" style="width: 30%; padding:0px; height:80%;"
+                        id="filter">
                         <img src="static/img/funnel_zu@2x.png" width="25%">
                     </button>
                 </span>
             </div>
-        <!-- </form> -->
-    </div>
-</nav>
+            <!-- </form> -->
+        </div>
+    </nav>
 
-<!-- <form method="POST"> -->
     <div id="myModal1" class="modal1">
-        <!-- Modal content -->
         <div class="modal1-content">
             <span class="close1">&times;</span>
             <div>
@@ -52,19 +51,25 @@
                 </select>
             </div>
             <div style="margin-top:5%; text-align:center">
-                <label for="gaji-minim" style="height:35px">Gaji Minimum(RP):</label>
-                <input type="number" name="gaji-minim" min="1" id="no1">
+                <label style="height:35px">Gaji Minimum(RP):</label>
+                <input type="number" name="gaji-minim" min="1" id="minmin" max="999999999999999">
             </div>
             <div style="text-align:center">
-                <label for="gaji-max" style="height:35px">Gaji Maximum(RP):</label>
-                <input type="number" name="gaji-max" min="1" id="no2">
+                <label style="height:35px">Gaji Maximum(RP):</label>
+                <input type="number" name="gaji-max" min="1" id="maxmax" max="999999999999999">
+            </div>
+            <div style="text-align:center;">                    
+                <p id="error_para" style="color:#ff0000"></p>
             </div>
             <div>
-                <button type="submit" style="width:10%; height:35px ; margin-left:45%; margin-top:5%; background-color:#79A0EF; color: #ffffff; border:none; border-radius:10px">Selesai</button>
+                <button type="button"
+                    style="width:10%; height:35px ; margin-left:45%; margin-top:5%; background-color:#79A0EF; color: #ffffff; border:none; border-radius:10px" onclick="validate()">Selesai</button>
             </div>
         </div>
     </div>
 </form>
+
+
 
 <script>
     // Get the modal
@@ -91,6 +96,18 @@
         if (event.target == modal1) {
             modal.style.display = "none";
         }
+    }
+
+    // JS untuk mengecek gajimax harus lebih besar dari gajimin
+    function validate() {
+        var error = "Gaji maximum harus lebih besar dari gaji minimum!";
+        var max = document.getElementById("maxmax").value;
+        var min = document.getElementById("minmin").value;
+        if (max <= min) {            
+            document.getElementById("error_para").innerHTML = error;
+        } else {            
+            document.getElementById('calv').submit();           
+        }        
     }
 </script>
 
