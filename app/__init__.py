@@ -17,17 +17,17 @@ UPLOAD_PROFILE = os.path.join(app.root_path, 'static/profile/')
 app.config['UPLOAD_PROFILE'] = UPLOAD_PROFILE
 ALLOWED_EXTENSIONS = {'jpg', 'jpeg', 'png', 'pdf', 'docx', 'doc'}
 
-# app.config['MYSQL_DATABASE_HOST'] = 'jmswijaya.com'
-# app.config['MYSQL_DATABASE_PORT'] = 3306
-# app.config['MYSQL_DATABASE_USER'] = 'isb19'
-# app.config['MYSQL_DATABASE_PASSWORD'] = 'Isb@2019'
-# app.config['MYSQL_DATABASE_DB'] = 'db_isb19_001'
-
-app.config['MYSQL_DATABASE_HOST'] = '127.0.0.1'
+app.config['MYSQL_DATABASE_HOST'] = 'jmswijaya.com'
 app.config['MYSQL_DATABASE_PORT'] = 3306
-app.config['MYSQL_DATABASE_USER'] = 'root'
-app.config['MYSQL_DATABASE_PASSWORD'] = ''
-app.config['MYSQL_DATABASE_DB'] = 'new_schema'
+app.config['MYSQL_DATABASE_USER'] = 'isb19'
+app.config['MYSQL_DATABASE_PASSWORD'] = 'Isb@2019'
+app.config['MYSQL_DATABASE_DB'] = 'db_isb19_001'
+
+# app.config['MYSQL_DATABASE_HOST'] = '127.0.0.1'
+# app.config['MYSQL_DATABASE_PORT'] = 3306
+# app.config['MYSQL_DATABASE_USER'] = 'root'
+# app.config['MYSQL_DATABASE_PASSWORD'] = ''
+# app.config['MYSQL_DATABASE_DB'] = 'new_schema'
 
 conn = cursor = None
 
@@ -126,8 +126,7 @@ def saveKTP(ktp):
             os.remove(os.path.join(app.config['UPLOAD_FOLDER'], filename))
         except:
             None
-        qry = 'UPDATE pekerja set ktp = \'' + filename + '\' WHERE id_pekerja = \'' + session[
-            "iduser"].upper() + '\';'
+        qry = 'CALL updatektp( \'' + filename + '\' , \'' + session["iduser"].upper() + '\')'
         ExecuteCMD(qry)
         ktp.save(os.path.join(app.config['UPLOAD_FOLDER'], filename))
 
@@ -145,9 +144,9 @@ def saveProfil(profil):
             os.remove(os.path.join(app.config['UPLOAD_PROFILE'], filesebelum))
         except:
             None
+
         session["profilepicture"] = filename
-        qry = 'UPDATE pekerja set profil_pekerja = \'' + filename + '\' WHERE id_pekerja = \'' + session[
-            "iduser"].upper() + '\';'
+        qry = 'CALL updatefotoprofil (\'' + filename + '\'  , \'' + session["iduser"].upper() + '\')'
         ExecuteCMD(qry)
         profil.save(os.path.join(app.config['UPLOAD_PROFILE'], filename))
 
