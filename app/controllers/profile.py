@@ -111,7 +111,7 @@ def profile():
             if ktp.filename != "" and ktp.filename != None:
                 saveKTP(ktp)
             if jobnya != "" and jobnya != None:
-                qry += ", tipe_pekerja = \'" + jobnya + "\'"
+                qry += ", tipe_pekerjaan = \'" + jobnya + "\'"
             if tipejob != "" and tipejob != None:
                 qry += ", durasi_pekerjaan = \'" + tipejob + "\'"
             if gaji != "" and gaji != None:
