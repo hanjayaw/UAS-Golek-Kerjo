@@ -200,14 +200,13 @@
     </div>
     {% endif %}
     {% block content %} {% endblock %}
-    <div id="popup1" class="overlay" style="z-index: 999;">
-        <div class="popup">
-            <!-- <input type="number" name="gaji-minim" min="1" id="no1"> -->
+    <div id="popup1" class="overlay">
+        <div class="popup">            
             <a class="close" href="#">&times;</a>
-            <div class="content">                
-                <img src="{{url_for('static', filename='images/sinarmas.png')}}" alt="" width="15%" height="15%"><p style="display: inline-block; padding-left: 2%;">Ada Lowongan Baru<p><hr>
-                <img src="{{url_for('static', filename='images/malciputra.jpg')}}" alt="" width="15%" height="15%"><p style="display: inline-block; padding-left: 2%;">Ada Lowongan Baru<p><hr>
-                <img src="{{url_for('static', filename='images/Golek_Kerjo_3.png')}}" alt="" width="15%" height="15%"><p style="display: inline-block; padding-left: 2%;">Ada Lowongan Baru<p><hr>
+            <div class="content">
+                {% for items in session["notification"] %}
+                    <a href="/searchedlowongan/{{items[2]}}"><img src="static/images/{{items[0]}}" alt=""><p style="display: inline-block; color: black; text-decoration:none;">{{items[1]}}</p><hr></a>
+                {% endfor %}
             </div>
         </div>
     </div>

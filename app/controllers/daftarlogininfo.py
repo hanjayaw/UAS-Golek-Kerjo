@@ -38,6 +38,11 @@ def daftarpage():
                         iid = RunSelect(qry)
                         session["user"] = name
                         session["iduser"] = iid[0][0]
+
+                        sql = "SELECT foto_notification, kalimat_notification, id_lowongan FROM notification ORDER BY RAND() LIMIT 3"
+                        hasil = RunSelect(sql)
+                        session["notification"] = hasil
+
                         return redirect(url_for('landingpage'))
                     else:
                         flash('Password harus 8 - 12 karakter')
@@ -78,6 +83,10 @@ def masukpage():
                 session["user"] = nama
                 session["iduser"] = idpekerja
                 session["profilepicture"] = profilpekerja
+
+                sql = "SELECT foto_notification, kalimat_notification, id_lowongan FROM notification ORDER BY RAND() LIMIT 3"
+                hasil = RunSelect(sql)
+                session["notification"] = hasil
                 # To Be Continued
                 # To Be Continued
                 # To Be Continued
@@ -102,7 +111,7 @@ def infolowongan(idlowongan):
 
             files = request.files["applyfiles"]
             pekerjaid = session["iduser"]
-            perusahaanid = results[0][0]
+            perusahaanid = results[0][0]            
             saveApplyFilesLampiran(files=files,
                                    pekerjaid=pekerjaid,
                                    perusahaanid=perusahaanid)
