@@ -34,7 +34,7 @@ def perusahaan():
     currentpage = request.args.get('page', 1)  #langkah 1 tau currentpage
     sql = "SELECT COUNT(*) as jumlah_perusahaan FROM perusahaan, jobs WHERE perusahaan.id_perusahaan = jobs.id_perusahaan GROUP BY perusahaan.id_perusahaan"
     res = RunSelectOne(sql)  #LANGKAH KE 2 COUNT DATA
-    n_item = res[0]
+    n_item = res[0][0]
     n_size = 6
     n_pages = math.ceil(n_item / n_size)
     if int(currentpage) > 1:
