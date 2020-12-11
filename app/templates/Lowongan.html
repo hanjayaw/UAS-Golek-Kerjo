@@ -5,7 +5,7 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.css" integrity="sha512-yHknP1/AwR+yx26cB1y0cjvQUMvEa2PFzt1c9LlS4pRQ5NOTZFWbhBig+X9G9eYW/8m0/4OXNx8pxJ6z57x0dw==" crossorigin="anonymous" />
 <link rel="stylesheet" href="{{ url_for('static', filename='/css/index.css') }}">
 <!-- search not in navbar collapse -->
-<nav class="navbar navbar-expand-md navbar-dark bg-light p-3">
+<nav class="navbar navbar-expand-md navbar-dark bg-light p-3" style="margin-top: 7%;">
     <div class="d-flex flex-grow-1">
         <h4 class="navbar-brand text-dark ml-2">GolekKerjo</h4>
         <form class="mr-3 my-auto ml-3 mx-auto w-100 d-inline-block order-1">
@@ -104,7 +104,7 @@
             <div class = "col-md-12">
                 <div class = "card mb-5" style="width: 100%; height: 50%;">
                     <div class = "card-body">
-                        <img src = "static/images/{{item[4]}}" class = "img-fluid mb-3  mx-auto" id = "lowongan" style="width: 20; height: 40; border-radius: 10px;">
+                        <img src = "static/images/{{item[4]}}" class = "img-fluid mb-3  mx-auto" id = "lowongan" style="width: 20; height: 30; border-radius: 10px;">
                         <h5>{{item[0]}}</h5>
                         <p>{{item[2]}}</p>
                         <p>{{item[3]}}</p>
@@ -126,7 +126,7 @@
             </div>
         </div>
         <div class = "row mt-5 slider">
-            {%for item in results%}
+            {%for item in baru%}
             <div class = "col-md-12">
                 <div class = "card-2 mb-5">
                     <div class = "card-body" style="width: 100%; height: 50%;">

@@ -1,49 +1,102 @@
 {% extends 'master.html' %}
 {% block content %}
-<section class ="contact">
-    <div class ="container">
+<section class="contact">
+
+    <div class="container mt-5">
         <h2>Hubungi Kami</h2>
-        <div class ="row100">
-            <div class ="col">
-                <div class ="inputbox">
-                    <input type ="text" name="" required="required" style="color: white;">
-                    <span class ="text">Nama</span>
-                    <span class ="line"></span>
+
+
+        <form action="" method="POST" id="formUtama">
+            <div class="row100">
+                <div class="col">
+                    <div class="inputbox">
+                        <input type="text" name="namacust" required="required" style="color: white;" id="nama" value="{{nama}}">
+                        <span class="text">Nama</span>
+                        <span class="line"></span>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="inputbox">
+                        <input type="text" name="emailcust" required="required" style="color: white;" id="email" value="{{email}}">
+                        <span class="text">E-mail</span>
+                        <span class="line"></span>
+                    </div>
                 </div>
             </div>
-            <div class ="col">
-                <div class ="inputbox">
-                    <input type ="text" name="" required="required" style="color: white;">
-                    <span class ="text">E-mail</span>
-                    <span class ="line"></span>
+
+            <div class="row100 form-row ml-4 mb-3 mt-3">
+                <div class="row100 form-group col-6 col-sm-6 col-md-6 col-lg-6">
+                    <label style="color:  #79A0EF; margin-left:2%;"> Jenis masalah</label>
+                    <select id="inputState" class="form-control dropdown-jenismasalah" name="jenismasalah"
+                        style="color: #79A0EF; width: 90%;">
+
+                        {%for item in masalah%}
+                        <option value="{{item[0]}}" selected style="color: #79A0EF;">{{item[1]}}</option>
+                        {%endfor%}
+                    </select>
+                </div>
+
+
+            </div>
+            <div class="row100">
+                <div class="col">
+                    <div class="inputbox textarea">
+                        <textarea required="required" style="color: white;" name="isimasalah" id="isimasalah">{{isitext}}</textarea>
+                        <span class="text">Ketik Pesan</span>
+                        <span class="line"></span>
+                    </div>
                 </div>
             </div>
-        </div>
-        <div class ="row100">
-            <div class ="col">
-                <div class ="inputbox textarea">
-                    <textarea required ="required" style="color: white;"></textarea>
-                    <span class ="text">Ketik Pesan</span>
-                    <span class ="line"></span>
+
+
+
+
+
+            <div class="row100">
+                <div class="col">
+                    <!-- {% if nama != "" and email != "" and isimasalah != "" %}
+                    <input type="submit" value="Kirim" style="color: white;" onclick="myFunction()">
+                    {%else%}
+                    <input type="submit" value="Kirim" style="color: white;">
+                    {%endif%} -->
+    
+                    
+                    <input type="submit" value="Kirim" style="color: white;" onclick="myFunction()">
+                    
+                    
                 </div>
             </div>
-        </div>
-        <div class ="row100">
-            <div class ="col">
-                <input type ="submit" value ="Kirim" style="color: white;">
-            </div>
-        </div>
+        </form>
+
     </div>
+
+
 </section>
 <script src="static/js/jquery3.5.1.js"></script>
 <script src="static/popper/js/popper.min.js"></script>
 <script src="static/bootstrap/js/bootstrap.min.js"></script>
-<style>
-    textarea{
-        vertical-align: middle;
+<script>
+    function myFunction() {
+        var nama = document.getElementById("nama").value;
+        var email = document.getElementById("email").value;
+        var jenismasalah = document.getElementById("inputState").value;
+        //alert("lol");
+        var isimasalah = document.getElementById("isimasalah").value;
+        if(nama != "" && email != "" && jenismasalah != "" && isimasalah != ""){
+            alert("PESAN ANDA SUDAH TERKIRIM!");
+            document.getElementById("formUtama").submit();
+        }else{
+            alert("Pesan anda Belum terkirim ada data yang belum terisi");
+        }
         
+        //export FLASK_ENV=development
     }
-    
+</script>
+<style>
+    textarea {
+        vertical-align: middle;
+
+    }
 </style>
 <link rel="stylesheet" href="{{ url_for('static', filename='/bootstrap/css/bootstrap.min.css') }}">
 <link rel="stylesheet" href="{{ url_for('static', filename='/css/contact.css') }}">

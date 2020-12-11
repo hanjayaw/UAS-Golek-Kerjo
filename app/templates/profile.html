@@ -1,7 +1,7 @@
 {% extends 'master.html' %}
 {% block content %}
 
-<body>
+
  
 
 
@@ -36,7 +36,7 @@
     
                         <span class="btn btn-primary btn-file"
                             style="background-color: #79A0EF; width: 15%; border-radius: 20px; height: 5%; border:none;">
-                            Ubah profil <input type="file" name="applyprofil" id="profil">
+                            Ubah Foto <input type="file" name="applyprofil" id="profil">
                         </span>
 
                     </form>
@@ -60,8 +60,6 @@
             <div class="row pt-3">
                 <div class="col">
                     <button type="button" class="btn btn-primary btn-blue">Jadi premium</button>
-
-
                 </div>
             </div>
 
@@ -69,7 +67,7 @@
 
             <div class="row mt-5">
                 <div class="col">
-                    <h3 class="text-left"> Biodata</h3>
+                    <h3 class="text-left">Biodata</h3>
                     <hr>
 
                 </div>
@@ -82,9 +80,17 @@
                     <div class="col">
                         <input type="text" class="form-control" placeholder="Nama" id=inputnama name="namaprofil" value="{{namapekerja}}">
                     </div>
-                    <div class="col">
-                        <input type="text" class="form-control" placeholder="Jenis Kelamin" id=inputjenis
-                            name="genderprofil" value="{{genderpekerja}}"> 
+                    <div class="form-group col">
+                        <select id="inputState" class="form-control dropdown-gender" style="padding-left:30px;"
+                            name="genderprofil">
+                            {%for item in range(2) %}
+                                {% if genderpekerja == genderkerja[item]%}
+                                    <option value="{{genderkerja[item]}}" selected>{{genderkerja[item]}}</option>
+                                {% else %}
+                                    <option value="{{genderkerja[item]}}">{{genderkerja[item]}}</option>
+                                {% endif %}
+                            {%endfor%}
+                        </select>
                     </div>
                 </div>
                 <div class="form-row mt-3 ">
@@ -127,9 +133,9 @@
                             
                             {%for item in kota%}
                             {% if item[0] == kota1 %}
-                                <option value="{{item[1]}}" selected>{{item[0]}}</option>
+                                <option value="{{item[0]}}" selected>{{item[1]}}</option>
                             {% else %}
-                                <option value="{{item[1]}}">{{item[0]}}</option>
+                                <option value="{{item[0]}}">{{item[1]}}</option>
                             {% endif %}
                             {%endfor%}
                         </select>
@@ -142,7 +148,7 @@
 
                             {%for item in provinsi%}
                             {% if item[0] == provinsi1%}
-                                <option value="{{item[1]}}" selected>{{item[0]}}</option>
+                                <option value="{{item[1]}}">{{item[0]}}</option>
                             {% else %}
                                 <option value="{{item[1]}}">{{item[0]}}</option>
                             {% endif %}
@@ -197,7 +203,7 @@
                         {%if ktpfoto %}
                             <div class="custom-file">
                                 <input type="file" class="custom-file-input" id="customFile" lang="in" name="applyktp">
-                                <label class="custom-file-label text-left" for="customFile" id="KTP" >FILE SUDAH ADA</label>
+                                <label class="custom-file-label text-left" for="customFile" id="KTP" >FILE KTP SUDAH ADA</label>
                             </div>
                         {%else%}
                         <div class="custom-file">
@@ -259,7 +265,7 @@
                     </div>
                 </div>
 
-                <div style="position:relative; margin:auto; width:90%">
+                <div style="position:relative; margin:auto; width:80%">
                     <span style="position:absolute; color:black; min-width:100px;">
                         <span id="Value"></span>
                     </span>
@@ -278,10 +284,10 @@
                 {% endwith %}
 
 
-                <div class="row mt-3 text-center">
-                    <div class="col">
-                        <a class="btn btn-danger button-bawah" type="submit" href="/logout">Keluar</a>
-                        <button class="btn btn-success button-bawah" type="submit" href="">Simpan</button>
+                <div class="row  text-center" style="margin-top: 7%;">
+                    <div class="col-sm-12">
+                        <button class="btn btn-danger button-bawah" type="submit" href="/logout" style="font-size: 80%;">Keluar</button>
+                        <button class="btn btn-success button-bawah" type="submit" href="" style="font-size: 80%;">Simpan</button>
 
 
                     </div>
@@ -292,7 +298,68 @@
 
 
 
+
+
+
             </form>
+
+
+            <div class="row mt-5">
+                <div class="col">
+                    <h3 class="text-left">Histori</h3>
+                    <hr>
+
+                </div>
+            </div>
+
+              {%for item in histori %}
+                        {%if item[0] == ""  and item[1] == ""  and item[2] == "" %}
+                            <h1>DATA KOSONG</h1>
+                        {%else%}
+
+                        <table class="table table-striped pb-4">
+                            <thead>
+                              <tr>  
+                                <th scope="col">Nama perusahaan</th>
+                                <th scope="col">Nama pekerja</th>
+                                <th scope="col">Tanggal upload CV</th>
+                              </tr>
+                            </thead>
+                            <tbody>
+                              <tr>
+                                    {%if item[0] != "" %}
+                                        <th scope="row">{{item[0]}}</th>
+                                    
+                                    {% else %}
+            
+                                    <th scope="row">DATA KOSONG</th>
+                                       
+                                    {% endif %}
+            
+                                    {%if item[1] != ""%}
+                                        <td>{{item[1]}}</td>
+                                    {% else %}
+                                        <td>data kosong</td>
+                                    {% endif %}
+            
+                                    {%if item[2] != ""%}
+                                        <td>{{item[2]}}</td>
+                                    {% else %}
+                                        <td>data kosong</td>
+                                    {% endif %}
+
+                                </tr>
+
+                        </tbody>
+                    </table>
+    
+        
+
+                        {% endif %}
+                {%endfor%}
+
+
+
 
 
 
@@ -316,7 +383,7 @@
 
 
 
-</body>
+
 
 
 <script src="static/js/jquery3.5.1.js"></script>

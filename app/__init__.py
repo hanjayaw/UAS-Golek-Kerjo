@@ -114,8 +114,7 @@ def saveKTP(ktp):
             os.remove(os.path.join(app.config['UPLOAD_FOLDER'], filename))
         except:
             None
-        qry = 'UPDATE pekerja set ktp = \'' + filename + '\' WHERE id_pekerja = \'' + session[
-            "iduser"].upper() + '\';'
+        qry = 'CALL updatektp( \'' + filename + '\' , \'' + session["iduser"].upper() + '\')'
         ExecuteCMD(qry)
         ktp.save(os.path.join(app.config['UPLOAD_FOLDER'], filename))
 
@@ -133,9 +132,9 @@ def saveProfil(profil):
             os.remove(os.path.join(app.config['UPLOAD_PROFILE'], filesebelum))
         except:
             None
+
         session["profilepicture"] = filename
-        qry = 'UPDATE pekerja set profil_pekerja = \'' + filename + '\' WHERE id_pekerja = \'' + session[
-            "iduser"].upper() + '\';'
+        qry = 'CALL updatefotoprofil (\'' + filename + '\'  , \'' + session["iduser"].upper() + '\')'
         ExecuteCMD(qry)
         profil.save(os.path.join(app.config['UPLOAD_PROFILE'], filename))
 
