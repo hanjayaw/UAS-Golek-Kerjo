@@ -54,6 +54,6 @@ def perusahaan():
     hasil = RunSelect(sql)
     return render_template('perusahaan.html',
                            results=results,
-                           hasil=hasil,                           
+                           hasil=hasil,
                            pages=n_pages,
                            currentpage=int(currentpage))

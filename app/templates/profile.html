@@ -52,14 +52,24 @@
 
             <div class="row pt-3">
                 <div class="col">
-                    <h5> Free Account</h5>
+                    {%if jenismember[0][0] == "Free" %}
+                    <h5>Free Account</h5>
+                    {%else%}
+                    <h5>Premium account</h5>
+
+                    {%endif%}
 
                 </div>
             </div>
 
             <div class="row pt-3">
                 <div class="col">
+                    {%if jenismember[0][0] == "Free" %}
                     <button type="button" class="btn btn-primary btn-blue">Jadi premium</button>
+                    {%else%}
+                    <button type="button" class="btn btn-primary btn-blue"> Premium aktif</button>
+
+                    {%endif%}
                 </div>
             </div>
 
