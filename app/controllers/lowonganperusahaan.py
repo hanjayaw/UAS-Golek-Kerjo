@@ -46,15 +46,14 @@ def perusahaan():
     else:
         currentindex = 0
     #NAMA PERUSAHAAN, KOTA PERUSAHAAN, BERAPA JUMLAH LOWONGANNYA, LOGO
-    sql = "SELECT nama_perusahaan, COUNT(nama_perusahaan), kota, logo_perusahaan, id_perusahaan FROM (SELECT p.nama_perusahaan, k.kota, p.logo_perusahaan, p.id_perusahaan from jobs j, kota k, perusahaan p WHERE p.id_kota = k.id_kota and j.id_perusahaan = p.id_perusahaan GROUP BY p.auto_num, j.auto_num, j.id_perusahaan) as jumlah_semua GROUP BY jumlah_semua.nama_perusahaan, kota, logo_perusahaan, id_perusahaan LIMIT 6"
+    sql = "SELECT nama_perusahaan, kota, COUNT(nama_perusahaan), logo_perusahaan, id_perusahaan FROM (SELECT p.nama_perusahaan, k.kota, p.logo_perusahaan, p.id_perusahaan from jobs j, kota k, perusahaan p WHERE p.id_kota = k.id_kota and j.id_perusahaan = p.id_perusahaan GROUP BY p.auto_num, j.auto_num, j.id_perusahaan) as jumlah_semua GROUP BY jumlah_semua.nama_perusahaan, kota, logo_perusahaan, id_perusahaan ORDER BY RAND() LIMIT 6"
     results = RunSelect(sql)
 
-    sql = "SELECT nama_perusahaan, COUNT(nama_perusahaan), kota, logo_perusahaan, id_perusahaan FROM (SELECT p.nama_perusahaan, k.kota, p.logo_perusahaan, p.id_perusahaan from jobs j, kota k, perusahaan p WHERE p.id_kota = k.id_kota and j.id_perusahaan = p.id_perusahaan GROUP BY p.auto_num, j.auto_num, j.id_perusahaan) as jumlah_semua GROUP BY jumlah_semua.nama_perusahaan, kota, logo_perusahaan, id_perusahaan LIMIT " + str(
+    sql = "SELECT nama_perusahaan, kota, COUNT(nama_perusahaan), logo_perusahaan, id_perusahaan FROM (SELECT p.nama_perusahaan, k.kota, p.logo_perusahaan, p.id_perusahaan from jobs j, kota k, perusahaan p WHERE p.id_kota = k.id_kota and j.id_perusahaan = p.id_perusahaan GROUP BY p.auto_num, j.auto_num, j.id_perusahaan) as jumlah_semua GROUP BY jumlah_semua.nama_perusahaan, kota, logo_perusahaan, id_perusahaan LIMIT " + str(
         currentindex) + ", " + str(n_size) + ";"
     hasil = RunSelect(sql)
     return render_template('perusahaan.html',
                            results=results,
-                           hasil=hasil,
-                           baru=baru,
+                           hasil=hasil,                           
                            pages=n_pages,
                            currentpage=int(currentpage))
