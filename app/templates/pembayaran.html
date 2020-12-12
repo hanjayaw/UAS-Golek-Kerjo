@@ -43,6 +43,7 @@
         </div>        
     </div>
 </div>
+<form method="POST" id="form-controller"></form>
 
 <link rel="stylesheet" href="{{url_for('static', filename='css/pembayaran.css')}}">
 <script 
@@ -54,8 +55,13 @@
     var payButton = document.getElementById('pay-button');
     // For example trigger on button clicked, or any time you need
     payButton.addEventListener('click', function () {
-      snap.pay('{{transaction}}'); // Replace it with your transaction token
+      snap.pay('{{transaction}}', {
+          onSuccess: function(result){
+              document.getElementById("form-controller").submit();
+          }
+      }); // Replace it with your transaction token
     });    
 </script>
 
 {% endblock %}
+
