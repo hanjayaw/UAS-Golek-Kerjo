@@ -132,10 +132,10 @@
                             name="kota">
                             
                             {%for item in kota%}
-                            {% if item[0] == kota1 %}
-                                <option value="{{item[0]}}" selected>{{item[1]}}</option>
+                            {% if item[0] == kota1%}
+                                <option value="{{item[1]}}" selected>{{item[0]}}</option>
                             {% else %}
-                                <option value="{{item[0]}}">{{item[1]}}</option>
+                                <option value="{{item[1]}}">{{item[0]}}</option>
                             {% endif %}
                             {%endfor%}
                         </select>
@@ -148,7 +148,7 @@
 
                             {%for item in provinsi%}
                             {% if item[0] == provinsi1%}
-                                <option value="{{item[1]}}">{{item[0]}}</option>
+                                <option value="{{item[1]}}" selected>{{item[0]}}</option>
                             {% else %}
                                 <option value="{{item[1]}}">{{item[0]}}</option>
                             {% endif %}
@@ -312,12 +312,8 @@
                 </div>
             </div>
 
-              {%for item in histori %}
-                        {%if item[0] == ""  and item[1] == ""  and item[2] == "" %}
-                            <h1>DATA KOSONG</h1>
-                        {%else%}
-
-                        <table class="table table-striped pb-4">
+                        {%if histori%}
+                        <table class="table table-bordered  table-striped pb-4">
                             <thead>
                               <tr>  
                                 <th scope="col">Nama perusahaan</th>
@@ -326,7 +322,9 @@
                               </tr>
                             </thead>
                             <tbody>
+                                {%for item in histori %}
                               <tr>
+                               
                                     {%if item[0] != "" %}
                                         <th scope="row">{{item[0]}}</th>
                                     
@@ -347,16 +345,22 @@
                                     {% else %}
                                         <td>data kosong</td>
                                     {% endif %}
+                               
 
                                 </tr>
+                                {%endfor%}
 
                         </tbody>
                     </table>
-    
-        
+                    {%else%}
 
-                        {% endif %}
-                {%endfor%}
+                    <h6 class ="text-dark text-left"> Histori Masih Kosong</h6>
+
+                    {% endif %}
+                     
+
+                        
+           
 
 
 
