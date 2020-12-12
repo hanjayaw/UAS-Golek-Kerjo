@@ -8,9 +8,9 @@
                 <img src="{{url_for('static', filename='images/windows-C6T6vr1sQI0-unsplash.png')}}" alt="" style="max-width: 100%; height: auto;">
             </div>
             <div class="text">
-                <h2>Cari Lowongan yang Cocok Untuk Anda di</h2>
-                <form class="search-form">
-                    <input type="text" placeholder="Masukkan Lokasi" id="search-input"><br>
+                <h2>Cari Lowongan yang Cocok Untuk Anda</h2>
+                <form action="/advance" method="POST">
+                    <input type="text" placeholder="Ketik di Sini" name="search" id="search-input"><br>
                     <input type="submit" value="Cari" id="search-submit">
                 </form>
             </div>

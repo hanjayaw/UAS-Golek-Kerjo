@@ -38,7 +38,7 @@ def daftarpage():
                         iid = RunSelect(qry)
                         session["user"] = name
                         session["iduser"] = iid[0][0]
-
+                        
                         sql = "SELECT foto_notification, kalimat_notification, id_lowongan FROM notification ORDER BY RAND() LIMIT 3"
                         hasil = RunSelect(sql)
                         session["notification"] = hasil
