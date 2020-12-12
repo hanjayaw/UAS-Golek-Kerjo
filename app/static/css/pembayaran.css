@@ -1,0 +1,21 @@
+.container-layanan{
+    background-color: #79A0EF;
+    padding:2%;
+    margin:5%;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+    color:white;
+    
+}
+button:disabled{
+    background-color: #0069d8 !important;
+    color:white !important;
+}
+.bg-blue-items{
+    background-color: white;
+    color: black;
+    border-radius: 20px;
+    padding: 3% 16% 3% 16%;
+}

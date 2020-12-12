@@ -1,13 +1,13 @@
-# from flask import Flask, render_template, request
-# from app import app
+from flask import Flask, render_template, request
+from app import app
 
-# # Code di bawah sini
-# import midtransclient
+# Code di bawah sini
+import midtransclient
 
-# # Create Snap API instance
-# snap = midtransclient.Snap(is_production=False,
-#                            server_key='SB-Mid-server-lPjI7VymABNAihCh157RTWHI',
-#                            client_key='SB-Mid-client-hH_K95RPUQyQl7L_')
+# Create Snap API instance
+snap = midtransclient.Snap(is_production=False,
+                           server_key='SB-Mid-server-lPjI7VymABNAihCh157RTWHI',
+                           client_key='SB-Mid-client-hH_K95RPUQyQl7L_')
 
 # Build API parameter
 param = {
@@ -26,9 +26,9 @@ param = {
     }
 }
 
-# transaction = snap.create_transaction(param)
-# transaction_token = transaction['token']
+transaction = snap.create_transaction(param)
+transaction_token = transaction['token']
 
-# @app.route('/midtrans')
-# def midtrans():
-#     return render_template('Midtrans.html', transaction=transaction_token)
+@app.route('/midtrans')
+def midtrans():
+    return render_template('Midtrans.html', transaction=transaction_token)
