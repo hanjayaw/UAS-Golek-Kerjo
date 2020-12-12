@@ -31,7 +31,6 @@ app.config['MYSQL_DATABASE_DB'] = 'db_isb19_001'
 
 conn = cursor = None
 
-
 def OpenDB():
     global conn, cursor
     conn = mysql.connect()

@@ -6,6 +6,10 @@ app.secret_key = 'Golekbarangkerjo'
 
 @app.route('/lowongan', methods=["POST", "GET"])
 def lowongan():
+    qrykota = "SELECT kota from kota ORDER BY kota"
+    session["kota"] = RunSelect(qrykota)
+    qryjenis = "SELECT tipe_job FROM jobs GROUP BY tipe_job"
+    session["jenis"] = RunSelect(qryjenis)
     currentpage = request.args.get('page', 1)  #langkah 1 tau currentpage
     sql = "SELECT COUNT(*) as jumlah_lowongan FROM jobs"
     res = RunSelectOne(sql)  #LANGKAH KE 2 COUNT DATA
@@ -35,6 +39,10 @@ def lowongan():
 # Code di bawah sini
 @app.route('/perusahaan', methods=["POST", "GET"])
 def perusahaan():
+    qrykota = "SELECT kota from kota ORDER BY kota"
+    session["kota"] = RunSelect(qrykota)
+    qryjenis = "SELECT tipe_job FROM jobs GROUP BY tipe_job"
+    session["jenis"] = RunSelect(qryjenis)
     currentpage = request.args.get('page', 1)  #langkah 1 tau currentpage
     sql = "SELECT COUNT(jumlahsemua.jumlah_perusahaan) as jumlah FROM (SELECT COUNT(*) as jumlah_perusahaan FROM jobs GROUP BY jobs.id_perusahaan) as jumlahsemua"
     res = RunSelectOne(sql)  #LANGKAH KE 2 COUNT DATA
