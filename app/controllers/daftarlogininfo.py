@@ -34,10 +34,11 @@ def daftarpage():
                         qry = "CALL Pendaftaran(\'" + name + "\', \'" + email + "\', \'" + password + "\')"
                         ExecuteCMD(qry)
 
-                        qry = "SELECT id_pekerja FROM pekerja WHERE email = \'" + email + "\'"
+                        qry = "SELECT id_pekerja, email FROM pekerja WHERE email = \'" + email + "\'"
                         iid = RunSelect(qry)
                         session["user"] = name
                         session["iduser"] = iid[0][0]
+                        session["email"] = iid[0][1]
                         
                         sql = "SELECT foto_notification, kalimat_notification, id_lowongan FROM notification ORDER BY RAND() LIMIT 3"
                         hasil = RunSelect(sql)
