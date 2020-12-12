@@ -16,7 +16,12 @@ def premium():
     results = RunSelect(qry)
     inlength = len(results) + 1 #PEMASUKAN KE BERAPA
     fullorderid = "IN" + str(inlength) + session["iduser"]
-
+    telepon = ("SELECT `telepon_pekerja` from pekerja WHERE id_pekerja = \'" + session["iduser"].upper() + "\';")
+    notelepon = RunSelect(telepon)
+    if notelepon[0][0] != "": 
+        asu = notelepon[0][0]
+    else:
+        asu = "Tidak Diketahui "
     param = {
         "transaction_details": {
             "order_id": fullorderid, #DIUBAH DENGAN MAX PEMASUKAN + 1 (QUERY)
@@ -29,7 +34,8 @@ def premium():
             "first_name": session["user"],
             "last_name": "",
             "email": session["email"],
-            "phone": "08111222333" #KALAU NOMOR HP NYA NGGA ADA DI PROFILE, GANTI JADI Tidak Diketahui (IF dan QUERY)
+            "phone" : asu
+            # "phone": "08111222333" #KALAU NOMOR HP NYA NGGA ADA DI PROFILE, GANTI JADI Tidak Diketahui (IF dan QUERY)
         },
         "callbacks": {
             "finish": "http://127.0.0.1:5000/keapproutemu" 
