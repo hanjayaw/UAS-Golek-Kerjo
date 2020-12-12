@@ -14,7 +14,7 @@ def before_request():
 def profile():
     if "user" in session:
         sqlutama = "SELECT `nama_pekerja`,`jenis_kelamin`,`umur_pekerja`,`pendidikan_terakhir`,`alamat`,`kota`,`provinsi`,`telepon_pekerja`,`email`,`instagram`,`linkedin`,`tipe_pekerjaan`,`durasi_pekerjaan`,`preferensi_gaji`,`ktp`FROM pekerja,kota,provinsi WHERE pekerja.id_kota = kota.id_kota and pekerja.id_provinsi = provinsi.id_provinsi and id_pekerja = \'"+ session["iduser"].upper() + "\';"
-        return sqlutama
+        #return sqlutama
         pekerja = RunSelect(sqlutama)
         sql = ("SELECT `kota`,`id_kota` FROM kota")
         kota = RunSelect(sql)
@@ -147,6 +147,7 @@ def profile():
 
             #qry += 'WHERE id_pekerja = \'' + session["iduser"].upper() + '\';'
             #ExecuteCMD(qry)
+            pekerja= RunSelect(sqlutama)
             return render_template("profile.html",
                                    kota=kota,
                                    provinsi=provinsi,
@@ -171,6 +172,7 @@ def profile():
                                    gajipekerja=pekerja[0][13],
                                    ktpfoto=pekerja[0][14])
         else:
+            pekerja = RunSelect(sqlutama)
             return render_template("profile.html",
                                    kota=kota,
                                    provinsi=provinsi,
