@@ -29,6 +29,9 @@ def profile():
         sqlhistori = ("SELECT `nama_perusahaan` , `nama_pekerja` , `tanggal_upload` FROM pekerjatoperusahaan pj ,pekerja,perusahaan WHERE pj.id_pekerja = pekerja.id_pekerja and pj.id_perusahaan = perusahaan.id_perusahaan and pj.id_pekerja = \'"
             + session["iduser"].upper() + "\';")
         histori = RunSelect(sqlhistori)
+        member = ("SELECT `jenis_membership` FROM pekerja p, membership m where p.id_membership = m.id_membership and p.id_pekerja = \'"
+            + session["iduser"].upper() + "\';")
+        jenismember = RunSelect(member)
 
 
         if request.method == "POST":
@@ -156,6 +159,7 @@ def profile():
                                    lulusannya=lulusanutama,
                                    genderkerja = genderutama,
                                    histori = histori,
+                                   jenismember = jenismember,
                                    namapekerja=pekerja[0][0],
                                    genderpekerja=pekerja[0][1],
                                    umurpekerja=pekerja[0][2],
@@ -181,6 +185,7 @@ def profile():
                                    lulusannya=lulusanutama,
                                    genderkerja = genderutama,
                                    histori = histori,
+                                   jenismember = jenismember,
                                    namapekerja=pekerja[0][0],
                                    genderpekerja=pekerja[0][1],
                                    umurpekerja=pekerja[0][2],

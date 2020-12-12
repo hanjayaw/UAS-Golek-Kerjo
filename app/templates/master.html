@@ -118,7 +118,7 @@
                     aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
-                <div class="collapse navbar-collapse" id="navbar">
+                <div class="collapse navbar-collapse mx-auto" id="navbar">
                     <ul class="navbar-nav text-uppercase">
                         <li class="nav-item">
                             <a href="/" class="nav-link navbar-left" style="width: 70px;"><img src="{{url_for('static', filename='images/Logo.png')}}" alt="" style="width: 100%;"><span class="sr-only">(current)</span></a>
@@ -136,9 +136,9 @@
                     </ul>
                     <ul class="navbar-nav text-uppercase ml-auto">
 
-                        <a class="button" href="#popup1" style="text-align: center; margin-right: 5%;">
+                        <a class="button mx-auto" href="#popup1" style="text-align: center; margin:0px; vertical-align: middle;">
                             <input type="image" src="{{url_for('static', filename='images/bell_1.png')}}"
-                                style="width: 70%; vertical-align: middle;">
+                                style="width: 70%; top: auto; margin: 0px; text-align: center; vertical-align: middle;" class="mx-auto">
                         </a>
                         <li class="nav-item"
                             style="top: auto; margin: 0px; text-align: center; vertical-align: middle;">
@@ -200,7 +200,7 @@
     </div>
     {% endif %}
     {% block content %} {% endblock %}
-    <div id="popup1" class="overlay" style="z-index: 999;">
+    <div id="popup1" class="overlay" style="z-index: 9999;">
         <div class="popup">            
             <a class="close" href="#">&times;</a>
             <div class="content">
@@ -225,7 +225,7 @@
                     <ul class="footer-list">
                         <li><img src="{{url_for('static', filename='images/linkedinlogo.png')}}" alt=""
                                 class="footer-img">
-                            <p>GolekKerjo</p>
+                            <span>GolekKerjo</span>
                         </li>
                         <li><img src="{{url_for('static', filename='images/download.png')}}" alt="" class="footer-img"
                                 style="width: 50; margin-left: 0%;">

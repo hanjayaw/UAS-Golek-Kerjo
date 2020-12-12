@@ -55,6 +55,5 @@ def perusahaan():
     return render_template('perusahaan.html',
                            results=results,
                            hasil=hasil,
-                           baru=baru,
                            pages=n_pages,
                            currentpage=int(currentpage))
