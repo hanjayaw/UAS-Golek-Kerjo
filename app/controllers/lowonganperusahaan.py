@@ -10,6 +10,7 @@ def lowongan():
     session["kota"] = RunSelect(qrykota)
     qryjenis = "SELECT tipe_job FROM jobs GROUP BY tipe_job"
     session["jenis"] = RunSelect(qryjenis)
+    session["jenisjobs"] = request.form.get("durasi", "")
     currentpage = request.args.get('page', 1)  #langkah 1 tau currentpage
     sql = "SELECT COUNT(*) as jumlah_lowongan FROM jobs"
     res = RunSelectOne(sql)  #LANGKAH KE 2 COUNT DATA

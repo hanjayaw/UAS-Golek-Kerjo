@@ -24,3 +24,21 @@ def advance():
         results = RunSelect(qry)
         return render_template('advance.html', results = results)
     return render_template('advance.html') 
+
+@app.route('/freelance')
+def freelance():
+    qry = "SELECT tipe_job , nama_perusahaan , kota , minimum_gaji , logo_perusahaan, id_jobs FROM jobs , perusahaan , kota WHERE perusahaan.id_kota = kota.id_kota AND jobs.id_perusahaan = perusahaan.id_perusahaan AND duration_job = 'Freelance'"
+    results = RunSelect(qry)
+    return render_template('hasilcari.html', results = results)
+
+@app.route('/parttime')
+def parttime():
+    qry = "SELECT tipe_job , nama_perusahaan , kota , minimum_gaji , logo_perusahaan, id_jobs FROM jobs , perusahaan , kota WHERE perusahaan.id_kota = kota.id_kota AND jobs.id_perusahaan = perusahaan.id_perusahaan AND duration_job = 'Part Time'"
+    results = RunSelect(qry)
+    return render_template('hasilcari.html', results = results)
+
+@app.route('/fulltime')
+def fulltime():
+    qry = "SELECT tipe_job , nama_perusahaan , kota , minimum_gaji , logo_perusahaan, id_jobs FROM jobs , perusahaan , kota WHERE perusahaan.id_kota = kota.id_kota AND jobs.id_perusahaan = perusahaan.id_perusahaan AND duration_job = 'Full Time'"
+    results = RunSelect(qry)
+    return render_template('hasilcari.html', results = results)
