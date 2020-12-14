@@ -1,6 +1,6 @@
 #https://zonacoding.com/article/penerapan-mvc-di-flask-python
 
-from flask import Flask, url_for, session  ## import Flask dari package flask
+from flask import Flask, url_for, session, make_response  ## import Flask dari package flask
 from flaskext.mysql import MySQL
 from werkzeug.utils import secure_filename
 from datetime import datetime
@@ -30,6 +30,7 @@ app.config['MYSQL_DATABASE_DB'] = 'db_isb19_001'
 # app.config['MYSQL_DATABASE_DB'] = 'new_schema'
 
 conn = cursor = None
+
 
 def OpenDB():
     global conn, cursor
@@ -113,7 +114,8 @@ def saveKTP(ktp):
             os.remove(os.path.join(app.config['UPLOAD_FOLDER'], filename))
         except:
             None
-        qry = 'CALL updatektp( \'' + filename + '\' , \'' + session["iduser"].upper() + '\')'
+        qry = 'CALL updatektp( \'' + filename + '\' , \'' + session[
+            "iduser"].upper() + '\')'
         ExecuteCMD(qry)
         ktp.save(os.path.join(app.config['UPLOAD_FOLDER'], filename))
 
@@ -133,9 +135,15 @@ def saveProfil(profil):
             None
 
         session["profilepicture"] = filename
-        qry = 'CALL updatefotoprofil (\'' + filename + '\'  , \'' + session["iduser"].upper() + '\')'
+        qry = 'CALL updatefotoprofil (\'' + filename + '\'  , \'' + session[
+            "iduser"].upper() + '\')'
         ExecuteCMD(qry)
         profil.save(os.path.join(app.config['UPLOAD_PROFILE'], filename))
+
+
+def delcookie():
+    res = make_response('Cookie Removed')
+    res.set_cookie('foo', 'bar', max_age=0)
 
 
 from app.controllers import *

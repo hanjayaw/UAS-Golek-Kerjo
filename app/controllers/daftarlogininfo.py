@@ -1,5 +1,5 @@
 from flask import Flask, render_template, request, flash, session, redirect, url_for
-from app import app, RunSelect, ExecuteCMD, saveApplyFilesLampiran
+from app import app, RunSelect, ExecuteCMD, saveApplyFilesLampiran, delcookie
 from datetime import timedelta
 
 app.secret_key = "golekbarengkerjo"
@@ -161,5 +161,6 @@ def logout():
     session.pop("email", None)
     session.pop("iduser", None)
     session.pop("profilepicture", None)
+    delcookie()
     return redirect(url_for('landingpage'))
     # return redirect(url_for('')) Landing Page
