@@ -169,6 +169,5 @@ def logout():
     session.pop("email", None)
     session.pop("iduser", None)
     session.pop("profilepicture", None)
-    delcookie()
     return redirect(url_for('landingpage'))
     # return redirect(url_for('')) Landing Page
