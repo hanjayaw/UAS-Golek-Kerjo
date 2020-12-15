@@ -1,9 +1,17 @@
 from flask import Flask, render_template, request, flash, session, redirect, url_for
+from flask_session import Session
 from app import app, RunSelect, ExecuteCMD, saveApplyFilesLampiran
 from datetime import timedelta
-
+import os
 app.secret_key = "golekbarengkerjo"
+SESSION_TYPE = app.config['SESSION_TYPE'] = 'filesystem'
+SESSION_FILE_DIR = app.config['SESSION_FILE_DIR'] = os.path.join(app.root_path,'flask_session')
+SESSION_FILE_THRESHOLD = app.config['SESSION_FILE_THRESHOLD'] = 100
+sess = Session()
+sess.init_app(app)
 app.permanent_session_lifetime = timedelta(weeks=12)
+
+
 
 
 # Code di bawah sini
