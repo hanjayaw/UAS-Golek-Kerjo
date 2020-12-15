@@ -17,10 +17,11 @@ UPLOAD_PROFILE = os.path.join(app.root_path, 'static/profile/')
 app.config['UPLOAD_PROFILE'] = UPLOAD_PROFILE
 ALLOWED_EXTENSIONS = {'jpg', 'jpeg', 'png', 'pdf', 'docx', 'doc'}
 
-app.config['MYSQL_DATABASE_HOST'] = 'jmswijaya.com'
+app.config[
+    'MYSQL_DATABASE_HOST'] = 'golekkerjo.cmmunxguhntd.us-east-1.rds.amazonaws.com'
 app.config['MYSQL_DATABASE_PORT'] = 3306
-app.config['MYSQL_DATABASE_USER'] = 'isb19'
-app.config['MYSQL_DATABASE_PASSWORD'] = 'Isb@2019'
+app.config['MYSQL_DATABASE_USER'] = 'admingk'
+app.config['MYSQL_DATABASE_PASSWORD'] = 'golekkerjo'
 app.config['MYSQL_DATABASE_DB'] = 'db_isb19_001'
 
 # app.config['MYSQL_DATABASE_HOST'] = '127.0.0.1'
@@ -39,11 +40,26 @@ def OpenDB():
 
 
 def RunSelect(cmd):
-    global cursor
-    OpenDB()
-    cursor.execute(cmd)
-    res = cursor.fetchall()
-    CloseDB()
+    try:
+        global cursor
+        OpenDB()
+        cursor.execute(cmd)
+        res = cursor.fetchall()
+        CloseDB()
+    except:
+        res = RunSelectSecond(cmd)
+    return res
+
+
+def RunSelectSecond(cmd):
+    try:
+        global cursor
+        OpenDB()
+        cursor.execute(cmd)
+        res = cursor.fetchall()
+        CloseDB()
+    except:
+        res = RunSelect(cmd)
     return res
 
 
