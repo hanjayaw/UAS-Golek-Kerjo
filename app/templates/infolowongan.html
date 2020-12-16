@@ -1,0 +1,161 @@
+{% extends 'master.html' %}
+{% block content %}
+	<!-- company -->
+	<section class="section-5" id="company-us">
+		<div class="container">
+			<div class="row main-row">
+				<div class="col-lg-4 col-md-12 col-sm-12">
+					<div class="company-img">
+						<img src="{{url_for('static', filename='images/')}}{{logoperusahaan}}" class="img-fluid"
+							id="company-img">
+						<!-- ImagePerusahaan -->
+						<!-- ImagePerusahaan -->
+						<!-- ImagePerusahaan -->
+					</div>
+				</div>
+				<div class="col-lg-8 col-md-12 col-sm-12 company-text">
+					<div class="company-title mb-3">
+						<h3>{{lowongantitle}}</h3>
+						<!-- Lowongan Title -->
+						<!-- Lowongan Title -->
+						<!-- Lowongan Title -->
+					</div>
+					<div class="company-desc mb-2">
+						<p>{{durationlowongan}}</p>
+						<p>{{kota}}</p>
+						<!-- Duration dan Kota -->
+						<!-- Duration dan Kota -->
+						<!-- Duration dan Kota -->
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<!-- Gaji -->
+	<section class="section-gaji" id="company-gaji">
+		<div class="container-fluid gaji-container">
+			<div class="text-container">
+				<p style="font-weight: bold;">Gaji</p>
+			</div>
+			<div class="container">
+				<div class="row">
+					<div class="col-md-4 gajiminimum">
+						<img src="{{url_for('static', filename='images/rupiah.png')}}" alt="Gaji Minimum"
+							id="gajiminimum" style="width: 30%; height: 30%;">
+						<p>Rp. {{gajiminimum}}</p>
+						<!-- Gaji Minimum -->
+						<!-- Gaji Minimum -->
+						<!-- Gaji Minimum -->
+					</div>
+					<div class="col-md-4 vertical-center">
+						<p id="sampai">Sampai</p>
+					</div>
+					<div class="col-md-4 gajimaximum">
+						<img src="{{url_for('static', filename='images/rupiah.png')}}" alt="Gaji Minimum"
+							id="gajimaximum" style="width: 30%; height: 30%;">
+						<p>Rp. {{gajimaximum}}</p>
+						<!-- Gaji Maximum -->
+						<!-- Gaji Maximum -->
+						<!-- Gaji Maximum -->
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<!-- Kontak -->
+	<section class="section-kontak" id="kontak">
+		<div class="container-fluid kontak-container">
+			<p id="text-kontak">Kontak</p>
+		</div>		
+		<div class="container-fluid ">
+			<div class="row align-items-center">
+				<div class="col col-lg-3 col-md-3 col-sm-4 center-kontak-logo">
+					<img src="{{url_for('static', filename='images/website.png')}}" alt="Instagram" id="instagram-logo"
+						class="sixfour">
+					{% if website != "" %}
+			                        {% if 'https://' in website %}
+			                            <p style="padding-top: 5%;"><a href="{{website}}">Website</a></p>
+			                        {% elif 'www' in website %}
+			                            <p style="padding-top: 5%;"><a href="https://{{website}}">Website</a></p>
+						{% else %}
+			  			    <p style="padding-top: 5%;"><a href="https://www{{website}}">Website</a></p>
+			                        {% endif %}
+					 	{% else %}
+						    <p style="padding-top: 5%;"><i>No Website</i></p>
+                    			{% endif %}
+				</div>
+				<div class="col col-lg-3 col-md-3 col-sm-4 center-kontak-logo">
+					<img src="{{url_for('static', filename='images/email.png')}}" alt="Email" id="email-logo"
+						class="sixfour">
+					{% if email != "" %}
+					<p style="padding-top: 5%;">{{email}}</p>
+					{% else %}
+					<p style="padding-top: 5%;">No Email</p>
+					{% endif %}
+				</div>
+				<div class="col col-lg-3 col-md-3 col-sm-4 center-kontak-logo">
+					<img src="{{url_for('static', filename='images/Phone_be.png')}}" alt="Telepon" id="telepon-logo"
+						class="sixfour">
+					{% if phone != "" %}
+					<p style="padding-top: 5%;">{{phone}}</p>
+					{% else %}
+					<p style="padding-top: 5%;">No Phone</p>
+					{% endif %}
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<!-- Kualifikasi -->
+	<section class="section-kualifikasi">
+		<div class="container kualifikasi-container">
+			<div class="content-container">
+				<div class="img-container">
+					<img src="{{url_for('static', filename='images/working-remote.png')}}" alt="" class="img-kual-desk">
+				</div>
+				<div class="text-container-kualifikasi">
+					<p>Kualifikasi</p>
+					{% for items in kualif %}
+					<p>{{items}}</p>
+					{% endfor %}
+					<!-- KUALIF -->
+					<!-- KUALIF -->
+					<!-- KUALIF -->
+				</div>
+			</div>
+		</div>
+	</section>
+	<section class="section-kualifikasi">
+		<div class="container kualifikasi-container">
+			<div class="content-container-2">
+				<div class="img-container-2">
+					<img src="{{url_for('static', filename='images/character_1.png')}}" alt="" class="img-kual-desk">
+				</div>
+				<div class="text-container-kualifikasi">
+					<p>Deskripsi</p>
+					{% for items in desk %}
+					<p>{{items}}</p>
+					{% endfor %}
+					<!-- DESK -->
+					<!-- DESK -->
+					<!-- DESK -->
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<form action="" method="POST" style="text-align: center;" id="formlamar" enctype="multipart/form-data">
+		<span class="btn btn-primary btn-file" style="background-color: #79A0EF; width: 15%; border-radius: 10px;">
+			Lamar<input type="file" name="applyfiles" id="lamar">
+		</span>
+	</form>
+
+<link rel="stylesheet" href="{{url_for('static', filename='css/infolowongan.css')}}">
+<script>
+document.getElementById("lamar").onchange = function() {
+    document.getElementById("formlamar").submit();
+};
+</script>
+{% endblock %}
