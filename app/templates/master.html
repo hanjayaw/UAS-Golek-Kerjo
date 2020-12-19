@@ -205,7 +205,7 @@
             <a class="close" href="#">&times;</a>
             <div class="content">
                 {% for items in session["notification"] %}
-                    <a href="/searchedlowongan/{{items[2]}}"><img src="static/images/{{items[0]}}" alt="" style="width: 15%; height: 15%"><p style="display: inline-block; color: black; text-decoration:none; padding-left: 20px;">{{items[1]}}</p><hr></a>
+                    <a href="/searchedlowongan/{{items[2]}}"><img src="/static/images/{{items[0]}}" alt="" style="width: 15%; height: 15%"><p style="display: inline-block; color: black; text-decoration:none; padding-left: 20px;">{{items[1]}}</p><hr></a>
                 {% endfor %}
             </div>
         </div>
@@ -223,13 +223,13 @@
                 <!-- AMIN -->
                 <div class="col">
                     <ul class="footer-list">
-                        <li><img src="{{url_for('static', filename='images/linkedinlogo.png')}}" alt=""
+                        <li><a href="https://www.linkedin.com/in/golek-kerjo-2a218a202/"><img src="{{url_for('static', filename='images/linkedinlogo.png')}}" alt=""
                                 class="footer-img">
-                            <p>GolekKerjo</p>
+                            <p>GolekKerjo</p></a>
                         </li>
-                        <li><img src="{{url_for('static', filename='images/download.png')}}" alt="" class="footer-img"
+                        <li><a href="https://web.facebook.com/golek.kerjo.7/"><img src="{{url_for('static', filename='images/download.png')}}" alt="" class="footer-img"
                                 style="width: 50; margin-left: 0%;">
-                            <p>GolekKerjo</p>
+                            <p>GolekKerjo</p></a>
                         </li>
                     </ul>
                 </div>

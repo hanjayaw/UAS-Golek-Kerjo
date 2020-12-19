@@ -1,7 +1,7 @@
 from flask import Flask, render_template, request, session, redirect, url_for
 from app import app, RunSelect
 import midtransclient
-
+import random
 # Code di bawah sini
 
 
@@ -16,7 +16,7 @@ def premium():
         qry = "SELECT * FROM pemasukan"
         results = RunSelect(qry)
         inlength = len(results) + 1 #PEMASUKAN KE BERAPA
-        fullorderid = "IN" + str(inlength) + session["iduser"]
+        fullorderid = "IN" + str(inlength) + session["iduser"] + str(random.randint(1,10000))
         telepon = ("SELECT `telepon_pekerja` from pekerja WHERE id_pekerja = \'" + session["iduser"].upper() + "\';")
         notelepon = RunSelect(telepon)
         if notelepon[0][0] != "": 
@@ -39,7 +39,7 @@ def premium():
                 # "phone": "08111222333" #KALAU NOMOR HP NYA NGGA ADA DI PROFILE, GANTI JADI Tidak Diketahui (IF dan QUERY)
             },
             "callbacks": {
-                "finish": "http://127.0.0.1:5000/ksjadfljakjHJJLKJl46546544SFDGdasd" 
+                "finish": "http://18.212.185.43/ksjadfljakjHJJLKJl46546544SFDGdasd" 
                 #KE APP ROUTE BARU UNTUK MEMASUKKAN DATA KE TABEL PEMASUKAN 
                 #HABIS ITU MENGUBAH STATUS PEKERJA DARI FREE KE PREMIUM
                 #HABIS DARI APP ROUTE MU LANGSUNG KE PROFILE

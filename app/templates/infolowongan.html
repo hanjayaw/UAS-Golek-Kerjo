@@ -75,16 +75,14 @@
 					<img src="{{url_for('static', filename='images/website.png')}}" alt="Instagram" id="instagram-logo"
 						class="sixfour">
 					{% if website != "" %}
-			                        {% if 'https://' in website %}
-			                            <p style="padding-top: 5%;"><a href="{{website}}">Website</a></p>
-			                        {% elif 'www' in website %}
-			                            <p style="padding-top: 5%;"><a href="https://{{website}}">Website</a></p>
-						{% else %}
-			  			    <p style="padding-top: 5%;"><a href="https://www.{{website}}">Website</a></p>
-			                        {% endif %}
-					 	{% else %}
-						    <p style="padding-top: 5%;"><i>No Website</i></p>
-                    			{% endif %}
+                        {% if 'https://www' not in website %}
+                            <p style="padding-top: 5%;"><a href="https://www.{{website}}">Website</a></p>
+                        {% elif 'https://' not in website %}
+                            <p style="padding-top: 5%;"><a href="https://{{website}}">Website</a></p>
+                        {% endif %}
+					{% else %}
+					    <p style="padding-top: 5%;"><i>No Website</i></p>
+                    {% endif %}
 				</div>
 				<div class="col col-lg-3 col-md-3 col-sm-4 center-kontak-logo">
 					<img src="{{url_for('static', filename='images/email.png')}}" alt="Email" id="email-logo"
@@ -148,13 +146,16 @@
 
 	<form action="" method="POST" style="text-align: center;" id="formlamar" enctype="multipart/form-data">
 		<span class="btn btn-primary btn-file" style="background-color: #79A0EF; width: 15%; border-radius: 10px;">
-			Lamar<input type="file" name="applyfiles" id="lamar">
+			Lamar dengan CV<input type="file" name="applyfiles" id="lamar">
 		</span>
 	</form>
 
 <link rel="stylesheet" href="{{url_for('static', filename='css/infolowongan.css')}}">
 <script>
 document.getElementById("lamar").onchange = function() {
+    if ("session['user']" != ""){
+       alert("Lampiran Sudah Terkirim!");
+    }
     document.getElementById("formlamar").submit();
 };
 </script>
