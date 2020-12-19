@@ -15,12 +15,54 @@ def advance():
         namakota = request.form.get("namakota", "")   
         gajimin = request.form.get("gaji-minim", "")   
         gajimax = request.form.get("gaji-max", "")
+        querynya = ""
+        if tipejobs != "":
+            querynya = querynya +  " AND tipe_job LIKE \'%"+tipejobs+"%\'"
+        if namakota != "":
+            querynya = querynya + "  AND kota LIKE \'%"+namakota+"%\'"
+        if jenisjobs != "":
+            querynya = querynya + " AND duration_job LIKE \'%"+jenisjobs+"%\'"
+        if gajimin != "":
+            querynya = querynya + " AND minimum_gaji > \'"+gajimin+"\' - 1 "
+        if gajimax != "":
+            querynya = querynya + " AND minimum_gaji < \'"+gajimax+"\' + 1"
         if searching == "":
-            qry = "SELECT tipe_job , nama_perusahaan , kota , minimum_gaji , logo_perusahaan, id_jobs FROM jobs , perusahaan , kota WHERE perusahaan.id_kota = kota.id_kota AND jobs.id_perusahaan = perusahaan.id_perusahaan AND duration_job LIKE \'%"+jenisjobs+"%\' AND tipe_job LIKE \'%"+tipejobs+"%\' AND kota LIKE \'%"+namakota+"%\' OR minimum_gaji > \'"+gajimin+"\' - 1 AND minimum_gaji < \'"+gajimax+"\' + 1"
+            qry = "SELECT tipe_job , nama_perusahaan , kota , minimum_gaji , logo_perusahaan, id_jobs FROM jobs , perusahaan , kota WHERE perusahaan.id_kota = kota.id_kota AND jobs.id_perusahaan = perusahaan.id_perusahaan "+ querynya + ";"
+            print(qry)
+            # qry = "SELECT tipe_job , nama_perusahaan , kota , minimum_gaji , logo_perusahaan, id_jobs FROM jobs , perusahaan , kota WHERE perusahaan.id_kota = kota.id_kota AND jobs.id_perusahaan = perusahaan.id_perusahaan AND duration_job LIKE \'%"+jenisjobs+"%\' AND tipe_job LIKE \'%"+tipejobs+"%\' AND kota LIKE \'%"+namakota+"%\' AND minimum_gaji > \'"+gajimin+"\' - 1 AND minimum_gaji < \'"+gajimax+"\' + 1"
+        
+        # elif searching == "" and jenisjobs == "" and tipejobs == "" and namakota == "" and gajimin != "" and gajimax != "":
+        #     qry = "SELECT tipe_job , nama_perusahaan , kota , minimum_gaji , logo_perusahaan, id_jobs FROM jobs , perusahaan , kota WHERE perusahaan.id_kota = kota.id_kota AND jobs.id_perusahaan = perusahaan.id_perusahaan AND minimum_gaji > \'"+gajimin+"\' - 1 AND minimum_gaji < \'"+gajimax+"\' + 1"
+        # elif searching == "" and jenisjobs == "" and tipejobs == "" and namakota != "" and gajimin == "" and gajimax == "":
+        #     qry = "SELECT tipe_job , nama_perusahaan , kota , minimum_gaji , logo_perusahaan, id_jobs FROM jobs , perusahaan , kota WHERE perusahaan.id_kota = kota.id_kota AND jobs.id_perusahaan = perusahaan.id_perusahaan AND kota LIKE \'%"+namakota+"%\'"
+        # elif searching == "" and jenisjobs == "" and tipejobs != "" and namakota == "" and gajimin == "" and gajimax == "":
+        #     qry = "SELECT tipe_job , nama_perusahaan , kota , minimum_gaji , logo_perusahaan, id_jobs FROM jobs , perusahaan , kota WHERE perusahaan.id_kota = kota.id_kota AND jobs.id_perusahaan = perusahaan.id_perusahaan AND tipe_job LIKE \'%"+tipejobs+"%\'"
+        # elif searching == "" and jenisjobs != "" and tipejobs == "" and namakota == "" and gajimin == "" and gajimax == "":
+        #     qry = "SELECT tipe_job , nama_perusahaan , kota , minimum_gaji , logo_perusahaan, id_jobs FROM jobs , perusahaan , kota WHERE perusahaan.id_kota = kota.id_kota AND jobs.id_perusahaan = perusahaan.id_perusahaan AND duration_job LIKE \'%"+jenisjobs+"%\'"
+                
+        # elif searching == "" and jenisjobs != "" and tipejobs != "" and namakota == "" and gajimin == "" and gajimax == "":
+        #     qry = "SELECT tipe_job , nama_perusahaan , kota , minimum_gaji , logo_perusahaan, id_jobs FROM jobs , perusahaan , kota WHERE perusahaan.id_kota = kota.id_kota AND jobs.id_perusahaan = perusahaan.id_perusahaan AND duration_job LIKE \'%"+jenisjobs+"%\' AND tipe_job LIKE \'%"+tipejobs+"%\'"
+        # elif searching == "" and jenisjobs != "" and tipejobs == "" and namakota != "" and gajimin == "" and gajimax == "":
+        #     qry = "SELECT tipe_job , nama_perusahaan , kota , minimum_gaji , logo_perusahaan, id_jobs FROM jobs , perusahaan , kota WHERE perusahaan.id_kota = kota.id_kota AND jobs.id_perusahaan = perusahaan.id_perusahaan AND duration_job LIKE \'%"+jenisjobs+"%\' AND kota LIKE \'%"+namakota+"%\'"
+        # elif searching == "" and jenisjobs != "" and tipejobs == "" and namakota == "" and gajimin != "" and gajimax != "":
+        #     qry = "SELECT tipe_job , nama_perusahaan , kota , minimum_gaji , logo_perusahaan, id_jobs FROM jobs , perusahaan , kota WHERE perusahaan.id_kota = kota.id_kota AND jobs.id_perusahaan = perusahaan.id_perusahaan AND duration_job LIKE \'%"+jenisjobs+"%\' AND minimum_gaji > \'"+gajimin+"\' - 1 AND minimum_gaji < \'"+gajimax+"\' + 1"
+        
+        # elif searching == "" and jenisjobs == "" and tipejobs != "" and namakota != "" and gajimin == "" and gajimax == "":
+        #     qry = "SELECT tipe_job , nama_perusahaan , kota , minimum_gaji , logo_perusahaan, id_jobs FROM jobs , perusahaan , kota WHERE perusahaan.id_kota = kota.id_kota AND jobs.id_perusahaan = perusahaan.id_perusahaan AND tipe_job LIKE \'%"+tipejobs+"%\' AND kota LIKE \'%"+namakota+"%\'"
+        # elif searching == "" and jenisjobs == "" and tipejobs != "" and namakota == "" and gajimin != "" and gajimax != "":
+        #     qry = "SELECT tipe_job , nama_perusahaan , kota , minimum_gaji , logo_perusahaan, id_jobs FROM jobs , perusahaan , kota WHERE perusahaan.id_kota = kota.id_kota AND jobs.id_perusahaan = perusahaan.id_perusahaan AND tipe_job LIKE \'%"+tipejobs+"%\' AND minimum_gaji > \'"+gajimin+"\' - 1 AND minimum_gaji < \'"+gajimax+"\' + 1"
+        
+        # elif searching == "" and jenisjobs == "" and tipejobs == "" and namakota != "" and gajimin != "" and gajimax != "":
+        #     qry = "SELECT tipe_job , nama_perusahaan , kota , minimum_gaji , logo_perusahaan, id_jobs FROM jobs , perusahaan , kota WHERE perusahaan.id_kota = kota.id_kota AND jobs.id_perusahaan = perusahaan.id_perusahaan AND kota LIKE \'%"+namakota+"%\' AND minimum_gaji > \'"+gajimin+"\' - 1 AND minimum_gaji < \'"+gajimax+"\' + 1"
+        
+
+        
         elif searching != "" and jenisjobs == "" and tipejobs == "" and namakota == "" and gajimin == "" and gajimax == "":
-            qry = "SELECT tipe_job , nama_perusahaan , kota , minimum_gaji , logo_perusahaan, id_jobs FROM jobs , perusahaan , kota WHERE perusahaan.id_kota = kota.id_kota AND jobs.id_perusahaan = perusahaan.id_perusahaan AND (UPPER(tipe_job) LIKE UPPER(\'%"+searching+"%\') OR UPPER(nama_perusahaan) LIKE UPPER(\'%"+searching+"%\'))"
+            qry = "SELECT tipe_job , nama_perusahaan , kota , minimum_gaji , logo_perusahaan, id_jobs FROM jobs , perusahaan , kota WHERE perusahaan.id_kota = kota.id_kota AND jobs.id_perusahaan = perusahaan.id_perusahaan AND (tipe_job LIKE \'%"+searching+"%\' OR nama_perusahaan LIKE \'%"+searching+"%\')"
+        
         else:
-            qry = "SELECT tipe_job , nama_perusahaan , kota , minimum_gaji , logo_perusahaan, id_jobs FROM jobs , perusahaan , kota WHERE perusahaan.id_kota = kota.id_kota AND jobs.id_perusahaan = perusahaan.id_perusahaan AND (UPPER(tipe_job) LIKE UPPER(\'%"+searching+"%\') OR UPPER(nama_perusahaan) LIKE UPPER(\'%"+searching+"%\')) AND (duration_job LIKE \'"+jenisjobs+"\' OR tipe_job LIKE \'"+tipejobs+"\' OR kota LIKE \'"+namakota+"\' OR minimum_gaji > \'"+gajimin+"\' - 1 AND minimum_gaji < \'"+gajimax+"\' + 1)"
+            # qry = "SELECT tipe_job , nama_perusahaan , kota , minimum_gaji , logo_perusahaan, id_jobs FROM jobs , perusahaan , kota WHERE perusahaan.id_kota = kota.id_kota AND jobs.id_perusahaan = perusahaan.id_perusahaan AND (UPPER(tipe_job) LIKE UPPER(\'%"+searching+"%\') OR UPPER(nama_perusahaan) LIKE UPPER(\'%"+searching+"%\')) AND (duration_job LIKE \'"+jenisjobs+"\' OR tipe_job LIKE \'"+tipejobs+"\' OR kota LIKE \'"+namakota+"\' OR minimum_gaji > \'"+gajimin+"\' - 1 AND minimum_gaji < \'"+gajimax+"\' + 1)"
+            qry = "SELECT tipe_job , nama_perusahaan , kota , minimum_gaji , logo_perusahaan, id_jobs FROM jobs , perusahaan , kota WHERE perusahaan.id_kota = kota.id_kota AND jobs.id_perusahaan = perusahaan.id_perusahaan AND (tipe_job LIKE \'%"+searching+"%\' OR nama_perusahaan LIKE \'%"+searching+"%\') AND (duration_job LIKE \'"+jenisjobs+"\' OR tipe_job LIKE \'"+tipejobs+"\' OR kota LIKE \'%"+namakota+"%\' AND minimum_gaji > \'"+gajimin+"\' - 1 AND minimum_gaji < \'"+gajimax+"\' + 1)"
         results = RunSelect(qry)
         return render_template('advance.html', results = results)
     return render_template('advance.html') 
