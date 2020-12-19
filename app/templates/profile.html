@@ -98,7 +98,7 @@
                         </select>
                     </div>
                 </div>
-                <div class="form-row mt-3 ">
+                <div class="form-row">
                     <div class="col">
                         <input type="text" class="form-control" placeholder="Umur" id=inputtanggal name="umur" value = "{{umurpekerja}}">
                     </div>
@@ -129,8 +129,13 @@
 
                 <div class="form-row mt-3 ">
                     <div class="col">
+                        {%if alamatpekerja == 'None' or alamatpekerja == None%}
                         <input type="text" class="form-control" placeholder="Alamat" id="inputalamat"
-                            name="alamatprofil" value = "{{alamatpekerja}}">
+                            name="alamatprofil" value = "">
+                        {%else%}
+                        <input type="text" class="form-control" placeholder="Alamat" id="inputalamat"
+                        name="alamatprofil" value = "{{alamatpekerja}}">
+                        {%endif%}
                     </div>
                     <div class="form-group col">
                         <select id="inputState" class="form-control dropdown-kota" style="padding-left:30px;"
@@ -175,22 +180,43 @@
 
                 <div class="form-row mt-3 ">
                     <div class="col">
+                        {%if teleponpekerja == 'None' or teleponpekerja == None%}
+                        <input type="text" class="form-control" placeholder="No telepon" id="inputtelpon"
+                            name="nomortelpon" value="">
+                        {%else%}
                         <input type="text" class="form-control" placeholder="No telepon" id="inputtelpon"
                             name="nomortelpon" value="{{teleponpekerja}}">
+                        {%endif%}
                     </div>
                     <div class="col">
+                        {%if instagrampekerja == 'None' or instagrampekerja == None%}
+                        <input type="text" class="form-control" placeholder="Instagram" id="inputinsta"
+                        name="instagram" value="">
+                        {%else%}
                         <input type="text" class="form-control" placeholder="Instagram" id="inputinsta"
                             name="instagram" value="{{instagrampekerja}}">
+                        {%endif%}
                     </div>
                 </div>
 
 
                 <div class="form-row mt-3 ">
                     <div class="col">
+                        {%if linkedinpekerja == 'None' or linkedinpekerja == None%}
+                        <input type="text" class="form-control" placeholder="Linkedin" id="inputlink" name="linkedin" value="">
+                        {%else%}
                         <input type="text" class="form-control" placeholder="Linkedin" id="inputlink" name="linkedin" value="{{linkedinpekerja}}">
+                        {%endif%}
+
+
+                        
                     </div>
                     <div class="col">
+                        {%if emailpekerja == 'None' or emailpekerja == None%}
+                        <input type="email" class="form-control" placeholder="E-mail" id="inputemail" name="email" value="">
+                        {%else%}
                         <input type="email" class="form-control" placeholder="E-mail" id="inputemail" name="email" value="{{emailpekerja}}">
+                        {%endif%}
                     </div>
                 </div>
 
@@ -243,19 +269,28 @@
                                     <option value="{{item[0]}}">{{item[0]}}</option>
                                 {% endif %}
                             {%endfor%}
+                            {%if tipepekerja == 'Other'%}
+                            <option value="Other" selected>Other</option>
+                            {%else%}
+                            <option value="Other">Other</option>
+                            {%endif%}
+
 
                         </select>
                     </div>
 
                     <div class="form-group col ">
-                        <select id="inputState" class="form-control dropdown-tipe" name="tipejob">                            
+                        <select id="inputState" class="form-control dropdown-tipe" name="tipejob"> 
+
                             {% for items in range(3) %}
                                 {% if durasi == duration[items] %}
                                     <option value="{{duration[items]}}" selected>{{duration[items]}}</option>
                                 {% else %}
                                     <option value="{{duration[items]}}">{{duration[items]}}</option>
                                 {% endif %}
-                            {% endfor %}                            
+                            {% endfor %}  
+                         
+
                         </select>
 
                     </div>
@@ -274,7 +309,7 @@
                     <span style="position:absolute; color:black; min-width:100px;">
                         <span id="Value"></span>
                     </span>
-                    <input type="range" id="Range" max="50000000" min="1000000" name="gaji" style="width:100%;" value="{{gajipekerja}}">
+                    <input type="range" id="Range" max="50000000" min="1000000" name="gaji" style="width:100%;" value="{{gajipekerja}}"step = "10000">
                 </div>
 
 

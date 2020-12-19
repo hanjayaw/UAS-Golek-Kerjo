@@ -17,8 +17,7 @@ UPLOAD_PROFILE = os.path.join(app.root_path, 'static/profile/')
 app.config['UPLOAD_PROFILE'] = UPLOAD_PROFILE
 ALLOWED_EXTENSIONS = {'jpg', 'jpeg', 'png', 'pdf', 'docx', 'doc'}
 
-app.config[
-    'MYSQL_DATABASE_HOST'] = 'golekkerjo.cmmunxguhntd.us-east-1.rds.amazonaws.com'
+app.config['MYSQL_DATABASE_HOST'] = 'golekkerjo.cmmunxguhntd.us-east-1.rds.amazonaws.com'
 app.config['MYSQL_DATABASE_PORT'] = 3306
 app.config['MYSQL_DATABASE_USER'] = 'admingk'
 app.config['MYSQL_DATABASE_PASSWORD'] = 'golekkerjo'
