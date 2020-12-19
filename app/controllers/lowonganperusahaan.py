@@ -29,9 +29,26 @@ def lowongan():
     sql = "SELECT `tipe_job`, `minimum_gaji`, `nama_perusahaan` ,`kota`, `logo_perusahaan`, `id_jobs` from jobs j, kota k, perusahaan p where p.id_kota = k.id_kota and j.id_perusahaan = p.id_perusahaan limit " + str(
         currentindex) + ", " + str(n_size) + ";"
     hasil = RunSelect(sql)
+
+    mingaji = []
+    mingajibaru = []
+    for items in range(len(results)):
+        mingaji.append(format(int(results[items][1]), ","))
+
+
+    for items in range(len(baru)):
+        mingajibaru.append(format(int(results[items][1]), ","))
+
+    panjangresults = len(results)
+    panjangbaru = len(baru)
+
     return render_template('lowongan.html',
                            results=results,
-                           baru = baru,
+                           pr=panjangresults,
+                           mingaji=mingaji,
+                           mingajibaru = mingajibaru,                           
+                           pb = panjangbaru,
+                           baru=baru,
                            hasil=hasil,
                            pages=n_pages,
                            currentpage=int(currentpage))

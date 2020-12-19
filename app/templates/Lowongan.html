@@ -95,17 +95,17 @@
 
         </div>
         <div class="row mt-5 slider">
-            {%for item in results%}
+            {%for item in range(pr)%}
             <div class="col-md-12">
                 <div class="card mb-5" style="width: 100%; height: 50%;">
                     <div class="card-body">
-                        <img src="static/images/{{item[4]}}" class="img-fluid mb-3  mx-auto" id="lowongan"
+                        <img src="static/images/{{results[item][4]}}" class="img-fluid mb-3  mx-auto" id="lowongan"
                             style="width: 20; height: 30; border-radius: 10px;">
-                        <h5>{{item[0]}}</h5>
-                        <p>{{item[2]}}</p>
-                        <p>{{item[3]}}</p>
-                        <p>Rp. {{item[1]}}</p>
-                        <a href="/searchedlowongan/{{item[5]}}" class="btn btn-outline-dark">Info</a>
+                        <h5>{{results[item][0]}}</h5>
+                        <p>{{results[item][2]}}</p>
+                        <p>{{results[item][3]}}</p>
+                        <p>Rp. {{mingaji[item]}}</p>
+                        <a href="/searchedlowongan/{{results[item][5]}}" class="btn btn-outline-dark">Info</a>
                     </div>
                 </div>
             </div>
@@ -122,17 +122,17 @@
             </div>
         </div>
         <div class="row mt-5 slider">
-            {%for item in baru%}
+            {%for item in range(pb)%}
             <div class="col-md-12">
                 <div class="card-2 mb-5">
                     <div class="card-body" style="width: 100%; height: 50%;">
-                        <img src="static/images/{{item[4]}}" class="img-fluid mb-3  mx-auto" id="lowongan"
+                        <img src="static/images/{{baru[item][4]}}" class="img-fluid mb-3  mx-auto" id="lowongan"
                             style="width: 20; height: 40; border-radius: 10px;">
-                        <h5>{{item[0]}}</h5>
-                        <p>{{item[2]}}</p>
-                        <p>{{item[3]}}</p>
-                        <p>Rp. {{item[1]}}</p>
-                        <a href="/searchedlowongan/{{item[5]}}" class="btn btn-outline-dark">Info</a>
+                        <h5>{{baru[item][0]}}</h5>
+                        <p>{{baru[item][2]}}</p>
+                        <p>{{baru[item][3]}}</p>
+                        <p>Rp. {{mingajibaru[item]}}</p>
+                        <a href="/searchedlowongan/{{baru[item][5]}}" class="btn btn-outline-dark">Info</a>
                     </div>
                 </div>
             </div>
@@ -150,7 +150,7 @@
             </div>
         </div>
         <div class="row mt-5">
-            {%for item in hasil%}
+            <!-- {%for item in hasil%}
             <div class="col-md-4 col-sm-6 col-6">
                 <div class="card-3 mb-5">
                     <div class="card-body" style="width: 100%; height: 50%;">
@@ -161,6 +161,21 @@
                         <p>{{item[3]}}</p>
                         <p>Rp. {{item[1]}}</p>
                         <a href="/searchedlowongan/{{item[5]}}" class="btn btn-outline-dark">Info</a>
+                    </div>
+                </div>
+            </div>
+            {%endfor%} -->
+            {%for item in range(pb)%}
+            <div class="col-md-4 col-sm-6 col-6">
+                <div class="card-3 mb-5">
+                    <div class="card-body" style="width: 100%; height: 50%;">
+                        <img src="static/images/{{baru[item][4]}}" class="img-fluid mb-3  mx-auto" id="lowongan"
+                            style="width: 20; height: 40; border-radius: 10px;">
+                        <h5>{{baru[item][0]}}</h5>
+                        <p>{{baru[item][2]}}</p>
+                        <p>{{baru[item][3]}}</p>
+                        <p>Rp. {{mingajibaru[item]}}</p>
+                        <a href="/searchedlowongan/{{baru[item][5]}}" class="btn btn-outline-dark">Info</a>
                     </div>
                 </div>
             </div>
