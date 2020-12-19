@@ -114,9 +114,7 @@
                             {%endfor%}
                         </select>
                     </div>
-
                 </div>
-
 
                 <div class="row mt-5">
                     <div class="col">
@@ -144,6 +142,8 @@
                             {%for item in kota%}
                             {% if item[0] == kota1%}
                                 <option value="{{item[1]}}" selected>{{item[0]}}</option>
+                            {% elif item[0] == "Kota" %}                                
+                                <option value="{{item[1]}}" selected disabled>{{item[0]}}</option>
                             {% else %}
                                 <option value="{{item[1]}}">{{item[0]}}</option>
                             {% endif %}
@@ -159,6 +159,8 @@
                             {%for item in provinsi%}
                             {% if item[0] == provinsi1%}
                                 <option value="{{item[1]}}" selected>{{item[0]}}</option>
+                            {% elif item[0] == "Provinsi" %}
+                                <option value="{{item[1]}}" selected disabled>{{item[0]}}</option>
                             {% else %}
                                 <option value="{{item[1]}}">{{item[0]}}</option>
                             {% endif %}
