@@ -153,9 +153,17 @@ def infoperusahaan(idperusahaan):
     image = results[0][0]
     query = "SELECT p.logo_perusahaan, j.tipe_job, p.nama_perusahaan, k.kota, j.minimum_gaji, j.id_jobs FROM kota k, jobs j, perusahaan p WHERE p.id_perusahaan = j.id_perusahaan AND k.id_kota = p.id_kota AND p.id_perusahaan = \'" + idperusahaan + "\'"
     results2 = RunSelect(query)
+
+    mingaji = []
+    for items in range(len(results2)):
+        mingaji.append(format(int(results2[items][4]), ","))
+    pr = len(results2)
+
     return render_template('infoperusahaan.html',
                            logoperusahaan=results[0][1],
                            deskripsiperusahaan=results[0][2],
+                           pr=pr,                           
+                           mingaji=mingaji,                           
                            website=results[0][3],
                            email=results[0][4],
                            phone=results[0][5],
